@@ -70,8 +70,4 @@
 .gt-rest { overflow:hidden }
 
 //Clear
-.gt-clear:after, .gt-clear:before {
-	content: "";
-	display: block;
-	clear: both;
-}
+.gt-clear:after, .gt-clear:before { content:""; display:block; clear:both }
