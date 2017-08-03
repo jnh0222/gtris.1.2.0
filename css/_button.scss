@@ -74,13 +74,13 @@
 	}
 
 	//disabled
-    &.gt-button[disabled],
-    &.gt-button-disabled, &.gt-btn-disabled,
-    &.gt-button-disabled:hover,
-    &.gt-button-disabled:focus,
-    &.gt-button-disabled:active {
+	&.gt-button[disabled],
+	&.gt-button-disabled, &.gt-btn-disabled,
+	&.gt-button-disabled:hover,
+	&.gt-button-disabled:focus,
+	&.gt-button-disabled:active {
 		cursor: not-allowed;
 		opacity: .5;
-    }
+	}
 
 }
