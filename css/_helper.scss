@@ -65,9 +65,9 @@
 .gt-margin-top-none, .gt-margin-top-0 { margin-top:0 }
 .gt-margin-bottom-none, .gt-margin-bottom-0 { margin-bottom:0 }
 
+//Clear
+.gt-clear:after, .gt-clear:before { content:""; display:block; clear:both }
+
 //Etc...
 .gt-image { max-width:100% }
 .gt-rest { overflow:hidden }
-
-//Clear
-.gt-clear:after, .gt-clear:before { content:""; display:block; clear:both }
