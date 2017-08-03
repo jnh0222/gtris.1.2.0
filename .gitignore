@@ -1,3 +1,4 @@
 # Git에서 관리하지 않는 디렉토리, 파일 이름 작성
+node_modules
 css/gtris.css
 .sass-cache
