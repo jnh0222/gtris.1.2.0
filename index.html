@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/gtris.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<title></title>
+<style>
+#color .gt-row > div {padding:50px;}
+</style>
+</head>
+<body>
+
+<div id="color" style="padding:5%">
+    <h1>Color</h1>
+    <div class="gt-row gt-text-white">
+        <div class="gt-light-blue gt-center gt-col gt-m6 gt-l2">gt-light-blue</div>
+        <div class="gt-blue gt-center gt-col gt-m6 gt-l2">gt-blue</div>
+        <div class="gt-deep-blue gt-center gt-col gt-m6 gt-l2">gt-deep-blue</div>
+        <div class="gt-yellow gt-center gt-col gt-m6 gt-l2">gt-yellow</div>
+        <div class="gt-orange gt-center gt-col gt-m6 gt-l2">gt-orange</div>
+        <div class="gt-deep-orange gt-center gt-col gt-m6 gt-l2">gt-deep-orange</div>
+    </div>
+
+    <div class="gt-row gt-text-white">
+        <div class="gt-red gt-center gt-col gt-m6 gt-l2">gt-red</div>
+        <div class="gt-green gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-green</div>
+        <div class="gt-pink gt-center gt-col gt-m6 gt-l2">gt-pink</div>
+        <div class="gt-teal gt-center gt-col gt-m6 gt-l2">gt-teal</div>
+        <div class="gt-indigo gt-center gt-col gt-m6 gt-l2">gt-indigo</div>
+        <div class="gt-brown gt-center gt-col gt-m6 gt-l2">gt-brown</div>
+    </div>
+
+    <div class="gt-row gt-text-white">
+        <div class="gt-cyan gt-text-white gt-center gt-col gt-m6 gt-l2">gt-cyan</div>
+        <div class="gt-purple gt-center gt-col gt-m6 gt-l2">gt-purple</div>
+        <div class="gt-lime gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-lime</div>
+        <div class="gt-khaki gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-khaki</div>
+        <div class="gt-amber gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-amber</div>
+        <div class="gt-beige gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-beige</div>
+    </div>
+
+    <div class="gt-row gt-text-white">
+        <div class="gt-gray-eee gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-gray-eee</div>
+        <div class="gt-gray-ddd gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-gray-ddd</div>
+        <div class="gt-gray-ccc gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-gray-ccc</div>
+        <div class="gt-gray-999 gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-gray-999</div>
+        <div class="gt-gray-666 gt-center gt-col gt-m6 gt-l2">gt-gray-666</div>
+        <div class="gt-gray-333 gt-center gt-col gt-m6 gt-l2">gt-gray-333</div>
+    </div>
+
+    <div class="gt-row gt-text-white">
+        <div class="gt-gray gt-center gt-col gt-m6 gt-l2">gt-gray</div>
+        <div class="gt-blue-gray gt-center gt-col gt-m6 gt-l2">gt-blue-gray</div>
+        <div class="gt-black gt-center gt-col gt-m6 gt-l2">gt-black</div>
+        <div class="gt-white gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-white</div>
+    </div>
+</div>
+
+<div style="padding:5%">
+    <h1>Button</h1>
+    <button class="gt-button" type="button" name="button">normal</button>
+    <button class="gt-button gt-button-primary" type="button" name="button">primary</button>
+    <button class="gt-button gt-button-success" type="button" name="button">success</button>
+    <button class="gt-button gt-button-info" type="button" name="button">info</button>
+    <button class="gt-button gt-button-warning" type="button" name="button">warning</button>
+    <button class="gt-button gt-button-danger" type="button" name="button">danger</button>
+    <button class="gt-button gt-button-disabled" type="button" name="button">disabled</button>
+    <br><br>
+    <button class="gt-button gt-btn-outline" type="button" name="button">outline</button>
+    <button class="gt-button gt-btn-outline" type="button" name="button">outline</button>
+    <button class="gt-button gt-btn-outline" type="button" name="button">outline</button>
+    <button class="gt-button gt-btn-outline" type="button" name="button">outline</button>
+    <button class="gt-button gt-btn-outline" type="button" name="button">outline</button>
+    <button class="gt-button gt-btn-outline" type="button" name="button">outline</button>
+    <button class="gt-button gt-btn-outline gt-btn-disabled" type="button" name="button">outline</button>
+    <br><br>
+    <button class="gt-button">Button <i class="fa fa-heart-o"></i></button>
+    <button class="gt-button">Button <i class="fa fa-search"></i></button>
+    <button class="gt-button">Button <i class="fa fa-spinner fa-spin"></i></button>
+    <button class="gt-button">Button <i class="fa fa-user-o"></i></button>
+    <button class="gt-button">Button <i class="fa fa-trash-o"></i></button>
+    <button class="gt-button">Button <i class="fa fa-plus"></i></button>
+    <button class="gt-button">Button <i class="fa fa-envelope"></i></button>
+    <button class="gt-button">Button <i class="fa fa-calendar"></i></button>
+    <button class="gt-button">Button <i class="fa fa-comment"></i></button>
+    <button class="gt-button">Button <i class="fa fa-compress"></i></button>
+    <button class="gt-button">Button <i class="fa fa-undo"></i></button>
+    <button class="gt-button">Button <i class="fa fa-check-circle"></i></button>
+    <button class="gt-button">Button <i class="fa fa-question-circle"></i></button>
+    <br><br>
+    <button class="gt-button gt-block">Block Button</button>
+    <br><br>
+    <button class="gt-button gt-large" type="button" name="button">large</button>
+    <button class="gt-button gt-button-primary gt-xlarge" type="button" name="button">xlarge</button>
+    <button class="gt-button gt-button-success gt-xxlarge" type="button" name="button">xxlarge</button>
+    <button class="gt-button gt-button-info gt-xxxlarge" type="button" name="button">xxxlarge</button>
+    <button class="gt-button gt-button-warning gt-huge" type="button" name="button">huge</button>
+    <br><br>
+    <br><br>
+    <div class="gt-clear">
+        <div class="gt-left">
+            <button class="gt-button gt-button-primary">Button</button>
+            <button class="gt-button gt-button-danger">Button</button>
+            <button class="gt-button gt-button-warning">Button</button>
+        </div>
+    </div>
+    <br>
+
+    <div class="gt-center">
+        <button class="gt-button gt-button-primary">Button</button>
+        <button class="gt-button gt-button-danger">Button</button>
+        <button class="gt-button gt-button-warning">Button</button>
+    </div>
+    <br>
+
+    <div class="gt-clear">
+        <div class="gt-right">
+            <button class="gt-button gt-button-primary">Button</button>
+            <button class="gt-button gt-button-danger">Button</button>
+            <button class="gt-button gt-button-warning">Button</button>
+        </div>
+    </div>
+    <br>
+
+    <div class="gt-clear">
+        <div class="gt-left">
+            <button class="gt-button gt-button-primary">Button</button>
+        </div>
+        <div class="gt-right">
+            <button class="gt-button gt-button-danger">Button</button>
+            <button class="gt-button gt-button-warning">Button</button>
+        </div>
+    </div>
+</div>
+
+<div style="padding:5%">
+    <h1>Grid</h1>
+    <div class="gt-row gt-center gt-text-white">
+		<div class="gt-col gt-s1 gt-black">1</div>
+		<div class="gt-col gt-s1 gt-gray-999">2</div>
+		<div class="gt-col gt-s1 gt-black">3</div>
+		<div class="gt-col gt-s1 gt-gray-999">4</div>
+		<div class="gt-col gt-s1 gt-black">5</div>
+		<div class="gt-col gt-s1 gt-gray-999">6</div>
+		<div class="gt-col gt-s1 gt-black">7</div>
+		<div class="gt-col gt-s1 gt-gray-999">8</div>
+		<div class="gt-col gt-s1 gt-black">9</div>
+		<div class="gt-col gt-s1 gt-gray-999">10</div>
+		<div class="gt-col gt-s1 gt-black">11</div>
+		<div class="gt-col gt-s1 gt-gray-999">12</div>
+		<div class="gt-row">
+    		<div class="gt-col gt-m4 gt-l3 gt-red">
+        		<div class="gt-display-container" style="height:300px">
+        			<div class="gt-display-middle">
+        				큰 화면에서 3열<br>중간 화면에서 4열<br>작은 화면에서 12열
+        			</div>
+        		</div>
+    		</div>
+    		<div class="gt-col gt-m8 gt-l9 gt-blue">
+        		<div class="gt-display-container" style="height:300px">
+        			<div class="gt-display-middle">
+        				큰 화면에서 9열<br>중간 화면에서 8열<br>작은 화면에서 12열
+        			</div>
+        		</div>
+    		</div>
+		</div>
+		<div class="gt-col gt-s1 gt-black">1</div>
+		<div class="gt-col gt-s1 gt-gray-999">2</div>
+		<div class="gt-col gt-s1 gt-black">3</div>
+		<div class="gt-col gt-s1 gt-gray-999">4</div>
+		<div class="gt-col gt-s1 gt-black">5</div>
+		<div class="gt-col gt-s1 gt-gray-999">6</div>
+		<div class="gt-col gt-s1 gt-black">7</div>
+		<div class="gt-col gt-s1 gt-gray-999">8</div>
+		<div class="gt-col gt-s1 gt-black">9</div>
+		<div class="gt-col gt-s1 gt-gray-999">10</div>
+		<div class="gt-col gt-s1 gt-black">11</div>
+		<div class="gt-col gt-s1 gt-gray-999">12</div>
+	</div>
+    <br>
+
+    <div class="gt-row gt-text-white">
+        <div class="gt-col gt-purple gt-center" style="width:150px"><p>150px</p></div>
+        <div class="gt-rest gt-teal gt-center"><p>rest</p></div>
+    </div>
+    <br>
+
+    <div class="gt-row gt-text-white">
+        <div class="gt-col gt-right gt-center gt-orange" style="width:75px"><p>75px</p></div>
+        <div class="gt-rest gt-center gt-pink"><p>rest</p></div>
+    </div>
+</div>
+
+<div style="padding:5%">
+    <h1>Modal</h1>
+    <button id="id-modal-btn" class="gt-button gt-brown gt-text-white">Set the Target(ID)</button>
+    <button id="class-modal-btn" class="gt-button gt-pink gt-text-white">Set the Target(Class)</button>
+    <button id="animate-top-btn" class="gt-button gt-button-success">Animate-Top</button>
+    <button id="animate-bottom-btn" class="gt-button gt-button-info">Animate-Bottom</button>
+    <button id="animate-left-btn" class="gt-button gt-button-warning">Animate-Left</button>
+    <button id="animate-right-btn" class="gt-button gt-button-danger">Animate-Right</button>
+    <button id="animate-zoom-btn" class="gt-button gt-button-primary">Zoom-In</button>
+    <button id="callback-event-btn" class="gt-button gt-teal gt-text-white">Callback-Events</button>
+</div>
+
+<div style="padding:5%">
+    <h1>Display</h1>
+    <div class="gt-display-container gt-text-white">
+		<img src="img/office1.png" class="gt-block gt-image">
+		<div class="gt-display-topleft">
+		<button class="gt-button gt-purple">gt-display-topleft</button>
+		</div>
+		<div class="gt-display-left">
+		<button class="gt-button gt-orange">gt-display-left</button>
+		</div>
+		<div class="gt-display-bottomleft">
+		<button class="gt-button gt-brown">gt-display-bottomleft</button>
+		</div>
+		<div class="gt-display-topmiddle">
+		<button class="gt-button gt-pink">gt-display-topmiddle</button>
+		</div>
+		<div class="gt-display-middle">
+		<button class="gt-button gt-cyan">gt-display-middle</button>
+		</div>
+		<div class="gt-display-bottommiddle">
+		<button class="gt-button gt-indigo">gt-display-bottommiddle</button>
+		</div>
+		<div class="gt-display-topright">
+		<button class="gt-button gt-indigo">gt-display-topright</button>
+		</div>
+		<div class="gt-display-right">
+		<button class="gt-button gt-purple">gt-display-right</button>
+		</div>
+		<div class="gt-display-bottomright">
+		<button class="gt-button gt-black">gt-display-bottomright</button>
+		</div>
+	</div>
+</div>
+
+<div style="padding:5%">
+    <h1>Progressbar</h1>
+    <div class="gt-gray-eee gt-text-white">
+        <div class="gt-center gt-gray-333" style="width:20%">20%</div>
+    </div>
+    <br>
+    <div class="gt-round-xxlarge gt-gray-eee gt-text-white">
+        <div class="gt-center gt-round-xxlarge gt-red gt-padding" style="width:80%">80%</div>
+    </div>
+</div>
+
+<div style="padding:5%">
+    <h1>Cell</h1>
+    <div class="gt-cell-row gt-text-white">
+        <div class="gt-cell gt-padding gt-pink">
+            <p>안녕하세요</p>
+            <p>안녕하세요</p>
+            <p>안녕하세요</p>
+            <p>안녕하세요</p>
+        </div>
+        <div class="gt-cell gt-cell-middle gt-padding gt-blue">
+            <span>안녕하세요</span>
+        </div>
+        <div class="gt-cell gt-cell-bottom gt-padding gt-green">
+            <span>안녕하세요</span>
+        </div>
+    </div>
+</div>
+
+<div style="padding:5%">
+    <h1>Pagination</h1>
+    <div class="gt-pagination gt-clear">
+        <a href="javascript:void(0)" class="gt-pagination-nav"><i class="fa fa-angle-left"></i></a>
+        <a href="javascript:void(0)" class="gt-pagination-nav"><i class="fa fa-angle-left"></i><i class="fa fa-angle-left"></i></a>
+        <a href="javascript:void(0)" class="gt-pagination-nav">1</a>
+        <a href="javascript:void(0)" class="gt-pagination-nav">2</a>
+        <a href="javascript:void(0)" class="gt-pagination-nav gt-active">3</a>
+        <a href="javascript:void(0)" class="gt-pagination-nav">4</a>
+        <a href="javascript:void(0)" class="gt-pagination-nav">5</a>
+        <a href="javascript:void(0)" class="gt-pagination-nav">6</a>
+        <a href="javascript:void(0)" class="gt-pagination-nav"><i class="fa fa-angle-right"></i></a>
+        <a href="javascript:void(0)" class="gt-pagination-nav"><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></a>
+    </div>
+    <div class="gt-center">
+        <div class="gt-pagination gt-clear">
+            <a href="javascript:void(0)" class="gt-pagination-nav"><i class="fa fa-angle-left"></i></a>
+            <a href="javascript:void(0)" class="gt-pagination-nav"><i class="fa fa-angle-left"></i><i class="fa fa-angle-left"></i></a>
+            <a href="javascript:void(0)" class="gt-pagination-nav">1</a>
+            <a href="javascript:void(0)" class="gt-pagination-nav">2</a>
+            <a href="javascript:void(0)" class="gt-pagination-nav">3</a>
+            <a href="javascript:void(0)" class="gt-pagination-nav">4</a>
+            <a href="javascript:void(0)" class="gt-pagination-nav gt-active">5</a>
+            <a href="javascript:void(0)" class="gt-pagination-nav">6</a>
+            <a href="javascript:void(0)" class="gt-pagination-nav"><i class="fa fa-angle-right"></i></a>
+            <a href="javascript:void(0)" class="gt-pagination-nav"><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></a>
+        </div>
+    </div>
+</div>
+
+<div style="padding:5%">
+    <h1>Border</h1>
+    <div class="gt-border-left gt-padding">gt-border-left</div>
+    <br>
+    <div class="gt-border-right gt-padding">gt-border-right</div>
+    <br>
+    <div class="gt-border-top gt-padding">gt-border-top</div>
+    <br>
+    <div class="gt-border-bottom gt-padding">gt-border-bottom</div>
+    <br>
+    <div class="gt-border-top gt-border-bottom gt-padding">gt-border-top, gt-border-bottom</div>
+    <br>
+    <div class="gt-border gt-round-small gt-padding">rounded borders(small)</div>
+    <br>
+    <div class="gt-border gt-round-medium gt-padding">rounded borders(medium)</div>
+    <br>
+    <div class="gt-border gt-round-large gt-padding">rounded borders(large)</div>
+    <br>
+    <div class="gt-border gt-round-xlarge gt-padding">rounded borders(xlarge)</div>
+    <br>
+    <div class="gt-border gt-round-xxlarge gt-padding">rounded borders(xxlarge)</div>
+</div>
+
+<div style="padding:5%">
+    <h1>Round</h1>
+    <div class="gt-round-small gt-pink gt-padding gt-text-white"><p>gt-round-small</p></div>
+    <br>
+    <div class="gt-round-medium gt-blue gt-padding gt-text-white"><p>gt-round-medium</p></div>
+    <br>
+    <div class="gt-round-large gt-green gt-padding gt-text-white"><p>gt-round-large</p></div>
+    <br>
+    <div class="gt-round-xlarge gt-indigo gt-padding gt-text-white"><p>gt-round-xlarge</p></div>
+    <br>
+    <div class="gt-round-xxlarge gt-teal gt-padding gt-text-white"><p>gt-round-xxlarge</p></div>
+    <br>
+    <img src="http://dochoul.com/dashboard/img/round1.png" class="gt-circle">
+</div>
+
+<div style="padding:5%">
+    <h1>Forms</h1>
+    <form>
+        <p>
+            <label>Name</label>
+            <input class="gt-input" type="text" required="">
+        </p>
+        <p>
+            <label>Email</label>
+            <input class="gt-input" type="text" required="">
+        </p>
+        <p>
+            <label>Text area</label>
+            <textarea class="gt-input"></textarea>
+        </p>
+    
+        <div class="gt-row">
+            <div class="gt-col gt-s6">
+                <div>
+                    <input id="milk" class="" type="checkbox" checked="checked">
+                    <label for="milk">apple</label>
+                </div>
+                <div>
+                    <input id="sugar" class="" type="checkbox">
+                    <label for="sugar">banana</label>
+                </div>
+                <div>
+                    <input id="lemon" class="" type="checkbox" disabled="">
+                    <label for="lemon">kiwi (disabled)</label>
+                </div>
+            </div>
+            <div class="gt-col gt-s6">
+                <div>
+                    <input id="male" class="" type="radio" name="gender" value="male" checked="">
+                    <label for="male">yes</label>
+                </div>
+                <div>
+                    <input id="female" class="" type="radio" name="gender" value="female">
+                    <label for="female">no</label>
+                </div>
+                <div>
+                    <input id="unknown" class="" type="radio" name="gender" value="" disabled="">
+                    <label for="unknown">don't know (disabled)</label>
+            </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div style="padding:5%">
+    <h1>Padding</h1>
+    <div class="gt-padding-small gt-pink gt-text-white">
+        gt-padding-small
+    </div>
+    <br>
+
+    <div class="gt-padding gt-blue gt-text-white">
+        gt-padding
+    </div>
+    <br>
+
+    <div class="gt-padding-large gt-green gt-text-white">
+        gt-padding-large
+    </div>
+    <br>
+
+    <div class="gt-padding-xlarge gt-cyan gt-text-white">
+        gt-padding-xlarge
+    </div>
+    <br>
+
+    <div class="gt-padding-xxlarge gt-brown gt-text-white">
+        gt-padding-xxlarge
+    </div>
+</div>
+
+<div style="padding:5%">
+    <h1>Table</h1>
+    <table class="gt-table">
+    <colgroup>
+    <col><col><col><col>
+    </colgroup>
+    <thead>
+    <tr>
+    <th>번호</th>
+    <th>제목</th>
+    <th>상태</th>
+    <th>발송</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>제목1</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>제목2</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>제목3</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    </tbody>
+    </table>
+    <br>
+
+    <table class="gt-table gt-striped">
+    <colgroup>
+    <col><col><col><col>
+    </colgroup>
+    <thead>
+    <tr>
+    <th>번호</th>
+    <th>제목</th>
+    <th>상태</th>
+    <th>발송</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>제목1</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>제목2</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>제목3</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>4</td>
+    <td>제목4</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>제목5</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    </tbody>
+    </table>
+    <br>
+
+    <table class="gt-table gt-bordered">
+    <colgroup>
+    <col><col><col><col>
+    </colgroup>
+    <thead>
+    <tr>
+    <th>번호</th>
+    <th>제목</th>
+    <th>상태</th>
+    <th>발송</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>제목1</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>제목2</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>제목3</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>4</td>
+    <td>제목4</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>제목5</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    </tbody>
+    </table>
+    <br>
+
+    <table class="gt-table gt-striped gt-bordered">
+    <colgroup>
+    <col><col><col><col>
+    </colgroup>
+    <thead>
+    <tr>
+    <th>번호</th>
+    <th>제목</th>
+    <th>상태</th>
+    <th>발송</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>제목1</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>제목2</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>제목3</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>4</td>
+    <td>제목4</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>제목5</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    </tbody>
+    </table>
+    <br>
+
+    <table class="gt-table gt-striped gt-border">
+    <colgroup>
+    <col><col><col><col>
+    </colgroup>
+    <thead>
+    <tr>
+    <th>번호</th>
+    <th>제목</th>
+    <th>상태</th>
+    <th>발송</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>제목1</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>제목2</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>제목3</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>4</td>
+    <td>제목4</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>제목5</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    </tbody>
+    </table>
+    <br>
+
+    <table class="gt-table-all">
+    <colgroup>
+    <col><col><col><col>
+    </colgroup>
+    <thead>
+    <tr>
+    <th>번호</th>
+    <th>제목</th>
+    <th>상태</th>
+    <th>발송</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>제목1</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>제목2</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>제목3</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>4</td>
+    <td>제목4</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>제목5</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    </tbody>
+    </table>
+    <br>
+
+    <table class="gt-table-all gt-hoverable">
+    <colgroup>
+    <col><col><col><col>
+    </colgroup>
+    <thead>
+    <tr>
+    <th>번호</th>
+    <th>제목</th>
+    <th>상태</th>
+    <th>발송</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>1</td>
+    <td>제목1</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>제목2</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>제목3</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>4</td>
+    <td>제목4</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    <tr>
+    <td>5</td>
+    <td>제목5</td>
+    <td>발송중</td>
+    <td>보기</td>
+    </tr>
+    </tbody>
+    </table>
+</div>
+
+<div style="padding:5%">
+    <h1>Panel</h1>
+    <div class="gt-row" style="margin:0 -8px">
+        <div class="gt-col gt-l3">
+            <div class="panel">
+                <div class="panel-heading">Panel Header</div>
+                <div class="panel-body">
+                    <p>...</p>
+                </div>
+                <div class="panel-footer">
+                    <button class="gt-button gt-yellow">Accept</button>
+                    <button class="gt-button gt-lime">Decline</button>				
+                </div>
+            </div>
+        </div>
+        <div class="gt-col gt-l3">
+        	<div class="panel gt-center">
+                <div class="panel-heading">Panel Header</div>
+                <div class="panel-body">
+                    <p>...</p>
+                </div>
+                <div class="panel-footer">
+                    <button class="gt-button gt-yellow">Accept</button>
+                    <button class="gt-button gt-lime">Decline</button>
+                </div>
+            </div>
+        </div>
+        <div class="gt-col gt-l3">
+			<div class="panel">
+				<div class="panel-heading">Panel Header</div>
+				<div class="panel-body">
+					<p>...</p>
+				</div>
+				<div class="panel-footer gt-right-align">
+					<button class="gt-button gt-yellow">Accept</button>
+					<button class="gt-button gt-lime">Decline</button>
+				</div>
+			</div>
+        </div>
+        <div class="gt-col gt-l3">
+			<div class="panel">
+				<div class="panel-heading">Panel Header</div>
+				<div class="panel-body">
+					<p>...</p>
+				</div>
+				<div class="panel-footer gt-clear">
+					<button class="gt-button gt-yellow gt-left">Accept</button>
+					<button class="gt-button gt-lime gt-right">Decline</button>
+				</div>
+			</div>
+        </div>
+    </div>
+    
+</div>
+
+<!-- modal -->
+<div id="id-modal" class="gt-modal">
+  <div class="gt-modal-content">
+    <div class="gt-modal-header gt-text-white gt-blue">Modal Header</div>
+    <div class="gt-modal-body">
+      <p style="font-size:16px; padding-bottom:10px; text-align:center">....</p>
+    </div>
+    <div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+      <a href="javascript:void(0);">
+        <img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+<div class="class-modal gt-modal">
+  <div class="gt-modal-content">
+    <div class="gt-modal-header gt-text-white gt-blue">Modal Header</div>
+    <div class="gt-modal-body">
+      <p style="font-size:16px; padding-bottom:10px; text-align:center">....</p>
+    </div>
+    <div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+      <a href="javascript:void(0);">
+        <img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+<div id="animate-top" class="gt-modal">
+  <div class="gt-modal-content gt-animate-top">
+    <div class="gt-modal-header gt-text-white gt-blue">Modal Header</div>
+    <div class="gt-modal-body">
+      <p style="font-size:16px; padding-bottom:10px; text-align:center">....</p>
+    </div>
+    <div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+      <a href="javascript:void(0);">
+        <img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+<div id="animate-bottom" class="gt-modal">
+  <div class="gt-modal-content gt-animate-bottom">
+    <div class="gt-modal-header gt-text-white gt-blue">Modal Header</div>
+    <div class="gt-modal-body">
+      <p style="font-size:16px; padding-bottom:10px; text-align:center">....</p>
+    </div>
+    <div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+      <a href="javascript:void(0);">
+        <img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+<div id="animate-left" class="gt-modal">
+  <div class="gt-modal-content gt-animate-left">
+    <div class="gt-modal-header gt-text-white gt-blue">Modal Header</div>
+    <div class="gt-modal-body">
+      <p style="font-size:16px; padding-bottom:10px; text-align:center">....</p>
+    </div>
+    <div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+      <a href="javascript:void(0);">
+        <img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+<div id="animate-right" class="gt-modal">
+  <div class="gt-modal-content gt-animate-right">
+    <div class="gt-modal-header gt-text-white gt-blue">Modal Header</div>
+    <div class="gt-modal-body">
+      <p style="font-size:16px; padding-bottom:10px; text-align:center">....</p>
+    </div>
+    <div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+      <a href="javascript:void(0);">
+        <img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+<div id="animate-zoom" class="gt-modal">
+  <div class="gt-modal-content gt-animate-zoom">
+    <div class="gt-modal-header gt-text-white gt-blue">Modal Header</div>
+    <div class="gt-modal-body">
+      <p style="font-size:16px; padding-bottom:10px; text-align:center">....</p>
+    </div>
+    <div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+      <a href="javascript:void(0);">
+        <img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- modal -->
+<div id="callback-event" class="gt-modal">
+  <div class="gt-modal-content">
+    <div class="gt-modal-header gt-text-white gt-blue">Modal Header</div>
+    <div class="gt-modal-body">
+      <p style="font-size:16px; padding-bottom:10px; text-align:center">....</p>
+    </div>
+    <div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+      <a href="javascript:void(0);">
+        <img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+      </a>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/gtris.js"></script>
+<script type="text/javascript">
+$('#id-modal-btn').click(function(event) {
+    gtris.ui.modal.open({
+        target: '#id-modal'
+    })
+});
+$('#class-modal-btn').click(function(event) {
+    gtris.ui.modal.open({
+        target: '.class-modal'
+    })
+});
+$('#animate-top-btn').click(function(event) {
+  gtris.ui.modal.open({
+    target: '#animate-top'
+  })
+});
+
+$('#animate-bottom-btn').click(function(event) {
+  gtris.ui.modal.open({
+    target: '#animate-bottom'
+  })
+});
+
+$('#animate-left-btn').click(function(event) {
+  gtris.ui.modal.open({
+    target: '#animate-left'
+  })
+});
+
+$('#animate-right-btn').click(function(event) {
+  gtris.ui.modal.open({
+    target: '#animate-right'
+  })
+});
+
+$('#animate-zoom-btn').click(function(event) {
+  gtris.ui.modal.open({
+    target: '#animate-zoom'
+  })
+});
+
+$('#callback-event-btn').click(function(event) {
+  gtris.ui.modal.open({
+    target: '#callback-event',
+    completed: function() {
+      alert('modal open completed');
+    },
+    closed: function() {
+      alert('modal closed');
+    }
+  });
+});
+</script>
+
+</body>
+</html>

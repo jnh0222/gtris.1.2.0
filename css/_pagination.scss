@@ -1,0 +1,22 @@
+/* pagination */
+.gt-pagination {
+
+	display: inline-block;
+
+	.gt-pagination-nav {
+		float: left;
+		padding: 8px 16px;
+		color: $gray;
+		text-decoration: none;
+
+		&:hover {
+			background: $gray-ccc;
+			color: $white;
+		}
+
+		&.gt-active {
+			background: $blue;
+			color: $white;
+		}
+	}
+}

@@ -1,0 +1,29 @@
+.gt-input {
+	padding:8px;
+	display:inline-block;
+	border:1px solid $gray-ddd;
+	min-height:34px;
+	//width:100%;
+
+	&[readonly], &.gt-disabled {
+		background-color: $gray-eee;
+		cursor: not-allowed;
+	}
+}
+
+.gt-select {
+	padding: 7px;
+	display:inline-block;
+	border:1px solid $gray-ddd;
+	min-height:34px;
+	//width:100%;
+}
+
+.gt-checkbox {
+	width: 20px;
+	height: 20px;
+	&.gt-disabled {
+		opacity: .4;
+		cursor: not-allowed;
+	}	
+}

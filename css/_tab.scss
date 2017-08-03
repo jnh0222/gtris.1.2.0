@@ -1,0 +1,23 @@
+/* tab */
+.gt-tab {
+	.gt-tab-nav {
+		.gt-nav-item {
+			float: left;
+			padding: 10px 20px;
+			background-color: $gray-eee;
+
+			&.gt-active {
+				background-color: $blue;
+				a {
+					color: $white;
+				}
+			}
+		}
+
+		&:before, &:after {
+			display: block;
+			clear: both;
+			content: "";
+		}
+	}
+}
