@@ -48,4 +48,11 @@
         .gt-l11 { width: 91.66666% }
         .gt-l12 { width: 99.99999% }
     }
+
+	//Clear
+	&:before, &:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
 }
