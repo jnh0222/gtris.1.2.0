@@ -15,11 +15,6 @@
 				color: $white;
 			}
 		}
-
-		&:before, &:after {
-			display: block;
-			clear: both;
-			content: "";
-		}
+		@include clearfix();
 	}
 }
