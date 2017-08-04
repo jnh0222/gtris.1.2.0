@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scaleable=no">
 <link rel="stylesheet" href="css/gtris.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 <title></title>
@@ -270,7 +271,7 @@
 
 <div style="padding:3%">
     <h1>Pagination</h1>
-    <div class="gt-pagination gt-clear">
+    <div class="gt-pagination">
         <a href="javascript:void(0)" class="gt-pagination-nav"><i class="fa fa-angle-left"></i></a>
         <a href="javascript:void(0)" class="gt-pagination-nav"><i class="fa fa-angle-left"></i><i class="fa fa-angle-left"></i></a>
         <a href="javascript:void(0)" class="gt-pagination-nav">1</a>
@@ -283,7 +284,7 @@
         <a href="javascript:void(0)" class="gt-pagination-nav"><i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i></a>
     </div>
     <div class="gt-center">
-        <div class="gt-pagination gt-clear">
+        <div class="gt-pagination">
             <a href="javascript:void(0)" class="gt-pagination-nav"><i class="fa fa-angle-left"></i></a>
             <a href="javascript:void(0)" class="gt-pagination-nav"><i class="fa fa-angle-left"></i><i class="fa fa-angle-left"></i></a>
             <a href="javascript:void(0)" class="gt-pagination-nav">1</a>
@@ -895,6 +896,43 @@
     </div>
 </div>
 
+<div style="padding:3%">
+    <h1>Tooltip</h1>
+    <div class="gt-center">
+        <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="left">
+            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼</button>
+            <div class="gt-tt-content" data-tooltip="content">
+                <span class="gt-triangle"></span>
+                <p>저는 굉장히 심플한 툴팁이에요.</p>
+            </div>
+        </div>
+
+        <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="bottom">
+            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼</button>
+            <div class="gt-tt-content" data-tooltip="content">
+                <span class="gt-triangle"></span>
+                <p>저는 굉장히 심플한 툴팁이에요.</p>
+            </div>
+        </div>
+
+        <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="top">
+            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼</button>
+            <div class="gt-tt-content" data-tooltip="content">
+                <span class="gt-triangle"></span>
+                <p>저는 굉장히 심플한 툴팁이에요.</p>
+            </div>
+        </div>
+
+         <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="right">
+            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼</button>
+            <div class="gt-tt-content" data-tooltip="content">
+                <span class="gt-triangle"></span>
+                <p>저는 굉장히 심플한 툴팁이에요.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- modal -->
 <div id="id-modal" class="gt-modal">
   <div class="gt-modal-content">
@@ -1018,6 +1056,10 @@
 <script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/gtris.js"></script>
 <script type="text/javascript">
+
+gtris.ui.tooltip.init({
+    target : $(document).find('[data-ui="gt-tooltip"]')
+})
 
 gtris.ui.collapse.init({
     target: '#accordion'
