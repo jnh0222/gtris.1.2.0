@@ -207,7 +207,7 @@
 <div style="padding:5%">
     <h1>Display</h1>
     <div class="gt-display-container gt-text-white">
-		<img src="img/office1.png" class="gt-block gt-image">
+		<img src="https://company.gabia.com/assets/images/office1.jpg" class="gt-block gt-image">
 		<div class="gt-display-topleft">
 		<button class="gt-button gt-purple">gt-display-topleft</button>
 		</div>
@@ -340,11 +340,15 @@
     <form>
         <p>
             <label>Name</label>
-            <input class="gt-input" type="text" required="">
+            <input class="gt-input" type="text" required="" disabled>
         </p>
         <p>
             <label>Email</label>
             <input class="gt-input" type="text" required="">
+        </p>
+        <p>
+            <label>Readonly</label>
+            <input class="gt-input" type="text" required="" readonly>
         </p>
         <p>
             <label>Text area</label>
@@ -354,29 +358,29 @@
         <div class="gt-row">
             <div class="gt-col gt-s6">
                 <div>
-                    <input id="milk" class="" type="checkbox" checked="checked">
+                    <input id="milk" class="gt-checkbox" type="checkbox" checked="checked">
                     <label for="milk">apple</label>
                 </div>
                 <div>
-                    <input id="sugar" class="" type="checkbox">
+                    <input id="sugar" class="gt-checkbox" type="checkbox">
                     <label for="sugar">banana</label>
                 </div>
                 <div>
-                    <input id="lemon" class="" type="checkbox" disabled="">
+                    <input id="lemon" class="gt-checkbox" type="checkbox" disabled="">
                     <label for="lemon">kiwi (disabled)</label>
                 </div>
             </div>
             <div class="gt-col gt-s6">
                 <div>
-                    <input id="male" class="" type="radio" name="gender" value="male" checked="">
+                    <input id="male" class="gt-radio" type="radio" name="gender" value="male" checked="">
                     <label for="male">yes</label>
                 </div>
                 <div>
-                    <input id="female" class="" type="radio" name="gender" value="female">
+                    <input id="female" class="gt-radio" type="radio" name="gender" value="female">
                     <label for="female">no</label>
                 </div>
                 <div>
-                    <input id="unknown" class="" type="radio" name="gender" value="" disabled="">
+                    <input id="unknown" class="gt-radio" type="radio" name="gender" value="" disabled="">
                     <label for="unknown">don't know (disabled)</label>
             </div>
             </div>
@@ -822,6 +826,44 @@
             </li>
         </ul>
     </div>
+
+    <br><br>
+    <div class="gt-collapse" id="accordion-expandable">
+        <ul>
+            <li class="gt-collapse-item gt-active">
+                <a href="javascript:void(0)" class="gt-collapse-header" data-collapse="header">
+                    파트너는 가비아 회원이여야 하나요?<span class="gt-collapse-arrow fa fa-angle-down"></span>
+                </a>
+                <div class="gt-collapse-content" data-collapse="content">
+                    제휴 파트너의 경우는 가비아 회원이 아니더라도 파트너 신청만으로 서비스 이용이 가능합니다. 링크 파트너는 가비아 회원가입이 되어 있어야 서비스 신청이 가능합니다.
+                </div>
+            </li>
+            <li class="gt-collapse-item">
+                <a href="javascript:void(0)" class="gt-collapse-header" data-collapse="header">
+                    디자인샵 입점은 어떻게 하나요?<span class="gt-collapse-arrow fa fa-angle-down"></span>
+                </a>
+                <div class="gt-collapse-content gt-hide" data-collapse="content">
+                    가비아 사이트내의 디자인샵에 입점하기 위해서는 "제휴파트너""신청이 완료되어야 합니다. 제휴 파트너 관리자 페이지에서 파트너들이 제작한 디자인 스킨을 업로드하고 가비아를 통해서 판매를 할 수 있습니다.
+                </div>
+            </li>
+            <li class="gt-collapse-item">
+                <a href="javascript:void(0)" class="gt-collapse-header" data-collapse="header">
+                    예치금 결제를 한후 언제쯤이면 사용할수 있습니까?<span class="gt-collapse-arrow fa fa-angle-down"></span>
+                </a>
+                <div class="gt-collapse-content gt-hide" data-collapse="content">
+                    예치금 결제를 하면 실시간으로 입금확인이 이루어 집니다. 입금확인된 예치금은 파트너 관리자내의 "예치금관리"에서 상세 내역을 보실수 있고 이후부터는 바로 서비스 신청이 가능합니다.
+                </div>
+            </li>
+            <li class="gt-collapse-item">
+                <a href="javascript:void(0)" class="gt-collapse-header" data-collapse="header">
+                    파트너 정산은 어떻게 이루어지는지요?<span class="gt-collapse-arrow fa fa-angle-down"></span>
+                </a>
+                <div class="gt-collapse-content gt-hide" data-collapse="content">
+                    제휴 파트너의 경우 관리툴 정산 메뉴에서 상세 정산내역을 볼수 있습니다. 정산 내역에 따라 월1회 세금계산서 신청을 통해 세금계산서를 발행합니다. 링크 파트너의 경우 3개 이상의 호스팅서비스를 유지하는 파트너에 대하여 호스팅서비스의 건별 월 기본가의 총액에 따라 A,B,C의 3개 등급으로 분류하여 배분액(월기본가 합계액 X 해당 수익율)을 정산하여 격월로 파트너 계좌로 입금합니다.
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
 
 <!-- modal -->
@@ -950,6 +992,11 @@
 
 gtris.ui.collapse.init({
     target: '#accordion'
+});
+
+gtris.ui.collapse.init({
+    target: '#accordion-expandable',
+    expandable: true
 });
 
 $('#id-modal-btn').click(function(event) {
