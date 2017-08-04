@@ -5,12 +5,15 @@
 			float: left;
 			padding: 10px 20px;
 			background-color: $gray-eee;
+			text-decoration: none;
+
+			&:hover {
+				background-color: $gray-ddd;
+			}
 
 			&.gt-active {
 				background-color: $blue;
-				a {
-					color: $white;
-				}
+				color: $white;
 			}
 		}
 
