@@ -66,7 +66,7 @@
 .gt-margin-bottom-none, .gt-margin-bottom-0 { margin-bottom:0 }
 
 //Clear
-.gt-clear:after, .gt-clear:before { content:""; display:block; clear:both }
+.gt-clear { @include clearfix() }
 
 //Etc...
 .gt-image { max-width:100% }
