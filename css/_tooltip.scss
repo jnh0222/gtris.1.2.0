@@ -1,0 +1,44 @@
+/* tooltip */
+.gt-tooltip {
+	position: relative;
+	display: inline-block;
+
+	.gt-tooltip-content, .gt-tt-content {
+		display: none;
+		position: absolute;
+		padding: 10px 25px;
+		min-width: 300px;
+		background: $gray;
+		color: $white;
+		text-align: center;
+		z-index: 1000;
+	}
+
+	&[data-placement="right"] {
+		.gt-triangle {
+			position: absolute;
+			@include triangle(left, 6px, 6px, $gray);
+		}
+	}
+
+	&[data-placement="left"] {
+		.gt-triangle {
+			position: absolute;
+			@include triangle(right, 6px, 6px, $gray);
+		}
+	}
+
+	&[data-placement="bottom"] {
+		.gt-triangle {
+			position: absolute;
+			@include triangle(top, 6px, 6px, $gray);
+		}
+	}
+
+	&[data-placement="top"] {
+		.gt-triangle {
+			position: absolute;
+			@include triangle(bottom, 6px, 6px, $gray);
+		}
+	}
+}
