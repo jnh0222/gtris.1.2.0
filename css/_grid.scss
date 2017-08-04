@@ -46,11 +46,27 @@
 		.gt-l11 { width: 91.66666% }
 		.gt-l12 { width: 99.99999% }
 	}
+	@include clearfix();
+}
 
-	//Clear
-	&:before, &:after {
-		content: "";
-		display: block;
-		clear: both;
+/* body {
+	background-color: red;	
+}
+
+@media (min-width: $small) {
+	body {
+		background-color: green;
 	}
 }
+
+@media (min-width: $small+1) and (max-width: $middle) {
+	body {
+		background-color: lime;
+	}
+}
+
+@media (min-width: $large) {
+	body {
+		background-color: cyan;
+	}
+} */
