@@ -908,7 +908,7 @@
     <h1>Tooltip</h1>
     <div class="gt-center">
         <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="left">
-            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼</button>
+            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼(left)</button>
             <div class="gt-tt-content" data-tooltip="content">
                 <span class="gt-triangle"></span>
                 <p>저는 굉장히 심플한 툴팁이에요.</p>
@@ -916,7 +916,7 @@
         </div>
 
         <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="bottom">
-            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼</button>
+            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼(bottom)</button>
             <div class="gt-tt-content" data-tooltip="content">
                 <span class="gt-triangle"></span>
                 <p>저는 굉장히 심플한 툴팁이에요.</p>
@@ -924,7 +924,7 @@
         </div>
 
         <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="top">
-            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼</button>
+            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼(top)</button>
             <div class="gt-tt-content" data-tooltip="content">
                 <span class="gt-triangle"></span>
                 <p>저는 굉장히 심플한 툴팁이에요.</p>
@@ -932,7 +932,7 @@
         </div>
 
          <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="right">
-            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼</button>
+            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼(right)</button>
             <div class="gt-tt-content" data-tooltip="content">
                 <span class="gt-triangle"></span>
                 <p>저는 굉장히 심플한 툴팁이에요.</p>
@@ -940,6 +940,21 @@
         </div>
     </div>
 </div>
+
+<div style="padding:3%">
+    <h1>Dropdown</h1>
+    <div class="gt-dropdown" data-ui="gt-dropdown">
+		<button class="gt-btn gt-btn-primary" type="button" name="button">Dropdown Click Me!</button>
+		<ul class="gt-dd-menu">
+			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
+			<li><a class="gt-dd-item" href="http://www.hiworks.com">www.hiworks.com</a></li>
+			<li><a class="gt-dd-item" href="https://partnercenter.gabia.com/">partnercenter.gabia.com</a></li>
+			<li class="gt-dd-divider"></li>
+			<li><a class="gt-dd-item" href="http://library.gabia.com">library.gabia.com</a></li>
+		</ul>
+	</div>
+</div>
+<br><br><br><br><br><br><br>
 
 <!-- modal -->
 <div id="id-modal" class="gt-modal">
@@ -1064,6 +1079,10 @@
 <script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/gtris.js"></script>
 <script type="text/javascript">
+
+gtris.ui.dropdown.init({
+    target : $(document).find('[data-ui="gt-dropdown"]')
+});
 
 gtris.ui.tab.init({
     target: '#myTab1',
