@@ -1,6 +1,7 @@
 /*  */
 .gt-dropdown {
 	position: relative;
+	display: inline-block;
 
 	.gt-dd-menu {
 		position: absolute;
@@ -41,4 +42,6 @@
 	&.gt-active .gt-dd-menu {
 		display: block;
 	}
+
+	@include clearfix();
 }
