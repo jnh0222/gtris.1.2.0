@@ -7,7 +7,7 @@
 	height: 100%;
 
 	.gt-modal {
-		z-index: 1010;
+		z-index: 1020;
 		padding-top: 10%;
 		position: fixed;
 		left: 0;
@@ -23,10 +23,14 @@
 		padding: 0;
 		background: #fff;
 		width: 90%;
-	}
 
-	.gt-modal-header { padding: 10px 16px }
-	.gt-modal-body { padding: 30px }
+		.gt-modal-header {
+			padding: 10px 16px;
+		}
+		.gt-modal-body {
+			padding: 30px;
+		}
+	}
 
 	@media screen and (min-width: $small) {
 		.gt-modal-content { width: 80% }
