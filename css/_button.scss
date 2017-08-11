@@ -2,79 +2,117 @@
 .gt-button, .gt-btn {
 	display:inline-block;
 	padding:8px 16px;
-	background-color: $gray-eee;
+	background-color: $gray-ccc;
 	text-align:center;
 	overflow:hidden;
 	vertical-align:middle;
 	text-decoration:none;
 	white-space:nowrap;
-	border:0;
-	outline:0;
-	color:inherit;
+	color: $white;
 	cursor:pointer;
 	transition-duration:.3s;
 	vertical-align: top;
-
-	&:hover {
-		background-color: $gray-ccc;
-	}
+	border: 1px solid transparent;
+	user-select: none;
 
 	&.gt-button-outline, &.gt-btn-outline {
+		color: $gray-666;
+    	background-color: $white;
+    	border-color: $gray-ccc;
+	}
+
+	&.gt-button-outline-primary, &.gt-btn-outline-primary {
+		color: $blue;
+		border-color: $blue;
 		background-color: $white;
-		border: 1px solid $gray-ccc;
-		padding:7px 16px;
 		&:hover {
-			border-color: $gray-999;
+			color: $white;
+			border-color: $blue;
+			background-color: $blue;
+		}
+	}
+
+	&.gt-button-outline-success, &.gt-btn-outline-success {
+		color: $green;
+		border-color: $green;
+		background-color: $white;
+		&:hover {
+			color: $white;
+			border-color: $green;
+			background-color: $green;
+		}
+	}
+
+	&.gt-button-outline-info, &.gt-btn-outline-info {
+		color: $teal;
+		border-color: $teal;
+		background-color: $white;
+		&:hover {
+			color: $white;
+			border-color: $teal;
+			background-color: $teal;
+		}
+	}
+
+	&.gt-button-outline-warning, &.gt-btn-outline-warning {
+		color: $yellow;
+		border-color: $yellow;
+		background-color: $white;
+		&:hover {
+			color: $white;
+			border-color: $yellow;
+			background-color: $yellow;
+		}
+	}
+
+	&.gt-button-outline-danger, &.gt-btn-outline-danger {
+		color: $red;
+		border-color: $red;
+		background-color: $white;
+		&:hover {
+			color: $white;
+			border-color: $red;
+			background-color: $red;
 		}
 	}
 
 	&.gt-button-primary, &.gt-btn-primary {
-		background-color:$blue;
-		color:#fff;
+		background-color: $blue;
 		&:hover {
-			background-color:$deep-blue;
-			color:#fff;
+			background-color: $deep-blue;
 		}
 	}
 
 	&.gt-button-success, &.gt-btn-success {
 		background-color:$green;
-		color:#fff;
 		&:hover {
-			background-color:$lime;
-			color:#fff;
+			background-color:#449d44;
 		}
 	}
 
 	&.gt-button-info, &.gt-btn-info {
 		background-color:$teal;
-		color:#fff;
 		&:hover {
-			background-color:$cyan;
-			color:#fff;
+			background-color:#01685e;
 		}
 	}
 
 	&.gt-button-warning, &.gt-btn-warning {
 		background-color:$yellow;
-		color:#fff;
 		&:hover {
-			background-color:$orange;
-			color:#fff;
+			background-color:#ec971f;
 		}
 	}
 
 	&.gt-button-danger, &.gt-btn-danger {
 		background-color:$red;
-		color:#fff;
 		&:hover {
-			background-color:$pink;
-			color:#fff;
+			background-color:#c9302c;
 		}
 	}
 
 	//disabled
-	&.gt-button[disabled],
+	&.gt-button[disabled], &.gt-btn[disabled],
 	&.gt-button-disabled, &.gt-btn-disabled,
 	&.gt-button-disabled:hover,
 	&.gt-button-disabled:focus,
