@@ -60,7 +60,67 @@
 
 <div style="padding:3%">
     <h1>Button</h1>
-    <button class="gt-button" type="button" name="button">normal</button>
+	<!-- <button type="button" class="gt-btn gt-btn-secondary">Secondary</button> -->
+	<button type="button" class="gt-btn">Normal</button>
+	<button type="button" class="gt-btn gt-btn-primary">Primary</button>
+	<button type="button" class="gt-btn gt-btn-success">Success</button>
+	<button type="button" class="gt-btn gt-btn-info">Info</button>
+	<button type="button" class="gt-btn gt-btn-warning">Warning</button>
+	<button type="button" class="gt-btn gt-btn-danger">Danger</button>
+
+    <br><br>
+	<button type="button" class="gt-btn gt-btn-outline">Normal</button>
+	<button type="button" class="gt-btn gt-btn-outline-primary">Primary</button>
+	<button type="button" class="gt-btn gt-btn-outline-success">Success</button>
+	<button type="button" class="gt-btn gt-btn-outline-info">Info</button>
+	<button type="button" class="gt-btn gt-btn-outline-warning">Warning</button>
+	<button type="button" class="gt-btn gt-btn-outline-danger">Danger</button>
+
+	<br><br>
+	<button type="button" class="gt-btn" disabled>Normal</button>
+	<button type="button" class="gt-btn gt-btn-primary" disabled>Primary</button>
+	<button type="button" class="gt-btn gt-btn-success" disabled>Success</button>
+	<button type="button" class="gt-btn gt-btn-info" disabled>Info</button>
+	<button type="button" class="gt-btn gt-btn-warning" disabled>Warning</button>
+	<button type="button" class="gt-btn gt-btn-danger" disabled>Danger</button>
+
+	<br><br>
+	<button type="button" class="gt-btn gt-btn-outline" disabled>Normal</button>
+	<button type="button" class="gt-btn gt-btn-outline-primary" disabled>Primary</button>
+	<button type="button" class="gt-btn gt-btn-outline-success" disabled>Success</button>
+	<button type="button" class="gt-btn gt-btn-outline-info" disabled>Info</button>
+	<button type="button" class="gt-btn gt-btn-outline-warning" disabled>Warning</button>
+	<button type="button" class="gt-btn gt-btn-outline-danger" disabled>Danger</button>
+
+	<br><br>
+	<button class="gt-btn gt-tiny" type="button" name="button">tiny</button>
+	<button class="gt-btn gt-small" type="button" name="button">small</button>
+	<button class="gt-btn gt-medium" type="button" name="button">medium</button>
+	<button class="gt-btn gt-large" type="button" name="button">large</button>
+    <button class="gt-btn gt-xlarge" type="button" name="button">xlarge</button>
+    <button class="gt-btn gt-xxlarge" type="button" name="button">xxlarge</button>
+    <button class="gt-btn gt-xxxlarge" type="button" name="button">xxxlarge</button>
+    <button class="gt-btn gt-huge" type="button" name="button">huge</button>
+
+    <br><br>
+    <button class="gt-button gt-block gt-xlarge">Block Button</button>
+
+    <br><br>
+    <button class="gt-button" disabled>Button <i class="fa fa-heart-o"></i></button>
+    <button class="gt-button">Button <i class="fa fa-search"></i></button>
+    <button class="gt-button">Button <i class="fa fa-spinner fa-spin"></i></button>
+    <button class="gt-button">Button <i class="fa fa-user-o"></i></button>
+    <button class="gt-button">Button <i class="fa fa-trash-o"></i></button>
+    <button class="gt-button">Button <i class="fa fa-plus"></i></button>
+    <button class="gt-button">Button <i class="fa fa-envelope"></i></button>
+    <button class="gt-button">Button <i class="fa fa-calendar"></i></button>
+    <button class="gt-button">Button <i class="fa fa-comment"></i></button>
+    <button class="gt-button">Button <i class="fa fa-compress"></i></button>
+    <button class="gt-button">Button <i class="fa fa-undo"></i></button>
+    <button class="gt-button">Button <i class="fa fa-check-circle"></i></button>
+    <button class="gt-button">Button <i class="fa fa-question-circle"></i></button>
+
+    <!-- <button class="gt-button" type="button" name="button">normal</button>
     <button class="gt-button gt-button-primary" type="button" name="button">primary</button>
     <button class="gt-button gt-button-success" type="button" name="button">success</button>
     <button class="gt-button gt-button-info" type="button" name="button">info</button>
@@ -132,7 +192,7 @@
             <button class="gt-button gt-button-danger">Button</button>
             <button class="gt-button gt-button-warning">Button</button>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <div style="padding:3%">
@@ -944,7 +1004,7 @@
 <div style="padding:3%">
     <h1>Dropdown</h1>
     <div class="gt-dropdown" data-ui="gt-dropdown">
-		<button class="gt-btn gt-btn-primary" type="button" name="button">Dropdown Click Me!</button>
+		<button class="gt-btn" type="button" name="button">Gender</button>
 		<ul class="gt-dd-menu">
 			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
 			<li><a class="gt-dd-item" href="http://www.hiworks.com">www.hiworks.com</a></li>
@@ -953,16 +1013,24 @@
 			<li><a class="gt-dd-item" href="http://library.gabia.com">library.gabia.com</a></li>
 		</ul>
 	</div>
-
-	<div class="gt-dropdown" data-ui="gt-dropdown">
-		<button class="gt-btn gt-btn-danger" type="button" name="button">Dropdown Click Me!</button>
-		<ul class="gt-dd-menu">
-			<li><a class="gt-dd-item" href="https://security.gabia.com/">security.gabia.com</a></li>
-			<li><a class="gt-dd-item" href="https://aty.gabia.com/">aty.gabia.com</a></li>
-		</ul>
-	</div>
 </div>
-<br><br><br><br><br><br><br>
+
+<div style="padding:3%">
+	<h1>Toast</h1>
+	<p style="padding:4px 0">
+		<button id="toast-btn-default" class="gt-btn" type="button" name="button">Toast(default:left-top)</button>
+		<button id="toast-btn-right-bottom" class="gt-btn" type="button" name="button">Toast(right-bottom)</button>
+		<button id="toast-btn-left-top" class="gt-btn" type="button" name="button">Toast(left-top)</button>
+		<button id="toast-btn-left-bottom" class="gt-btn" type="button" name="button">Toast(left-bottom)</button>
+	</p>
+	<p style="padding:4px 0">
+		<button id="toast-btn-primary" class="gt-btn gt-btn-primary" type="button" name="button">Toast(primary)</button>
+		<button id="toast-btn-success" class="gt-btn gt-button-success" type="button" name="button">Toast(success)</button>
+		<button id="toast-btn-info" class="gt-btn gt-btn-info" type="button" name="button">Toast(info)</button>
+		<button id="toast-btn-warning" class="gt-btn gt-button-warning" type="button" name="button">Toast(warning)</button>
+		<button id="toast-btn-danger" class="gt-btn gt-btn-danger" type="button" name="button">Toast(danger)</button>
+	</p>
+</div>
 
 <!-- modal -->
 <div id="id-modal" class="gt-modal">
@@ -1084,9 +1152,96 @@
   </div>
 </div>
 
+<!-- toast 
+<div class="gt-toast-container" data-placement="bottom-right">
+	<div class="gt-toast">
+		I do not think that means what you think it means.
+	</div>
+</div>
+-->
+
+
 <script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/gtris.js"></script>
 <script type="text/javascript">
+
+
+var osName = gtris.util.os.name;
+var browserName = gtris.util.browser.name;
+var browserVersion = gtris.util.browser.version;
+var isMobile = gtris.util.isMobile;
+if(isMobile === true) {
+	isMobile = 'mobile';
+}else{
+	isMobile = 'desktop';
+}
+var info = osName + ' ' + browserName + ' ' + browserVersion + ' ' + isMobile;
+$('html').addClass(info);
+
+
+
+$('#toast-btn-default').click(function(event) {
+	gtris.ui.toast.open({
+		message: '안녕하세요. 반갑습니다~',
+		position: 'top-right'
+	})
+})
+
+$('#toast-btn-right-bottom').click(function(event) {
+	gtris.ui.toast.open({
+		message: '나의 업무 파트너 하이웍스',
+		position: 'bottom-right'
+	})
+})
+
+$('#toast-btn-left-top').click(function(event) {
+	gtris.ui.toast.open({
+		message: '비즈니스를 위한 IT 가비아',
+		position: 'top-left'
+	})
+})
+
+$('#toast-btn-left-bottom').click(function(event) {
+	gtris.ui.toast.open({
+		message: '파트너 센터, 리셀러, 제휴 파트너',
+		position: 'bottom-left'
+	})
+})
+
+$('#toast-btn-primary').click(function(event) {
+	gtris.ui.toast.open({
+		message: '가비아 보안/관제 - 위협을 기술로 통제하는, 가비아시큐리티',
+		type: 'primary'
+	})
+})
+
+$('#toast-btn-success').click(function(event) {
+	gtris.ui.toast.open({
+		message: '가비아 보안/관제 - 위협을 기술로 통제하는, 가비아시큐리티',
+		type: 'success'
+	})
+})
+
+$('#toast-btn-info').click(function(event) {
+	gtris.ui.toast.open({
+		message: '가비아 Office 365 상품 출시',
+		type: 'info'
+	})
+})
+
+$('#toast-btn-warning').click(function(event) {
+	gtris.ui.toast.open({
+		message: '가비아 오피스호스팅 - 사무실 IT 장비 임대 관리',
+		type: 'warning'
+	})
+})
+
+$('#toast-btn-danger').click(function(event) {
+	gtris.ui.toast.open({
+		message: '가비아 - 대한민국 No.1 서버 관리 전문 업체',
+		type: 'danger'
+	})
+})
 
 gtris.ui.dropdown.init({
     target : $(document).find('[data-ui="gt-dropdown"]')
