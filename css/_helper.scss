@@ -5,37 +5,47 @@
 //Text Align
 .gt-left-align { text-align:left!important }
 .gt-right-align { text-align:right!important }
-.gt-justify { text-align:justify }
-.gt-center { text-align:center }
-.gt-bold { font-weight:bold }
+.gt-justify { text-align:justify!important }
+.gt-center { text-align:center!important }
+.gt-bold { font-weight:bold!important }
 
 //Vertical
-.gt-vertical-top { vertical-align:top }
-.gt-vertical-middle { vertical-align:middle }
-.gt-vertical-bottom { vertical-align:bottom }
+.gt-vertical-top { vertical-align:top!important }
+.gt-vertical-middle { vertical-align:middle!important }
+.gt-vertical-bottom { vertical-align:bottom!important }
 
 //Display
 .gt-block { display:block; width:100% }
-.gt-inline-block {display:inline-block }
+.gt-inline-block { display:inline-block }
 .gt-hide { display:none }
 
 //Text Size
-.gt-tiny { font-size:10px }
-.gt-small { font-size:12px }
-.gt-medium { font-size:14px }
-.gt-large { font-size:16px }
-.gt-xlarge { font-size:24px }
-.gt-xxlarge { font-size:36px }
-.gt-xxxlarge { font-size:48px }
+.gt-tiny { font-size:12px }
+.gt-small { font-size:14px }
+.gt-medium { font-size:16px }
+.gt-large { font-size:24px }
+.gt-xlarge { font-size:32px }
+.gt-xxlarge { font-size:40px }
+.gt-xxxlarge { font-size:40px }
 .gt-huge { font-size:64px }
+.gt-font-12 { font-size:12px }
+.gt-font-14 { font-size:14px }
+.gt-font-16 { font-size:16px }
+.gt-font-18 { font-size:18px }
+.gt-font-20 { font-size:20px }
+.gt-font-22 { font-size:22px }
+.gt-font-24 { font-size:24px }
+.gt-font-26 { font-size:26px }
+.gt-font-28 { font-size:28px }
+.gt-font-30 { font-size:30px }
 
 //Border
-.gt-border-none, .gt-border-0 { border:0 }
-.gt-border { border:1px solid $gray-ccc }
-.gt-border-top { border-top:1px solid $gray-ccc }
-.gt-border-bottom { border-bottom:1px solid $gray-ccc }
-.gt-border-left { border-left:1px solid $gray-ccc }
-.gt-border-right { border-right:1px solid $gray-ccc }
+.gt-border-none, .gt-border-0 { border:0!important }
+.gt-border { border:1px solid $gray-ccc!important }
+.gt-border-top { border-top:1px solid $gray-ccc!important }
+.gt-border-bottom { border-bottom:1px solid $gray-ccc!important }
+.gt-border-left { border-left:1px solid $gray-ccc!important }
+.gt-border-right { border-right:1px solid $gray-ccc!important }
 
 //Round
 .gt-round-none, .gt-round-0 { border-radius:0 }
@@ -69,5 +79,5 @@
 .gt-clear { @include clearfix() }
 
 //Etc...
-.gt-image { max-width:100% }
-.gt-rest { overflow:hidden }
+.gt-image { max-width:100%!important }
+.gt-rest { overflow:hidden!important }
