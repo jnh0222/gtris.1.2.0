@@ -3,26 +3,6 @@
 	position: relative;
 	display: inline-block;
 
-	.gt-btn, .gt-button {
-
-		&:after {
-		    display: inline-block;
-			width: 0;
-			height: 0;
-			margin-left: 8px;
-			vertical-align: middle;
-			content: "";
-			border-top: 6px solid;
-			border-right: 6px solid transparent;
-			border-left: 6px solid transparent;
-		}
-	}
-
-	.gt-btn:active, .gt-button:active,
-	.gt-btn:focus, .gt-button:focus {
-		
-	}
-
 	.gt-dd-menu {
 		position: absolute;
 		top: 100%;
