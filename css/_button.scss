@@ -19,31 +19,55 @@
 		color: $gray-666;
     	background-color: $white;
     	border-color: $gray-ccc;
+    	&:hover {
+			color: $white;
+			background: $gray-ccc;
+		}
 	}
 
 	&.gt-button-outline-primary, &.gt-btn-outline-primary {
 		color: $primary;
 		border-color: $primary;
+		&:hover {
+			color: $white;
+			background: $primary;
+		}
 	}
 
 	&.gt-button-outline-success, &.gt-btn-outline-success {
 		color: $success;
 		border-color: $success;
+		&:hover {
+			color: $white;
+			background: $success;
+		}
 	}
 
 	&.gt-button-outline-info, &.gt-btn-outline-info {
 		color: $info;
 		border-color: $info;
+		&:hover {
+			color: $white;
+			background: $info;
+		}
 	}
 
 	&.gt-button-outline-warning, &.gt-btn-outline-warning {
 		color: $warning;
 		border-color: $warning;
+		&:hover {
+			color: $white;
+			background: $warning;
+		}
 	}
 
 	&.gt-button-outline-danger, &.gt-btn-outline-danger {
 		color: $danger;
 		border-color: $danger;
+		&:hover {
+			color: $white;
+			background: $danger;
+		}
 	}
 
 	&.gt-button-outline-primary, &.gt-btn-outline-primary,
