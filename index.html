@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 <title></title>
 <style>
+h1 {margin: 10px 0 20px}
 #color .gt-row > div {padding:50px;}
 </style>
 </head>
@@ -16,18 +17,18 @@
     <h1>Color</h1>
     <div class="gt-row gt-text-white">
         <div class="gt-light-blue gt-center gt-col gt-m6 gt-l2">gt-light-blue</div>
-        <div class="gt-blue gt-center gt-col gt-m6 gt-l2">gt-blue</div>
+        <div class="gt-primary gt-center gt-col gt-m6 gt-l2">gt-blue<br>gt-primary</div>
         <div class="gt-deep-blue gt-center gt-col gt-m6 gt-l2">gt-deep-blue</div>
-        <div class="gt-yellow gt-center gt-col gt-m6 gt-l2">gt-yellow</div>
+        <div class="gt-warning gt-center gt-col gt-m6 gt-l2">gt-yellow<br>gt-warning</div>
         <div class="gt-orange gt-center gt-col gt-m6 gt-l2">gt-orange</div>
-        <div class="gt-deep-orange gt-center gt-col gt-m6 gt-l2">gt-deep-orange</div>
+        <div class="gt-danger gt-center gt-col gt-m6 gt-l2">gt-deep-orange<br>gt-danger</div>
     </div>
 
     <div class="gt-row gt-text-white">
         <div class="gt-red gt-center gt-col gt-m6 gt-l2">gt-red</div>
-        <div class="gt-green gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-green</div>
+        <div class="gt-success gt-center gt-col gt-m6 gt-l2">gt-green<br>gt-success</div>
         <div class="gt-pink gt-center gt-col gt-m6 gt-l2">gt-pink</div>
-        <div class="gt-teal gt-center gt-col gt-m6 gt-l2">gt-teal</div>
+        <div class="gt-info gt-center gt-col gt-m6 gt-l2">gt-teal<br>gt-info</div>
         <div class="gt-indigo gt-center gt-col gt-m6 gt-l2">gt-indigo</div>
         <div class="gt-brown gt-center gt-col gt-m6 gt-l2">gt-brown</div>
     </div>
@@ -969,31 +970,31 @@
     <div class="gt-center">
         <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="left">
             <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼(left)</button>
-            <div class="gt-tt-content" data-tooltip="content">
+            <div class="gt-tt-content">
                 <span class="gt-triangle"></span>
                 <p>저는 굉장히 심플한 툴팁이에요.</p>
             </div>
         </div>
 
         <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="bottom">
-            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼(bottom)</button>
-            <div class="gt-tt-content" data-tooltip="content">
+            <button class="gt-button gt-btn-success" data-tooltip="button">툴팁 버튼(bottom)</button>
+            <div class="gt-tt-content">
                 <span class="gt-triangle"></span>
                 <p>저는 굉장히 심플한 툴팁이에요.</p>
             </div>
         </div>
 
         <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="top">
-            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼(top)</button>
-            <div class="gt-tt-content" data-tooltip="content">
+            <button class="gt-button gt-btn-info" data-tooltip="button">툴팁 버튼(top)</button>
+            <div class="gt-tt-content">
                 <span class="gt-triangle"></span>
                 <p>저는 굉장히 심플한 툴팁이에요.</p>
             </div>
         </div>
 
          <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="right">
-            <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼(right)</button>
-            <div class="gt-tt-content" data-tooltip="content">
+            <button class="gt-button gt-btn-danger" data-tooltip="button">툴팁 버튼(right)</button>
+            <div class="gt-tt-content">
                 <span class="gt-triangle"></span>
                 <p>저는 굉장히 심플한 툴팁이에요.</p>
             </div>
@@ -1004,7 +1005,62 @@
 <div style="padding:3%">
     <h1>Dropdown</h1>
     <div class="gt-dropdown" data-ui="gt-dropdown">
-		<button class="gt-btn" type="button" name="button">Gender</button>
+		<button class="gt-btn" type="button" name="button">Dropdown menu</button>
+		<ul class="gt-dd-menu">
+			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
+			<li><a class="gt-dd-item" href="http://www.hiworks.com">www.hiworks.com</a></li>
+			<li><a class="gt-dd-item" href="https://partnercenter.gabia.com/">partnercenter.gabia.com</a></li>
+			<li class="gt-dd-divider"></li>
+			<li><a class="gt-dd-item" href="http://library.gabia.com">library.gabia.com</a></li>
+		</ul>
+	</div>
+
+	<div class="gt-dropdown" data-ui="gt-dropdown">
+		<button class="gt-btn gt-btn-primary" type="button" name="button">Dropdown menu <i class="fa fa-caret-down"></i></button>
+		<ul class="gt-dd-menu">
+			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
+			<li><a class="gt-dd-item" href="http://www.hiworks.com">www.hiworks.com</a></li>
+			<li><a class="gt-dd-item" href="https://partnercenter.gabia.com/">partnercenter.gabia.com</a></li>
+			<li class="gt-dd-divider"></li>
+			<li><a class="gt-dd-item" href="http://library.gabia.com">library.gabia.com</a></li>
+		</ul>
+	</div>
+
+	<div class="gt-dropdown" data-ui="gt-dropdown">
+		<button class="gt-btn gt-btn-success" type="button" name="button">Dropdown menu <i class="fa fa-angle-down"></i></button>
+		<ul class="gt-dd-menu">
+			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
+			<li><a class="gt-dd-item" href="http://www.hiworks.com">www.hiworks.com</a></li>
+			<li><a class="gt-dd-item" href="https://partnercenter.gabia.com/">partnercenter.gabia.com</a></li>
+			<li class="gt-dd-divider"></li>
+			<li><a class="gt-dd-item" href="http://library.gabia.com">library.gabia.com</a></li>
+		</ul>
+	</div>
+
+	<div class="gt-dropdown" data-ui="gt-dropdown">
+		<button class="gt-btn gt-btn-info" type="button" name="button">Dropdown menu</button>
+		<ul class="gt-dd-menu">
+			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
+			<li><a class="gt-dd-item" href="http://www.hiworks.com">www.hiworks.com</a></li>
+			<li><a class="gt-dd-item" href="https://partnercenter.gabia.com/">partnercenter.gabia.com</a></li>
+			<li class="gt-dd-divider"></li>
+			<li><a class="gt-dd-item" href="http://library.gabia.com">library.gabia.com</a></li>
+		</ul>
+	</div>
+
+	<div class="gt-dropdown" data-ui="gt-dropdown">
+		<button class="gt-btn gt-btn-warning" type="button" name="button">Dropdown menu</button>
+		<ul class="gt-dd-menu">
+			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
+			<li><a class="gt-dd-item" href="http://www.hiworks.com">www.hiworks.com</a></li>
+			<li><a class="gt-dd-item" href="https://partnercenter.gabia.com/">partnercenter.gabia.com</a></li>
+			<li class="gt-dd-divider"></li>
+			<li><a class="gt-dd-item" href="http://library.gabia.com">library.gabia.com</a></li>
+		</ul>
+	</div>
+
+	<div class="gt-dropdown" data-ui="gt-dropdown">
+		<button class="gt-btn gt-btn-danger" type="button" name="button">Dropdown menu</button>
 		<ul class="gt-dd-menu">
 			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
 			<li><a class="gt-dd-item" href="http://www.hiworks.com">www.hiworks.com</a></li>
