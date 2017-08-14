@@ -1010,6 +1010,16 @@ h1 {margin: 10px 0 20px}
                 <p>저는 굉장히 심플한 툴팁이에요.</p>
             </div>
         </div>
+
+        <div class="gt-padding">
+        	<div class="gt-tooltip" id="tooltipMouseHover">
+	            <button class="gt-button" data-tooltip="button">툴팁 버튼(MouseHover)</button>
+	            <div class="gt-tt-content">
+	                <span class="gt-triangle"></span>
+	                <p class="gt-tiny">안녕하세요. 저는 굉장히 심플한 툴팁이에요.</p>
+	            </div>
+	        </div>
+        </div>
     </div>
 </div>
 
@@ -1358,6 +1368,12 @@ gtris.ui.tab.init({
 gtris.ui.tooltip.init({
     target : $(document).find('[data-ui="gt-tooltip"]')
 })
+
+gtris.ui.tooltip.init({
+    target : $('#tooltipMouseHover'),
+    event: 'mouseover'
+})
+
 
 gtris.ui.collapse.init({
     target: '#accordion'
