@@ -968,15 +968,26 @@ h1 {margin: 10px 0 20px}
 <div style="padding:3%">
     <h1>Tooltip</h1>
     <div class="gt-center">
-        <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="left">
+
+    	<div class="gt-padding">
+	    	<div class="gt-tooltip" data-ui="gt-tooltip">
+	            <button class="gt-button" data-tooltip="button">툴팁 버튼(default)</button>
+	            <div class="gt-tt-content">
+	                <span class="gt-triangle"></span>
+	                <p class="gt-tiny">안녕하세요. 저는 굉장히 심플한 툴팁이에요.</p>
+	            </div>
+	        </div>
+        </div>
+
+        <div class="gt-tooltip gt-tooltip-primary" data-ui="gt-tooltip" data-placement="left">
             <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼(left)</button>
             <div class="gt-tt-content">
                 <span class="gt-triangle"></span>
-                <p>저는 굉장히 심플한 툴팁이에요.</p>
+                <p class="gt-small">가급적이면 한 줄만 사용해주세요.</p>
             </div>
         </div>
 
-        <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="bottom">
+        <div class="gt-tooltip gt-tooltip-success" data-ui="gt-tooltip" data-placement="bottom">
             <button class="gt-button gt-btn-success" data-tooltip="button">툴팁 버튼(bottom)</button>
             <div class="gt-tt-content">
                 <span class="gt-triangle"></span>
@@ -984,7 +995,7 @@ h1 {margin: 10px 0 20px}
             </div>
         </div>
 
-        <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="top">
+        <div class="gt-tooltip gt-tooltip-info" data-ui="gt-tooltip" data-placement="top">
             <button class="gt-button gt-btn-info" data-tooltip="button">툴팁 버튼(top)</button>
             <div class="gt-tt-content">
                 <span class="gt-triangle"></span>
@@ -992,7 +1003,7 @@ h1 {margin: 10px 0 20px}
             </div>
         </div>
 
-         <div class="gt-tooltip" data-ui="gt-tooltip" data-placement="right">
+         <div class="gt-tooltip gt-tooltip-danger" data-ui="gt-tooltip" data-placement="right">
             <button class="gt-button gt-btn-danger" data-tooltip="button">툴팁 버튼(right)</button>
             <div class="gt-tt-content">
                 <span class="gt-triangle"></span>
@@ -1086,6 +1097,21 @@ h1 {margin: 10px 0 20px}
 		<button id="toast-btn-warning" class="gt-btn gt-button-warning" type="button" name="button">Toast(warning)</button>
 		<button id="toast-btn-danger" class="gt-btn gt-btn-danger" type="button" name="button">Toast(danger)</button>
 	</p>
+</div>
+
+<div style="padding:3%">
+	<h1>Layer</h1>
+	<div class="gt-layer" id="gtrisLayer1">
+		<button class="gt-button" data-layer="button">Layer Open</button>
+	</div>
+
+	<div class="gt-layer" id="gtrisLayer2">
+		<button class="gt-button gt-btn-primary" data-layer="button">Layer Open</button>
+	</div>
+
+	<div class="gt-layer" id="gtrisLayer3">
+		<button class="gt-button gt-btn-danger" data-layer="button">Layer Open Callback Events</button>
+	</div>
 </div>
 
 <!-- modal -->
@@ -1208,14 +1234,6 @@ h1 {margin: 10px 0 20px}
   </div>
 </div>
 
-<!-- toast 
-<div class="gt-toast-container" data-placement="bottom-right">
-	<div class="gt-toast">
-		I do not think that means what you think it means.
-	</div>
-</div>
--->
-
 
 <script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/gtris.js"></script>
@@ -1234,6 +1252,35 @@ if(isMobile === true) {
 var info = osName + ' ' + browserName + ' ' + browserVersion + ' ' + isMobile;
 $('html').addClass(info);
 
+
+$('#gtrisLayer1').click(function() {
+	gtris.ui.layer.open({
+		target: $(this),
+		url: 'layer/layer0.html',
+		id : '#myLayer1'
+	})
+});
+
+$('#gtrisLayer2').click(function() {
+	gtris.ui.layer.open({
+		target: $(this),
+		url: 'layer/layer0.html',
+		id : '#myLayer2'
+	})
+});
+
+$('#gtrisLayer3').click(function() {
+	gtris.ui.layer.open({
+		target: $(this),
+		url: 'layer/layer1.html',
+		id : '#myLayer2',
+		completed: function() {
+			gtris.ui.tab.init({
+				target: '#layerTab'
+			})
+		}
+	})
+});
 
 
 $('#toast-btn-default').click(function(event) {
