@@ -655,7 +655,7 @@
 
 		toggleTT: function(event) {
 			var $tt_btn = $(event.target);
-			var $tt_cnt = $tt_btn.siblings('[data-tooltip="content"]');
+			var $tt_cnt = $tt_btn.siblings('.gt-tt-content');
 			var placement = $tt_btn.parents('.gt-tooltip').attr('data-placement');
 
 			$tt_cnt.toggleClass('gt-active');
