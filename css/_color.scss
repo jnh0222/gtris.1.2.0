@@ -30,15 +30,15 @@
 
 //Text Color
 .gt-text-light-blue { color: #89c6e1!important }
-.gt-text-blue { color: #2598e7!important }
+.gt-text-blue, .gt-text-primary { color: #2598e7!important }
 .gt-text-deep-blue { color: #00519e!important }
-.gt-text-yellow { color: #f9b200!important }
-.gt-text-orange { color: #f7851c!important }
+.gt-text-yellow, .gt-text-warning { color: #f9b200!important }
+.gt-text-orange, .gt-text-danger { color: #f7851c!important }
 .gt-text-deep-orange { color: #e75113!important }
 .gt-text-red { color: #f44336!important }
-.gt-text-green { color: #94c11e!important }
+.gt-text-green, .gt-text-success { color: #94c11e!important }
 .gt-text-pink { color: #e91e63!important }
-.gt-text-teal { color: #009688!important }
+.gt-text-teal, .gt-text-info { color: #009688!important }
 .gt-text-indigo { color: #00529e!important }
 .gt-text-brown { color: #795548!important }
 .gt-text-cyan { color: #00bcd4!important }
@@ -60,15 +60,15 @@
 
 //Border Color
 .gt-border-light-blue { border-color: #89c6e1!important }
-.gt-border-blue { border-color: #2598e7!important }
+.gt-border-blue, .gt-border-primary { border-color: #2598e7!important }
 .gt-border-deep-blue { border-color: #00519e!important }
-.gt-border-yellow { border-color: #f9b200!important }
-.gt-border-orange { border-color: #f7851c!important }
+.gt-border-yellow, .gt-border-warning { border-color: #f9b200!important }
+.gt-border-orange, .gt-border-danger { border-color: #f7851c!important }
 .gt-border-deep-orange { border-color: #e75113!important }
 .gt-border-red { border-color: #f44336!important }
-.gt-border-green { border-color: #94c11e!important }
+.gt-border-green, .gt-border-success { border-color: #94c11e!important }
 .gt-border-pink { border-color: #e91e63!important }
-.gt-border-teal { border-color: #009688!important }
+.gt-border-teal, .gt-border-info { border-color: #009688!important }
 .gt-border-indigo { border-color: #00529e!important }
 .gt-border-brown { border-color: #795548!important }
 .gt-border-cyan { border-color: #00bcd4!important }
