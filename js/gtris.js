@@ -931,14 +931,10 @@
 				this.$toastContainer = $(document.createElement('div'));
 				this.$toastContainer.addClass('gt-toast-container');
 				this.$toastContainer.appendTo('body');
-
-
 				if(options.position === undefined || options.position ==='') {
 					options.position = 'top-right';
 				}
-
 				this.$toastContainer.attr('data-placement', options.position);
-
 			}
 
 			$toast = $(document.createElement('div'));
@@ -951,9 +947,6 @@
 			console.log( "<code>" + options.message + "</code>" )
 
 			$toast.html( options.message );
-
-
-
 
 			switch(options.type) {
 				case 'primary':
@@ -994,7 +987,6 @@
 			if( $('.gt-toast-container .gt-toast').length === 1 ) {
 				$('.gt-toast-container').remove();
 			}
-
 			$(this).remove();
 		},
 
