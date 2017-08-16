@@ -1,35 +1,35 @@
 /*table*/
 .gt-table,.gt-table-all {
-	display:table;
-	width:100%;
-	border-spacing:0;
-	border-collapse:collapse;
+	display: table;
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
 	th, td {
-		padding:8px 8px;
-		display:table-cell;
-		text-align:left;
+		display: table-cell;
+		padding: 8px 8px;
+		text-align: left;
 	}
 }
 
 .gt-table-all {
-	border:1px solid $gray-ddd;
+	border: 1px solid $gray-ddd;
 	tr {
-		border-bottom:1px solid $gray-ddd;
+		border-bottom: 1px solid $gray-ddd;
 		&:nth-child(odd) {
-			background-color:$white;
+			background-color: $white;
 		}
 		&:nth-child(even) {
-			background-color:$gray-eee;
+			background-color: $gray-eee;
 		}
 	}
 }
 
 .gt-centered tr th, .gt-centered tr td {
-	text-align:center;
+	text-align: center;
 }
 
 .gt-bordered tr {
-	border-bottom:1px solid #ddd
+	border-bottom: 1px solid #ddd
 }
 
 .gt-striped tbody tr:nth-child(even) {
