@@ -9,8 +9,7 @@
 		position: relative;
 		padding: 10px 15px;
 		color: #333;
-		background-color: $primary;
-		color: $white;
+		background-color: $gray-eee;
 		overflow: hidden;
 	}
 	.panel-body {
@@ -24,5 +23,6 @@
 		background-color: $gray-eee;
 		border-bottom-right-radius: 3px;
 		border-bottom-left-radius: 3px;
+		@include clearfix();
 	}
 }
