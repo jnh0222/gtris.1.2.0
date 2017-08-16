@@ -444,7 +444,7 @@
 
 			//set option
 			if(_overlayOpacity === undefined) _overlayOpacity = 0.5;
-			if(_overlayColor === undefined) _overlayColor = '#000000';
+			if(_overlayColor === undefined) _overlayColor = '#333';
 
 			this.options = {
 				overlayOpacity : _overlayOpacity,
@@ -514,7 +514,7 @@
 			this.wrapperArr.push(gtModalWrapper);
 
 			//create overlay
-			var $overlay = $(gtris.util.makeDimmed('gt-overlay', this.options.overlayOpacity, this.options.overlayColor, 1000));
+			var $overlay = $(gtris.util.makeDimmed('gt-overlay gt-animate-overlay', this.options.overlayOpacity, this.options.overlayColor, 1000));
 
 			//append overlay, modal
 			$overlay.appendTo(this.wrapperArr[this.wrapperArr.length - 1]);
