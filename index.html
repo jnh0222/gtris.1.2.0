@@ -1159,7 +1159,9 @@ h1 {margin: 10px 0 20px}
   <div class="gt-modal-content gt-animate-top">
     <div class="gt-modal-header">Modal Header</div>
     <div class="gt-modal-body">
-      <p style="font-size:16px; padding-bottom:10px; text-align:center">....</p>
+      <p style="font-size:16px; padding-bottom:10px; text-align:center">
+      	<button class="gt-btn" id="multiple-modal">멀티모달</button>
+      </p>
     </div>
     <div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
       <a href="javascript:void(0);">
@@ -1394,13 +1396,22 @@ $('#class-modal-btn').click(function(event) {
 });
 $('#animate-top-btn').click(function(event) {
   gtris.ui.modal.open({
-    target: '#animate-top'
+    target: '#animate-top',
+    overlayOpacity: 1,
+    completed: function() {
+    	$('#multiple-modal').click(function(event) {
+    		gtris.ui.modal.open({
+    			target: 'modal/ajax-modal.html'
+    		});
+    	});
+    }
   })
 });
 
 $('#animate-bottom-btn').click(function(event) {
   gtris.ui.modal.open({
-    target: '#animate-bottom'
+    target: '#animate-bottom',
+    overlayColor: 'red'
   })
 });
 

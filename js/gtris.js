@@ -434,34 +434,21 @@
 
 		wrapperArr : [],
 		options : {},
-		escKeyArr : [],
 		clonedArr : [],
 
 		open: function(obj) {
 			var _obj = obj;
-			var _position = _obj.position;
 			var _overlayOpacity = _obj.overlayOpacity;
-			var _overlayClose = _obj.overlayClose;
 			var _overlayColor = _obj.overlayColor;
-			var _escKey = _obj.escKey;
 			var _selector = _obj.target.charAt(0);
 
 			//set option
-			if(_position === undefined) _position = ['center','center'];
 			if(_overlayOpacity === undefined) _overlayOpacity = 0.5;
 			if(_overlayColor === undefined) _overlayColor = '#000000';
-			if(_overlayClose === undefined) _overlayClose = false;
-			if(_escKey === undefined) {
-				this.escKeyArr.push(true);
-			}else{
-				this.escKeyArr.push(_obj.escKey);
-			}
 
 			this.options = {
-				position : _position,
 				overlayOpacity : _overlayOpacity,
-				overlayColor : _overlayColor,
-				overlayClose : _overlayClose
+				overlayColor : _overlayColor
 			};
 
 			if ( _selector === '#' ||  _selector === '.' ) {
@@ -527,8 +514,7 @@
 			this.wrapperArr.push(gtModalWrapper);
 
 			//create overlay
-			var $overlay = $(gtris.util.makeDimmed('gt-overlay', 0, this.options.overlayColor));
-			$overlay.css('opacity', this.options.overlayOpacity);
+			var $overlay = $(gtris.util.makeDimmed('gt-overlay', this.options.overlayOpacity, this.options.overlayColor, 1000));
 
 			//append overlay, modal
 			$overlay.appendTo(this.wrapperArr[this.wrapperArr.length - 1]);
@@ -538,12 +524,6 @@
 			$target.find('[data-modal="hide"]').on('click', function(event) {
 				modal.hideModal(_obj);
 			});
-
-			if(this.options.overlayClose) {
-				$overlay.on('click', function(event) {
-					modal.hideModal(_obj);
-				});
-			}
 
 			//completed event return
 			if(_obj.completed) {
