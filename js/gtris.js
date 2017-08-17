@@ -293,7 +293,7 @@
 		dimmed.style.height = '100%';
 
 		if(className === undefined) {
-			className = 'gtrisDimmed';
+			className = 'gt-overlay';
 		}else{
 			className = className;
 		}
@@ -311,7 +311,7 @@
 		}
 
 		if(zIndex === undefined) {
-			zIndex = 1010;
+			zIndex = 1000;
 		}else{
 			zIndex = zIndex;
 		}
@@ -514,7 +514,7 @@
 			this.wrapperArr.push(gtModalWrapper);
 
 			//create overlay
-			var $overlay = $(gtris.util.makeDimmed('gt-overlay gt-animate-overlay', this.options.overlayOpacity, this.options.overlayColor, 1000));
+			var $overlay = $(gtris.util.makeDimmed('gt-overlay gt-animate-overlay', this.options.overlayOpacity, this.options.overlayColor));
 
 			//append overlay, modal
 			$overlay.appendTo(this.wrapperArr[this.wrapperArr.length - 1]);
