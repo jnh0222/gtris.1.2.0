@@ -514,7 +514,7 @@
 			this.wrapperArr.push(gtModalWrapper);
 
 			//create overlay
-			var $overlay = $(gtris.util.makeDimmed('gt-overlay gt-animate-overlay', this.options.overlayOpacity, this.options.overlayColor));
+			var $overlay = $(gtris.util.makeDimmed('gt-overlay gt-animate-overlay', this.options.overlayOpacity, this.options.overlayColor, 1050));
 
 			//append overlay, modal
 			$overlay.appendTo(this.wrapperArr[this.wrapperArr.length - 1]);
