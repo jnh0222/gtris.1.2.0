@@ -40,4 +40,6 @@ $blue-gray: #455a64 !default;
 $white: #fff !default;
 
 //Z-index
-$zindex-modal: 1010 !default;
+$zindex-fixed: 1000 !default;
+$zindex-overlay: 1050 !default;
+$zindex-modal: 1060 !default;
