@@ -2,60 +2,99 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scaleable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
 <link rel="stylesheet" href="css/gtris.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 <title></title>
 <style>
 h1 {margin: 10px 0 20px}
 #color .gt-row > div {padding:50px;}
+.box {display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    margin: .25rem;
+    background-color: #f5f5f5;}
 </style>
 </head>
-<body>
+<body style="margin:83px 0">
+
+
+
+<div class="gt-fixed-top gt-blue">
+	<p class="gt-text-white gt-xlarge gt-bold" style="padding:20px 20px; max-height:85px;">Fixed Top</p>
+</div>
+
+<div class="gt-fixed-bottom gt-deep-orange">
+	<p class="gt-text-white gt-xlarge gt-bold" style="padding:20px 20px; max-height:85px;">Fixed Bottom</p>
+</div>
+
+<div class="gt-border box"></div>
+<div class="gt-border gt-border-primary box gt-border-top-0"></div>
+<div class="gt-border gt-border-success box gt-border-bottom-0"></div>
+<div class="gt-border gt-border-info box gt-border-right-0"></div>
+<div class="gt-border gt-border-warning box gt-border-left-0"></div>
+<div class="gt-border gt-border-danger box gt-border-0"></div>
+
+
+<div class="gt-row">
+	<div class="gt-col gt-xs12 gt-s6 gt-m4 gt-l2 gt-xl1 gt-gray">1</div>
+	<div class="gt-col gt-xs12 gt-s6 gt-m4 gt-l2 gt-xl1 gt-gray-ccc">2</div>
+	<div class="gt-col gt-xs12 gt-s6 gt-m4 gt-l2 gt-xl1 gt-gray">3</div>
+	<div class="gt-col gt-xs12 gt-s6 gt-m4 gt-l2 gt-xl1 gt-gray-ccc">4</div>
+	<div class="gt-col gt-xs12 gt-s6 gt-m4 gt-l2 gt-xl1 gt-gray">5</div>
+	<div class="gt-col gt-xs12 gt-s6 gt-m4 gt-l2 gt-xl1 gt-gray-ccc">6</div>
+	<div class="gt-col gt-xs12 gt-s6 gt-m4 gt-l2 gt-xl1 gt-gray">7</div>
+	<div class="gt-col gt-xs12 gt-s6 gt-m4 gt-l2 gt-xl1 gt-gray-ccc">8</div>
+	<div class="gt-col gt-xs12 gt-s6 gt-m4 gt-l2 gt-xl1 gt-gray">9</div>
+	<div class="gt-col gt-xs12 gt-s6 gt-m4 gt-l2 gt-xl1 gt-gray-ccc">10</div>
+	<div class="gt-col gt-xs12 gt-s6 gt-m4 gt-l2 gt-xl1 gt-gray">11</div>
+	<div class="gt-col gt-xs12 gt-s6 gt-m4 gt-l2 gt-xl1 gt-gray-ccc">12</div>
+</div>
+
 
 <div id="color" style="padding:3%">
     <h1>Color</h1>
     <div class="gt-row gt-text-white">
-        <div class="gt-light-blue gt-center gt-col gt-m6 gt-l2">gt-light-blue</div>
-        <div class="gt-primary gt-center gt-col gt-m6 gt-l2">gt-blue<br>gt-primary</div>
-        <div class="gt-deep-blue gt-center gt-col gt-m6 gt-l2">gt-deep-blue</div>
-        <div class="gt-warning gt-center gt-col gt-m6 gt-l2">gt-yellow<br>gt-warning</div>
-        <div class="gt-orange gt-center gt-col gt-m6 gt-l2">gt-orange</div>
-        <div class="gt-danger gt-center gt-col gt-m6 gt-l2">gt-deep-orange<br>gt-danger</div>
+        <div class="gt-light-blue gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-light-blue</div>
+        <div class="gt-primary gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-blue</div>
+        <div class="gt-deep-blue gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-deep-blue</div>
+        <div class="gt-warning gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-yellow</div>
+        <div class="gt-orange gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-orange</div>
+        <div class="gt-danger gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-deep-orange</div>
     </div>
 
     <div class="gt-row gt-text-white">
-        <div class="gt-red gt-center gt-col gt-m6 gt-l2">gt-red</div>
-        <div class="gt-success gt-center gt-col gt-m6 gt-l2">gt-green<br>gt-success</div>
-        <div class="gt-pink gt-center gt-col gt-m6 gt-l2">gt-pink</div>
-        <div class="gt-info gt-center gt-col gt-m6 gt-l2">gt-teal<br>gt-info</div>
-        <div class="gt-indigo gt-center gt-col gt-m6 gt-l2">gt-indigo</div>
-        <div class="gt-brown gt-center gt-col gt-m6 gt-l2">gt-brown</div>
+        <div class="gt-red gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-red</div>
+        <div class="gt-success gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-green</div>
+        <div class="gt-pink gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-pink</div>
+        <div class="gt-info gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-teal</div>
+        <div class="gt-indigo gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-indigo</div>
+        <div class="gt-brown gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-brown</div>
     </div>
 
     <div class="gt-row gt-text-white">
-        <div class="gt-cyan gt-text-white gt-center gt-col gt-m6 gt-l2">gt-cyan</div>
-        <div class="gt-purple gt-center gt-col gt-m6 gt-l2">gt-purple</div>
-        <div class="gt-lime gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-lime</div>
-        <div class="gt-khaki gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-khaki</div>
-        <div class="gt-amber gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-amber</div>
-        <div class="gt-beige gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-beige</div>
+        <div class="gt-cyan gt-text-white gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-cyan</div>
+        <div class="gt-purple gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-purple</div>
+        <div class="gt-lime gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2 gt-text-black">gt-lime</div>
+        <div class="gt-khaki gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2 gt-text-black">gt-khaki</div>
+        <div class="gt-amber gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2 gt-text-black">gt-amber</div>
+        <div class="gt-beige gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2 gt-text-black">gt-beige</div>
     </div>
 
     <div class="gt-row gt-text-white">
-        <div class="gt-gray-eee gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-gray-eee</div>
-        <div class="gt-gray-ddd gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-gray-ddd</div>
-        <div class="gt-gray-ccc gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-gray-ccc</div>
-        <div class="gt-gray-999 gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-gray-999</div>
-        <div class="gt-gray-666 gt-center gt-col gt-m6 gt-l2">gt-gray-666</div>
-        <div class="gt-gray-333 gt-center gt-col gt-m6 gt-l2">gt-gray-333</div>
+        <div class="gt-gray-eee gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2 gt-text-black">gt-gray-eee</div>
+        <div class="gt-gray-ddd gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2 gt-text-black">gt-gray-ddd</div>
+        <div class="gt-gray-ccc gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2 gt-text-black">gt-gray-ccc</div>
+        <div class="gt-gray-999 gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2 gt-text-black">gt-gray-999</div>
+        <div class="gt-gray-666 gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-gray-666</div>
+        <div class="gt-gray-333 gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-gray-333</div>
     </div>
 
     <div class="gt-row gt-text-white">
-        <div class="gt-gray gt-center gt-col gt-m6 gt-l2">gt-gray</div>
-        <div class="gt-blue-gray gt-center gt-col gt-m6 gt-l2">gt-blue-gray</div>
-        <div class="gt-black gt-center gt-col gt-m6 gt-l2">gt-black</div>
-        <div class="gt-white gt-center gt-col gt-m6 gt-l2 gt-text-black">gt-white</div>
+        <div class="gt-gray gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-gray</div>
+        <div class="gt-blue-gray gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-blue-gray</div>
+        <div class="gt-black gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2">gt-black</div>
+        <div class="gt-white gt-center gt-col gt-s6 gt-m6 gt-l4 gt-xl2 gt-text-black">gt-white</div>
     </div>
 </div>
 
@@ -104,7 +143,7 @@ h1 {margin: 10px 0 20px}
     <button class="gt-btn gt-huge" type="button" name="button">huge</button>
 
     <br><br>
-    <button class="gt-button gt-block gt-xlarge">Block Button</button>
+    <button class="gt-button gt-btn-block gt-xlarge">Block Button</button>
 
     <br><br>
     <button class="gt-button" disabled>Button <i class="fa fa-heart-o"></i></button>
@@ -300,11 +339,23 @@ h1 {margin: 10px 0 20px}
 <div style="padding:3%">
 	<h1>Progressbar</h1>
 	<div class="gt-gray-eee gt-text-white">
-		<div class="gt-center gt-gray-333" style="width:20%">20%</div>
+		<div class="gt-center gt-primary" style="width:20%">20%</div>
+	</div>
+	<br>
+	<div class="gt-round-medium gt-gray-eee gt-text-white">
+		<div class="gt-center gt-round-medium gt-success" style="width:80%">80%</div>
+	</div>
+	<br>
+	<div class="gt-round-large gt-gray-eee gt-text-white">
+		<div class="gt-center gt-round-large gt-info" style="width:50%">50%</div>
+	</div>
+	<br>
+	<div class="gt-round-xlarge gt-gray-eee gt-text-white">
+		<div class="gt-center gt-round-xlarge gt-warning" style="width:70%">70%</div>
 	</div>
 	<br>
 	<div class="gt-round-xxlarge gt-gray-eee gt-text-white">
-		<div class="gt-center gt-round-xxlarge gt-red gt-padding" style="width:80%">80%</div>
+		<div class="gt-center gt-round-xxlarge gt-danger" style="width:90%">90%</div>
 	</div>
 </div>
 
@@ -381,15 +432,15 @@ h1 {margin: 10px 0 20px}
 
 <div style="padding:3%">
 	<h1>Round</h1>
-	<div class="gt-round-small gt-pink gt-padding gt-text-white"><p>gt-round-small</p></div>
+	<div class="gt-round-small gt-primary gt-padding gt-text-white"><p>gt-round-small</p></div>
 	<br>
-	<div class="gt-round-medium gt-blue gt-padding gt-text-white"><p>gt-round-medium</p></div>
+	<div class="gt-round-medium gt-success gt-padding gt-text-white"><p>gt-round-medium</p></div>
 	<br>
-	<div class="gt-round-large gt-green gt-padding gt-text-white"><p>gt-round-large</p></div>
+	<div class="gt-round-large gt-info gt-padding gt-text-white"><p>gt-round-large</p></div>
 	<br>
-	<div class="gt-round-xlarge gt-indigo gt-padding gt-text-white"><p>gt-round-xlarge</p></div>
+	<div class="gt-round-xlarge gt-warning gt-padding gt-text-white"><p>gt-round-xlarge</p></div>
 	<br>
-	<div class="gt-round-xxlarge gt-teal gt-padding gt-text-white"><p>gt-round-xxlarge</p></div>
+	<div class="gt-round-xxlarge gt-danger gt-padding gt-text-white"><p>gt-round-xxlarge</p></div>
 	<br>
 	<img src="http://dochoul.com/dashboard/img/round1.png" class="gt-circle">
 </div>
@@ -458,15 +509,15 @@ h1 {margin: 10px 0 20px}
 
 <div style="padding:3%">
 	<h1>Padding</h1>
-	<div class="gt-padding-small gt-pink gt-text-white">gt-padding-small</div>
+	<div class="gt-padding-small gt-primary gt-text-white">gt-padding-small</div>
 	<br>
-	<div class="gt-padding gt-blue gt-text-white">gt-padding</div>
+	<div class="gt-padding gt-success gt-text-white">gt-padding</div>
 	<br>
-	<div class="gt-padding-large gt-green gt-text-white">gt-padding-large</div>
+	<div class="gt-padding-large gt-info gt-text-white">gt-padding-large</div>
 	<br>
-	<div class="gt-padding-xlarge gt-cyan gt-text-white">gt-padding-xlarge</div>
+	<div class="gt-padding-xlarge gt-warning gt-text-white">gt-padding-xlarge</div>
 	<br>
-	<div class="gt-padding-xxlarge gt-brown gt-text-white">gt-padding-xxlarge</div>
+	<div class="gt-padding-xxlarge gt-danger gt-text-white">gt-padding-xxlarge</div>
 </div>
 
 <div style="padding:3%">
@@ -834,8 +885,8 @@ h1 {margin: 10px 0 20px}
 					<p>...</p>
 				</div>
 				<div class="panel-footer">
-					<button class="gt-button gt-button-danger gt-left gt-tiny">Accept</button>
-					<button class="gt-button gt-button-success gt-right gt-tiny">Decline</button>
+					<button class="gt-button gt-button-danger gt-float-left gt-tiny">Accept</button>
+					<button class="gt-button gt-button-success gt-float-right gt-tiny">Decline</button>
 				</div>
 			</div>
 		</div>
@@ -883,6 +934,7 @@ h1 {margin: 10px 0 20px}
 
     <br><br>
     <div class="gt-collapse" id="accordion-expandable">
+    	<button class="gt-btn" id="temp-btn">전체보기</button>
         <ul>
             <li class="gt-collapse-item gt-active">
                 <a href="javascript:void(0)" class="gt-collapse-header" data-collapse="header">
@@ -940,26 +992,6 @@ h1 {margin: 10px 0 20px}
         	일반적으로 홈페이지를 만들고 운영하기 위해서는 웹호스팅과 도메인이 필요합니다. 하지만 웹호스팅과 도메인이 있어야지만 홈페이지를 가질 수 있는 것은 아닙니다. 무료로 제공되는 ‘홈페이지 빌더 서비스’를 이용해서 홈페이지를 만들 수도 있기 때문입니다.
         </div>
     </div>
-    <br><br>
-    <div class="gt-tab">
-        <div class="gt-tab-nav" data-ui="gt-tab" id="myTab2">
-            <a href="javascript:void(0);" class="gt-nav-item gt-active" data-id="tab4">하이웍스</a>
-            <a href="javascript:void(0);" class="gt-nav-item" data-id="tab5">가비아 백신</a>
-            <a href="javascript:void(0);" class="gt-nav-item" data-id="tab6">홈페이지 빌더</a>
-        </div>
-        <div id="tab4" class="gt-border gt-padding-xlarge">
-        	효율적인 협업과 원활한 커뮤니케이션을 돕는 클라우드 그룹웨어 '하이웍스' 하이웍스 도입에 관심이 있거나 이용 중인 모든 분들을 위해 하이웍스는 정기적으로 교육을 진행하고 있습니다.
-        	하이웍스 관리자 교육을 신청하시고, 한층 향상된 협업 환경을 경험해 보세요.
-        </div>
-        <div id="tab5" class="gt-border gt-padding-xlarge gt-hide">
-        	가비아 백신 빠르고 강력한 기업용 ‘프리미엄 무료백신’
-        	안티바이러스 백신 프로그램으로 외부 보안 위협으로부터 기업의 자산을 안전하게 보호합니다
-        </div>
-        <div id="tab6" class="gt-border gt-padding-xlarge gt-hide">
-        	세상 쉬운 홈페이지 빌더
-        	마우스만으로 여러분이 원하는 홈페이지를 만들어보세요!
-        </div>
-    </div>
 </div>
 
 <div style="padding:3%">
@@ -969,6 +1001,14 @@ h1 {margin: 10px 0 20px}
     	<div class="gt-padding">
 	    	<div class="gt-tooltip" data-ui="gt-tooltip">
 	            <button class="gt-button" data-tooltip="button">툴팁 버튼(default)</button>
+	            <div class="gt-tt-content">
+	                <span class="gt-triangle"></span>
+	                <p class="gt-tiny">안녕하세요. 저는 굉장히 심플한 툴팁이에요.</p>
+	            </div>
+	        </div>
+
+	        <div class="gt-tooltip" id="tooltipMouseHover">
+	            <button class="gt-button" data-tooltip="button">툴팁 버튼(MouseHover)</button>
 	            <div class="gt-tt-content">
 	                <span class="gt-triangle"></span>
 	                <p class="gt-tiny">안녕하세요. 저는 굉장히 심플한 툴팁이에요.</p>
@@ -988,7 +1028,7 @@ h1 {margin: 10px 0 20px}
             <button class="gt-button gt-btn-success" data-tooltip="button">툴팁 버튼(bottom)</button>
             <div class="gt-tt-content">
                 <span class="gt-triangle"></span>
-                <p>저는 굉장히 심플한 툴팁이에요.</p>
+                <p>저를 마우스로 드래그 해보세요.</p>
             </div>
         </div>
 
@@ -996,27 +1036,25 @@ h1 {margin: 10px 0 20px}
             <button class="gt-button gt-btn-info" data-tooltip="button">툴팁 버튼(top)</button>
             <div class="gt-tt-content">
                 <span class="gt-triangle"></span>
-                <p>저는 굉장히 심플한 툴팁이에요.</p>
+                <p>user-select 속성이 none입니다.</p>
             </div>
         </div>
 
-         <div class="gt-tooltip gt-tooltip-danger" data-ui="gt-tooltip" data-placement="right">
-            <button class="gt-button gt-btn-danger" data-tooltip="button">툴팁 버튼(right)</button>
-            <div class="gt-tt-content">
-                <span class="gt-triangle"></span>
-                <p>저는 굉장히 심플한 툴팁이에요.</p>
-            </div>
-        </div>
+		<div class="gt-tooltip gt-tooltip-warning" data-ui="gt-tooltip" data-placement="right">
+			<button class="gt-button gt-btn-warning" data-tooltip="button">툴팁 버튼(right)</button>
+			<div class="gt-tt-content">
+				<span class="gt-triangle"></span>
+				<p>많이 사용해주세요</p>
+			</div>
+		</div>
 
-        <div class="gt-padding">
-        	<div class="gt-tooltip" id="tooltipMouseHover">
-	            <button class="gt-button" data-tooltip="button">툴팁 버튼(MouseHover)</button>
-	            <div class="gt-tt-content">
-	                <span class="gt-triangle"></span>
-	                <p class="gt-tiny">안녕하세요. 저는 굉장히 심플한 툴팁이에요.</p>
-	            </div>
-	        </div>
-        </div>
+		<div class="gt-tooltip gt-tooltip-danger" data-ui="gt-tooltip" data-placement="right">
+			<button class="gt-button gt-btn-danger" data-tooltip="button">툴팁 버튼(right)</button>
+			<div class="gt-tt-content">
+				<span class="gt-triangle"></span>
+				<p>많이 사용해주세요</p>
+			</div>
+		</div>
     </div>
 </div>
 
@@ -1308,63 +1346,63 @@ $('#toast-btn-default').click(function(event) {
 		message: '안녕하세요. 반갑습니다~',
 		position: 'top-right'
 	})
-})
+});
 
 $('#toast-btn-right-bottom').click(function(event) {
 	gtris.ui.toast.open({
 		message: '나의 업무 파트너 하이웍스',
 		position: 'bottom-right'
 	})
-})
+});
 
 $('#toast-btn-left-top').click(function(event) {
 	gtris.ui.toast.open({
 		message: '비즈니스를 위한 IT 가비아',
 		position: 'top-left'
 	})
-})
+});
 
 $('#toast-btn-left-bottom').click(function(event) {
 	gtris.ui.toast.open({
 		message: '파트너 센터, 리셀러, 제휴 파트너',
 		position: 'bottom-left'
 	})
-})
+});
 
 $('#toast-btn-primary').click(function(event) {
 	gtris.ui.toast.open({
 		message: '가비아 보안/관제 - 위협을 기술로 통제하는, 가비아시큐리티',
 		type: 'primary'
 	})
-})
+});
 
 $('#toast-btn-success').click(function(event) {
 	gtris.ui.toast.open({
 		message: '가비아 보안/관제 - 위협을 기술로 통제하는, 가비아시큐리티',
 		type: 'success'
 	})
-})
+});
 
 $('#toast-btn-info').click(function(event) {
 	gtris.ui.toast.open({
 		message: '가비아 Office 365 상품 출시',
 		type: 'info'
 	})
-})
+});
 
 $('#toast-btn-warning').click(function(event) {
 	gtris.ui.toast.open({
 		message: '가비아 오피스호스팅 - 사무실 IT 장비 임대 관리',
 		type: 'warning'
 	})
-})
+});
 
 $('#toast-btn-danger').click(function(event) {
 	gtris.ui.toast.open({
 		message: '가비아 - 대한민국 No.1 서버 관리 전문 업체',
 		type: 'danger'
 	})
-})
+});
 
 gtris.ui.dropdown.init({
     target : $(document).find('[data-ui="gt-dropdown"]')
@@ -1372,21 +1410,21 @@ gtris.ui.dropdown.init({
 
 gtris.ui.tab.init({
     target: '#myTab1'
-})
+});
 
 gtris.ui.tab.init({
     target: '#myTab2',
     event: 'mouseover'
-})
+});
 
 gtris.ui.tooltip.init({
     target : $(document).find('[data-ui="gt-tooltip"]')
-})
+});
 
 gtris.ui.tooltip.init({
     target : $('#tooltipMouseHover'),
     event: 'mouseover'
-})
+});
 
 
 gtris.ui.collapse.init({
@@ -1395,7 +1433,8 @@ gtris.ui.collapse.init({
 
 gtris.ui.collapse.init({
     target: '#accordion-expandable',
-    expandable: true
+    expandable: true,
+    slideTime: 500
 });
 
 $('#id-modal-btn').click(function(event) {
@@ -1464,6 +1503,7 @@ $('#ajax-btn').click(function(event) {
     target: 'modal/ajax-modal.html'
   })
 });
+
 </script>
 
 </body>
