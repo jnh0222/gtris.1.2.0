@@ -25,7 +25,7 @@ gulp.task('sass', function () {
 	.pipe(sourcemaps.init())
 	.pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
 	.pipe(sourcemaps.write(DIR.MAP))
-		.pipe(gulp.dest( paths.dist.gt_css ));
+	.pipe(gulp.dest( paths.dist.gt_css ));
 });
 
 // watch
