@@ -4,20 +4,38 @@
 		float: left;
 		width: 100%
 	}
-	.gt-s1 { width: 8.33333% }
-	.gt-s2 { width: 16.66666% }
-	.gt-s3 { width: 24.99999% }
-	.gt-s4 { width: 33.33333% }
-	.gt-s5 { width: 41.66666% }
-	.gt-s6 { width: 49.99999% }
-	.gt-s7 { width: 58.33333% }
-	.gt-s8 { width: 66.66666% }
-	.gt-s9 { width: 74.99999% }
-	.gt-s10 { width: 83.33333% }
-	.gt-s11 { width: 91.66666% }
-	.gt-s12 { width: 99.99999% }
 
-	@media (min-width: $middle) {
+	@media (max-width: $xs) {
+		.gt-xs1 { width: 8.33333% }
+		.gt-xs2 { width: 16.66666% }
+		.gt-xs3 { width: 24.99999% }
+		.gt-xs4 { width: 33.33333% }
+		.gt-xs5 { width: 41.66666% }
+		.gt-xs6 { width: 49.99999% }
+		.gt-xs7 { width: 58.33333% }
+		.gt-xs8 { width: 66.66666% }
+		.gt-xs9 { width: 74.99999% }
+		.gt-xs10 { width: 83.33333% }
+		.gt-xs11 { width: 91.66666% }
+		.gt-xs12 { width: 99.99999% }
+	}
+
+	@media (min-width: $xs) {
+		.gt-s1 { width: 8.33333% }
+		.gt-s2 { width: 16.66666% }
+		.gt-s3 { width: 24.99999% }
+		.gt-s4 { width: 33.33333% }
+		.gt-s5 { width: 41.66666% }
+		.gt-s6 { width: 49.99999% }
+		.gt-s7 { width: 58.33333% }
+		.gt-s8 { width: 66.66666% }
+		.gt-s9 { width: 74.99999% }
+		.gt-s10 { width: 83.33333% }
+		.gt-s11 { width: 91.66666% }
+		.gt-s12 { width: 99.99999% }
+	}
+
+	@media (min-width: $sm) {
 		.gt-m1 { width: 8.33333% }
 		.gt-m2 { width: 16.66666% }
 		.gt-m3 { width: 24.99999% }
@@ -32,7 +50,7 @@
 		.gt-m12 { width: 99.99999% }
 	}
 
-	@media (min-width: $large) {
+	@media (min-width: $md) {
 		.gt-l1 { width: 8.33333% }
 		.gt-l2 { width: 16.66666% }
 		.gt-l3 { width: 24.99999% }
@@ -46,27 +64,20 @@
 		.gt-l11 { width: 91.66666% }
 		.gt-l12 { width: 99.99999% }
 	}
+
+	@media (min-width: $xl) {
+		.gt-xl1 { width: 8.33333% }
+		.gt-xl2 { width: 16.66666% }
+		.gt-xl3 { width: 24.99999% }
+		.gt-xl4 { width: 33.33333% }
+		.gt-xl5 { width: 41.66666% }
+		.gt-xl6 { width: 49.99999% }
+		.gt-xl7 { width: 58.33333% }
+		.gt-xl8 { width: 66.66666% }
+		.gt-xl9 { width: 74.99999% }
+		.gt-xl10 { width: 83.33333% }
+		.gt-xl11 { width: 91.66666% }
+		.gt-xl12 { width: 99.99999% }
+	}
 	@include clearfix();
 }
-
-/* body {
-	background-color: red;	
-}
-
-@media (min-width: $small) {
-	body {
-		background-color: green;
-	}
-}
-
-@media (min-width: $small+1) and (max-width: $middle) {
-	body {
-		background-color: lime;
-	}
-}
-
-@media (min-width: $large) {
-	body {
-		background-color: cyan;
-	}
-} */
