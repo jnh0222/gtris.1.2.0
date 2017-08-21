@@ -35,14 +35,18 @@
 		}
 	}
 
-	@media screen and (min-width: $small) {
+	@media screen and (min-width: $xs) {
 		.gt-modal-content { width: 80% }
 	}
 
-	@media screen and (min-width: $middle) {
+	@media screen and (min-width: $sm) {
+		.gt-modal-content { width: 80% }
+	}
+
+	@media screen and (min-width: $md) {
 		.gt-modal-content { width: 70% }
 	}
-	@media screen and (min-width: $large) {
+	@media screen and (min-width: $xl) {
 		.gt-modal-content { width: 800px }
 	}
 }
