@@ -9,7 +9,7 @@ var DIR = {
 	MAP: 'map'
 };
 
-/* variables */
+// variables
 var paths = {
 	src: {
 		gt_scss: 'css/**/*.scss',
