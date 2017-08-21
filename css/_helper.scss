@@ -1,3 +1,6 @@
+//Accessibility
+.gt-screen-out {overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px }
+
 //Float
 .gt-float-left { float:left!important }
 .gt-float-right { float:right!important }
@@ -23,7 +26,7 @@
 .gt-block { display:block!important; }
 .gt-inline { display: inline!important; }
 .gt-inline-block { display:inline-block!important; }
-.gt-hide { display:none!important; }
+.gt-hide { display:none; }
 
 //Text Size
 .gt-tiny { font-size:12px }
