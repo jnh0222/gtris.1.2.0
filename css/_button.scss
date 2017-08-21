@@ -1,4 +1,6 @@
 /*button*/
+
+//.gt-button and .gt-btn are based style for all buttons
 .gt-button, .gt-btn {
 	display:inline-block;
 	padding:8px 16px;
@@ -14,7 +16,11 @@
 	vertical-align: top;
 	border: 1px solid transparent;
 	user-select: none;
+	&:hover {
+		background-color: darken($gray-999, 10%);
+	}
 
+	//outline style
 	&.gt-button-outline, &.gt-btn-outline {
 		color: $gray-666;
     	background-color: $white;
@@ -24,81 +30,31 @@
 			background: $gray-ccc;
 		}
 	}
-
-	&.gt-button-outline-primary, &.gt-btn-outline-primary {
-		color: $primary;
-		border-color: $primary;
-		&:hover {
-			color: $white;
-			background: $primary;
-		}
-	}
-
-	&.gt-button-outline-success, &.gt-btn-outline-success {
-		color: $success;
-		border-color: $success;
-		&:hover {
-			color: $white;
-			background: $success;
-		}
-	}
-
-	&.gt-button-outline-info, &.gt-btn-outline-info {
-		color: $info;
-		border-color: $info;
-		&:hover {
-			color: $white;
-			background: $info;
-		}
-	}
-
-	&.gt-button-outline-warning, &.gt-btn-outline-warning {
-		color: $warning;
-		border-color: $warning;
-		&:hover {
-			color: $white;
-			background: $warning;
-		}
-	}
-
-	&.gt-button-outline-danger, &.gt-btn-outline-danger {
-		color: $danger;
-		border-color: $danger;
-		&:hover {
-			color: $white;
-			background: $danger;
-		}
-	}
-
-	&.gt-button-outline-primary, &.gt-btn-outline-primary,
-	&.gt-button-outline-success, &.gt-btn-outline-success,
-	&.gt-button-outline-info, &.gt-btn-outline-info,
-	&.gt-button-outline-warning, &.gt-btn-outline-warning,
-	&.gt-button-outline-danger, &.gt-btn-outline-danger {
+	&[class*='gt-button-outline-'],
+	&[class*='gt-btn-outline-'] {
 		background-color: $white;
 	}
 
-	&.gt-button-primary, &.gt-btn-primary {
-		background-color: $primary;
+	//color mapped style
+	$func_colors: (primary:$primary, success:$success, info:$info, warning:$warning, danger:$danger);
+	@each $name, $color in $func_colors {
+		&.gt-button-outline-#{$name}, &.gt-btn-outline-#{$name} {
+			color: $color;
+			border-color: $color;
+			&:hover {
+				color: $white;
+				background-color: $color;
+			}
+		}
+		&.gt-button-#{$name}, &.gt-btn-#{$name} {
+			background-color: $color;
+			&:hover {
+				background-color: darken($color, 10%);
+			}
+		}
 	}
 
-	&.gt-button-success, &.gt-btn-success {
-		background-color: $success;
-	}
-
-	&.gt-button-info, &.gt-btn-info {
-		background-color: $info;
-	}
-
-	&.gt-button-warning, &.gt-btn-warning {
-		background-color: $warning;
-	}
-
-	&.gt-button-danger, &.gt-btn-danger {
-		background-color: $danger;
-	}
-
-	//disabled
+	//disabled style
 	&.gt-button[disabled], &.gt-btn[disabled],
 	&.gt-button-disabled, &.gt-btn-disabled,
 	&.gt-button-disabled:hover,
@@ -108,6 +64,7 @@
 		opacity: .5;
 	}
 
+	//block style
 	&.gt-button-block, &.gt-btn-block {
 		width: 100%;
 		display: block;
