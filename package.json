@@ -1,7 +1,7 @@
 {
   "name": "gtris.1.2.0",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.2.0",
+  "description": "front-end framework for developing projects on the web",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/jnh0222/gtris.1.2.0.git"
   },
-  "author": "",
+  "author": "gabia front-end dev team",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jnh0222/gtris.1.2.0/issues"
