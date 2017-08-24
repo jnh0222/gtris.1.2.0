@@ -815,7 +815,6 @@
 		toggleDD: function(event) {
 			event.stopPropagation();
 			var $dd_button = $(event.target);
-			console.log($dd_button)
 			$dd_button.parents('.gt-dropdown').toggleClass('gt-active');
 		},
 
@@ -944,7 +943,7 @@
 			$toast.animate({opacity: 0}, 0);
 			$toast.animate({opacity: 0.8}, 500);
 			
-			console.log( "<code>" + options.message + "</code>" )
+			//console.log( "<code>" + options.message + "</code>" )
 
 			$toast.html( options.message );
 
