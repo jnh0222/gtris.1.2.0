@@ -160,6 +160,7 @@ h1 {margin: 10px 0 20px}
     <button class="gt-button">Button <i class="fa fa-check-circle"></i></button>
     <button class="gt-button">Button <i class="fa fa-question-circle"></i></button>
 
+
     <!-- <button class="gt-button" type="button" name="button">normal</button>
     <button class="gt-button gt-button-primary" type="button" name="button">primary</button>
     <button class="gt-button gt-button-success" type="button" name="button">success</button>
@@ -844,7 +845,7 @@ h1 {margin: 10px 0 20px}
 	<div class="gt-row" style="margin:0 -8px">
 		<div class="gt-col gt-l3">
 			<div class="panel">
-				<div class="panel-heading">Panel Header</div>
+				<div class="panel-header">Panel Header</div>
 				<div class="panel-body">
 					<p>...</p>
 				</div>
@@ -856,7 +857,7 @@ h1 {margin: 10px 0 20px}
 		</div>
 		<div class="gt-col gt-l3">
 			<div class="panel gt-center">
-				<div class="panel-heading">Panel Header</div>
+				<div class="panel-header">Panel Header</div>
 				<div class="panel-body">
 					<p>...</p>
 				</div>
@@ -868,7 +869,7 @@ h1 {margin: 10px 0 20px}
 		</div>
 		<div class="gt-col gt-l3">
 			<div class="panel">
-				<div class="panel-heading">Panel Header</div>
+				<div class="panel-header">Panel Header</div>
 				<div class="panel-body">
 					<p>...</p>
 				</div>
@@ -880,7 +881,7 @@ h1 {margin: 10px 0 20px}
 		</div>
 		<div class="gt-col gt-l3">
 			<div class="panel">
-				<div class="panel-heading">Panel Header</div>
+				<div class="panel-header">Panel Header</div>
 				<div class="panel-body">
 					<p>...</p>
 				</div>
@@ -896,36 +897,37 @@ h1 {margin: 10px 0 20px}
 <div style="padding:3%">
     <h1>Accordion</h1>
     <div class="gt-collapse" id="accordion">
+        <button class="gt-btn gt-btn-danger" id="temp-btn1" data-collapse="allview">전체 보기</button>
         <ul>
             <li class="gt-collapse-item gt-active">
-                <a href="javascript:void(0)" class="gt-collapse-header" data-collapse="header">
+                <a href="javascript:void(0)" class="gt-collapse-header">
                     파트너는 가비아 회원이여야 하나요?<span class="gt-collapse-arrow fa fa-angle-down"></span>
                 </a>
-                <div class="gt-collapse-content" data-collapse="content">
+                <div class="gt-collapse-content">
                     제휴 파트너의 경우는 가비아 회원이 아니더라도 파트너 신청만으로 서비스 이용이 가능합니다. 링크 파트너는 가비아 회원가입이 되어 있어야 서비스 신청이 가능합니다.
                 </div>
             </li>
             <li class="gt-collapse-item">
-                <a href="javascript:void(0)" class="gt-collapse-header" data-collapse="header">
+                <a href="javascript:void(0)" class="gt-collapse-header">
                     디자인샵 입점은 어떻게 하나요?<span class="gt-collapse-arrow fa fa-angle-down"></span>
                 </a>
-                <div class="gt-collapse-content gt-hide" data-collapse="content">
+                <div class="gt-collapse-content gt-hide">
                     가비아 사이트내의 디자인샵에 입점하기 위해서는 "제휴파트너""신청이 완료되어야 합니다. 제휴 파트너 관리자 페이지에서 파트너들이 제작한 디자인 스킨을 업로드하고 가비아를 통해서 판매를 할 수 있습니다.
                 </div>
             </li>
             <li class="gt-collapse-item">
-                <a href="javascript:void(0)" class="gt-collapse-header" data-collapse="header">
+                <a href="javascript:void(0)" class="gt-collapse-header">
                     예치금 결제를 한후 언제쯤이면 사용할수 있습니까?<span class="gt-collapse-arrow fa fa-angle-down"></span>
                 </a>
-                <div class="gt-collapse-content gt-hide" data-collapse="content">
+                <div class="gt-collapse-content gt-hide">
                     예치금 결제를 하면 실시간으로 입금확인이 이루어 집니다. 입금확인된 예치금은 파트너 관리자내의 "예치금관리"에서 상세 내역을 보실수 있고 이후부터는 바로 서비스 신청이 가능합니다.
                 </div>
             </li>
             <li class="gt-collapse-item">
-                <a href="javascript:void(0)" class="gt-collapse-header" data-collapse="header">
+                <a href="javascript:void(0)" class="gt-collapse-header">
                     파트너 정산은 어떻게 이루어지는지요?<span class="gt-collapse-arrow fa fa-angle-down"></span>
                 </a>
-                <div class="gt-collapse-content gt-hide" data-collapse="content">
+                <div class="gt-collapse-content gt-hide">
                     제휴 파트너의 경우 관리툴 정산 메뉴에서 상세 정산내역을 볼수 있습니다. 정산 내역에 따라 월1회 세금계산서 신청을 통해 세금계산서를 발행합니다. 링크 파트너의 경우 3개 이상의 호스팅서비스를 유지하는 파트너에 대하여 호스팅서비스의 건별 월 기본가의 총액에 따라 A,B,C의 3개 등급으로 분류하여 배분액(월기본가 합계액 X 해당 수익율)을 정산하여 격월로 파트너 계좌로 입금합니다.
                 </div>
             </li>
@@ -934,37 +936,45 @@ h1 {margin: 10px 0 20px}
 
     <br><br>
     <div class="gt-collapse" id="accordion-expandable">
-    	<button class="gt-btn" id="temp-btn">전체보기</button>
+    	<button class="gt-btn" id="temp-btn2" data-collapse="allview">전체 보기</button>
         <ul>
-            <li class="gt-collapse-item gt-active">
-                <a href="javascript:void(0)" class="gt-collapse-header" data-collapse="header">
+            <li class="gt-collapse-item">
+                <a href="javascript:void(0)" class="gt-collapse-header">
                     파트너는 가비아 회원이여야 하나요?<span class="gt-collapse-arrow fa fa-angle-down"></span>
                 </a>
-                <div class="gt-collapse-content" data-collapse="content">
+                <div class="gt-collapse-content gt-hide">
                     제휴 파트너의 경우는 가비아 회원이 아니더라도 파트너 신청만으로 서비스 이용이 가능합니다. 링크 파트너는 가비아 회원가입이 되어 있어야 서비스 신청이 가능합니다.
                 </div>
             </li>
             <li class="gt-collapse-item">
-                <a href="javascript:void(0)" class="gt-collapse-header" data-collapse="header">
+                <a href="javascript:void(0)" class="gt-collapse-header">
                     디자인샵 입점은 어떻게 하나요?<span class="gt-collapse-arrow fa fa-angle-down"></span>
                 </a>
-                <div class="gt-collapse-content gt-hide" data-collapse="content">
+                <div class="gt-collapse-content gt-hide">
                     가비아 사이트내의 디자인샵에 입점하기 위해서는 "제휴파트너""신청이 완료되어야 합니다. 제휴 파트너 관리자 페이지에서 파트너들이 제작한 디자인 스킨을 업로드하고 가비아를 통해서 판매를 할 수 있습니다.
                 </div>
             </li>
             <li class="gt-collapse-item">
-                <a href="javascript:void(0)" class="gt-collapse-header" data-collapse="header">
+                <a href="javascript:void(0)" class="gt-collapse-header">
                     예치금 결제를 한후 언제쯤이면 사용할수 있습니까?<span class="gt-collapse-arrow fa fa-angle-down"></span>
                 </a>
-                <div class="gt-collapse-content gt-hide" data-collapse="content">
+                <div class="gt-collapse-content gt-hide">
                     예치금 결제를 하면 실시간으로 입금확인이 이루어 집니다. 입금확인된 예치금은 파트너 관리자내의 "예치금관리"에서 상세 내역을 보실수 있고 이후부터는 바로 서비스 신청이 가능합니다.
                 </div>
             </li>
             <li class="gt-collapse-item">
-                <a href="javascript:void(0)" class="gt-collapse-header" data-collapse="header">
+                <a href="javascript:void(0)" class="gt-collapse-header">
                     파트너 정산은 어떻게 이루어지는지요?<span class="gt-collapse-arrow fa fa-angle-down"></span>
                 </a>
-                <div class="gt-collapse-content gt-hide" data-collapse="content">
+                <div class="gt-collapse-content gt-hide">
+                    제휴 파트너의 경우 관리툴 정산 메뉴에서 상세 정산내역을 볼수 있습니다. 정산 내역에 따라 월1회 세금계산서 신청을 통해 세금계산서를 발행합니다. 링크 파트너의 경우 3개 이상의 호스팅서비스를 유지하는 파트너에 대하여 호스팅서비스의 건별 월 기본가의 총액에 따라 A,B,C의 3개 등급으로 분류하여 배분액(월기본가 합계액 X 해당 수익율)을 정산하여 격월로 파트너 계좌로 입금합니다.
+                </div>
+            </li>
+            <li class="gt-collapse-item">
+                <a href="javascript:void(0)" class="gt-collapse-header">
+                    파트너 정산은 어떻게 이루어지는지요?<span class="gt-collapse-arrow fa fa-angle-down"></span>
+                </a>
+                <div class="gt-collapse-content gt-hide">
                     제휴 파트너의 경우 관리툴 정산 메뉴에서 상세 정산내역을 볼수 있습니다. 정산 내역에 따라 월1회 세금계산서 신청을 통해 세금계산서를 발행합니다. 링크 파트너의 경우 3개 이상의 호스팅서비스를 유지하는 파트너에 대하여 호스팅서비스의 건별 월 기본가의 총액에 따라 A,B,C의 3개 등급으로 분류하여 배분액(월기본가 합계액 X 해당 수익율)을 정산하여 격월로 파트너 계좌로 입금합니다.
                 </div>
             </li>
@@ -975,7 +985,7 @@ h1 {margin: 10px 0 20px}
 <div style="padding:3%">
     <h1>Tab</h1>
     <div class="gt-tab">
-        <div class="gt-tab-nav" data-ui="gt-tab" id="myTab1">
+        <div class="gt-tab-nav" id="myTab1">
             <a href="javascript:void(0);" class="gt-nav-item gt-active" data-id="tab1">요약</a>
             <a href="javascript:void(0);" class="gt-nav-item" data-id="tab2">g클라우드 서버</a>
             <a href="javascript:void(0);" class="gt-nav-item" data-id="tab3">g클라우드 서버 스냅샷/이미지</a>
@@ -999,7 +1009,7 @@ h1 {margin: 10px 0 20px}
     <div class="gt-center">
 
     	<div class="gt-padding">
-	    	<div class="gt-tooltip" data-ui="gt-tooltip">
+	    	<div class="gt-tooltip" data-ui="tooltip">
 	            <button class="gt-button" data-tooltip="button">툴팁 버튼(default)</button>
 	            <div class="gt-tt-content">
 	                <span class="gt-triangle"></span>
@@ -1016,7 +1026,7 @@ h1 {margin: 10px 0 20px}
 	        </div>
         </div>
 
-        <div class="gt-tooltip gt-tooltip-primary" data-ui="gt-tooltip" data-placement="left">
+        <div class="gt-tooltip gt-tooltip-primary" data-ui="tooltip" data-placement="left">
             <button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼(left)</button>
             <div class="gt-tt-content">
                 <span class="gt-triangle"></span>
@@ -1024,7 +1034,7 @@ h1 {margin: 10px 0 20px}
             </div>
         </div>
 
-        <div class="gt-tooltip gt-tooltip-success" data-ui="gt-tooltip" data-placement="bottom">
+        <div class="gt-tooltip gt-tooltip-success" data-ui="tooltip" data-placement="bottom">
             <button class="gt-button gt-btn-success" data-tooltip="button">툴팁 버튼(bottom)</button>
             <div class="gt-tt-content">
                 <span class="gt-triangle"></span>
@@ -1032,7 +1042,7 @@ h1 {margin: 10px 0 20px}
             </div>
         </div>
 
-        <div class="gt-tooltip gt-tooltip-info" data-ui="gt-tooltip" data-placement="top">
+        <div class="gt-tooltip gt-tooltip-info" data-ui="tooltip" data-placement="top">
             <button class="gt-button gt-btn-info" data-tooltip="button">툴팁 버튼(top)</button>
             <div class="gt-tt-content">
                 <span class="gt-triangle"></span>
@@ -1040,7 +1050,7 @@ h1 {margin: 10px 0 20px}
             </div>
         </div>
 
-		<div class="gt-tooltip gt-tooltip-warning" data-ui="gt-tooltip" data-placement="right">
+		<div class="gt-tooltip gt-tooltip-warning" data-ui="tooltip" data-placement="right">
 			<button class="gt-button gt-btn-warning" data-tooltip="button">툴팁 버튼(right)</button>
 			<div class="gt-tt-content">
 				<span class="gt-triangle"></span>
@@ -1048,7 +1058,7 @@ h1 {margin: 10px 0 20px}
 			</div>
 		</div>
 
-		<div class="gt-tooltip gt-tooltip-danger" data-ui="gt-tooltip" data-placement="right">
+		<div class="gt-tooltip gt-tooltip-danger" data-ui="tooltip" data-placement="right">
 			<button class="gt-button gt-btn-danger" data-tooltip="button">툴팁 버튼(right)</button>
 			<div class="gt-tt-content">
 				<span class="gt-triangle"></span>
@@ -1060,7 +1070,7 @@ h1 {margin: 10px 0 20px}
 
 <div style="padding:3%">
     <h1>Dropdown</h1>
-    <div class="gt-dropdown" data-ui="gt-dropdown">
+    <div class="gt-dropdown" data-ui="dropdown">
 		<button class="gt-btn" type="button" name="button">Dropdown menu</button>
 		<ul class="gt-dd-menu">
 			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
@@ -1071,7 +1081,7 @@ h1 {margin: 10px 0 20px}
 		</ul>
 	</div>
 
-	<div class="gt-dropdown" data-ui="gt-dropdown">
+	<div class="gt-dropdown" data-ui="dropdown">
 		<button class="gt-btn gt-btn-primary" type="button" name="button">Dropdown menu <i class="fa fa-caret-down"></i></button>
 		<ul class="gt-dd-menu">
 			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
@@ -1082,7 +1092,7 @@ h1 {margin: 10px 0 20px}
 		</ul>
 	</div>
 
-	<div class="gt-dropdown" data-ui="gt-dropdown">
+	<div class="gt-dropdown" data-ui="dropdown">
 		<button class="gt-btn gt-btn-success" type="button" name="button">Dropdown menu <i class="fa fa-angle-down"></i></button>
 		<ul class="gt-dd-menu">
 			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
@@ -1093,7 +1103,7 @@ h1 {margin: 10px 0 20px}
 		</ul>
 	</div>
 
-	<div class="gt-dropdown" data-ui="gt-dropdown">
+	<div class="gt-dropdown" data-ui="dropdown">
 		<button class="gt-btn gt-btn-info" type="button" name="button">Dropdown menu</button>
 		<ul class="gt-dd-menu">
 			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
@@ -1104,7 +1114,7 @@ h1 {margin: 10px 0 20px}
 		</ul>
 	</div>
 
-	<div class="gt-dropdown" data-ui="gt-dropdown">
+	<div class="gt-dropdown" data-ui="dropdown">
 		<button class="gt-btn gt-btn-warning" type="button" name="button">Dropdown menu</button>
 		<ul class="gt-dd-menu">
 			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
@@ -1115,7 +1125,7 @@ h1 {margin: 10px 0 20px}
 		</ul>
 	</div>
 
-	<div class="gt-dropdown" data-ui="gt-dropdown">
+	<div class="gt-dropdown" data-ui="dropdown">
 		<button class="gt-btn gt-btn-danger" type="button" name="button">Dropdown menu</button>
 		<ul class="gt-dd-menu">
 			<li><a class="gt-dd-item" href="http://www.gabia.com">www.gabia.com</a></li>
@@ -1298,6 +1308,8 @@ h1 {margin: 10px 0 20px}
 <script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/gtris.js"></script>
 <script type="text/javascript">
+
+
 var osName = gtris.util.os.name;
 var browserName = gtris.util.browser.name;
 var browserVersion = gtris.util.browser.version;
@@ -1405,7 +1417,7 @@ $('#toast-btn-danger').click(function(event) {
 });
 
 gtris.ui.dropdown.init({
-    target : $(document).find('[data-ui="gt-dropdown"]')
+    target : $(document).find('[data-ui="dropdown"]')
 });
 
 gtris.ui.tab.init({
@@ -1418,7 +1430,7 @@ gtris.ui.tab.init({
 });
 
 gtris.ui.tooltip.init({
-    target : $(document).find('[data-ui="gt-tooltip"]')
+    target : $(document).find('[data-ui="tooltip"]')
 });
 
 gtris.ui.tooltip.init({
@@ -1428,13 +1440,24 @@ gtris.ui.tooltip.init({
 
 
 gtris.ui.collapse.init({
-    target: '#accordion'
+    target: '#accordion',
+    expanded: function() {
+        console.log('모두 열려진 상태입니다.')
+    },
+    collapsed: function() {
+        console.log('모두 닫혀진 상태입니다.')
+    }
 });
 
 gtris.ui.collapse.init({
     target: '#accordion-expandable',
-    expandable: true,
-    slideTime: 500
+    slideTime: 250,
+    expanded: function() {
+        console.log('모두 열려진 상태입니다.')
+    },
+    collapsed: function() {
+        console.log('모두 닫혀진 상태입니다.')
+    }
 });
 
 $('#id-modal-btn').click(function(event) {
