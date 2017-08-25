@@ -20,7 +20,7 @@
 		.gt-xs12 { width: 99.99999% }
 	}
 
-	@media (min-width: $xs) {
+	@media (min-width: $sm) {
 		.gt-s1 { width: 8.33333% }
 		.gt-s2 { width: 16.66666% }
 		.gt-s3 { width: 24.99999% }
@@ -35,7 +35,7 @@
 		.gt-s12 { width: 99.99999% }
 	}
 
-	@media (min-width: $sm) {
+	@media (min-width: $md) {
 		.gt-m1 { width: 8.33333% }
 		.gt-m2 { width: 16.66666% }
 		.gt-m3 { width: 24.99999% }
@@ -50,7 +50,7 @@
 		.gt-m12 { width: 99.99999% }
 	}
 
-	@media (min-width: $md) {
+	@media (min-width: $lg) {
 		.gt-l1 { width: 8.33333% }
 		.gt-l2 { width: 16.66666% }
 		.gt-l3 { width: 24.99999% }
