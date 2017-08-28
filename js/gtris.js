@@ -178,6 +178,7 @@
 	gtris.util.getCookie = getCookie;
 
 })(window.gtris);
+
 (function(gtris) {
     'use strict';
     if (!gtris) {
@@ -563,37 +564,70 @@
 
 		init: function(obj) {
 			var _obj = obj;
-			if(!_obj.expandable) _obj.expandable = false;
 			if(!_obj.slideTime) _obj.slideTime = 250;
+			if(!_obj.isAllExpanded) _obj.isAllExpanded = false;
 			this.addEvent(_obj);
 		},
 
 		collapseContent: function(event) {
 			event.preventDefault();
-			var obj = event.data.obj;
-			var $target = $(obj.target);
+			var _obj = event.data.obj;
+			var $target = $(_obj.target);
 			var $collapseHeader = $(event.target);
-			var $thisContent = $collapseHeader.closest('.gt-collapse-item').find('[data-collapse="content"]');
-			var $collapseContent = $target.find('[data-collapse="content"]');
+			var $collapseCnt = $target.find('.gt-collapse-content');
+			var $thisCollapseCnt = $collapseHeader.closest('.gt-collapse-item').find('.gt-collapse-content');
 			
-			//expandable
-			if(!obj.expandable) {
-				$collapseContent.parent().removeClass('gt-active');
-				$collapseContent.slideUp(obj.slideTime);
-			}
 			//show & hide
-			if($thisContent.is(':hidden')) {
-				$thisContent.slideDown(obj.slideTime);
+			if($thisCollapseCnt.is(':hidden')) {
+				$thisCollapseCnt.slideDown(_obj.slideTime);
 				$collapseHeader.closest('.gt-collapse-item').addClass('gt-active');
 			}else{
-				$thisContent.slideUp(obj.slideTime);
+				$thisCollapseCnt.slideUp(_obj.slideTime);
 				$collapseHeader.parent().removeClass('gt-active');
+			}
+
+			var $collapseItem = $target.find('.gt-collapse-item');
+			var $activeCollapseItem = $target.find('.gt-collapse-item.gt-active');
+
+			_obj.isAllExpanded = false;
+			if( $collapseItem.length === $activeCollapseItem.length ) {
+				_obj.isAllExpanded = true;
+				if(_obj.expanded) return _obj.expanded($target);
+			}
+
+			if($activeCollapseItem.length === 0 || $activeCollapseItem.length < $collapseItem.length) {
+				if(_obj.collapsed) return _obj.collapsed($target);
+			}			
+		},
+
+		toggleCollapse: function(event) {
+			event.preventDefault();
+			var _obj = event.data.obj;
+			var $target = $(_obj.target);
+			var $allViewBtn = $(event.target);
+			var thisCollapseItem = $allViewBtn.parents('.gt-collapse').find('.gt-collapse-item');
+			var thisCollapseCnt = $allViewBtn.parents('.gt-collapse').find('.gt-collapse-content');
+			
+			//allViewBtn toggle class
+			$allViewBtn.toggleClass('gt-dropdown-expanded');
+
+			//show & hide
+			if(_obj.isAllExpanded) {
+				_obj.isAllExpanded = false;
+				thisCollapseItem.removeClass('gt-active');
+				thisCollapseCnt.slideUp(_obj.slideTime);
+				if(_obj.collapsed) return _obj.collapsed($target);
+			}else{
+				_obj.isAllExpanded = true;
+				thisCollapseItem.addClass('gt-active');
+				thisCollapseCnt.slideDown(_obj.slideTime);
+				if(_obj.expanded) return _obj.expanded($target);
 			}
 		},
 
 		addEvent: function(obj) {
-			var $acd_head = $(obj.target).find('[data-collapse="header"]');
-			$acd_head.on('click', { obj: obj }, this.collapseContent);
+			$(obj.target).find('.gt-collapse-header').on('click', { obj: obj }, this.collapseContent);
+			$(obj.target).find('[data-collapse="allview"]').on('click', { obj: obj }, this.toggleCollapse);
 		}
 	};
 
