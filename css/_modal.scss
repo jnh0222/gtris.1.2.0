@@ -50,6 +50,7 @@
 		.gt-modal-content { width: 800px }
 	}
 	
+	//modal animate
 	.gt-animate-overlay {animation:animatedimmed 0.2s forwards}
 	@keyframes animatedimmed {
 		0% {background:rgba(0,0,0,0)}
