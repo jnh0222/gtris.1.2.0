@@ -5,7 +5,7 @@
 		width: 100%
 	}
 
-	@media (max-width: $xs) {
+	@media (max-width: $sm) {
 		.gt-xs1 { width: 8.33333% }
 		.gt-xs2 { width: 16.66666% }
 		.gt-xs3 { width: 24.99999% }
@@ -21,48 +21,48 @@
 	}
 
 	@media (min-width: $sm) {
-		.gt-s1 { width: 8.33333% }
-		.gt-s2 { width: 16.66666% }
-		.gt-s3 { width: 24.99999% }
-		.gt-s4 { width: 33.33333% }
-		.gt-s5 { width: 41.66666% }
-		.gt-s6 { width: 49.99999% }
-		.gt-s7 { width: 58.33333% }
-		.gt-s8 { width: 66.66666% }
-		.gt-s9 { width: 74.99999% }
-		.gt-s10 { width: 83.33333% }
-		.gt-s11 { width: 91.66666% }
-		.gt-s12 { width: 99.99999% }
+		.gt-sm1 { width: 8.33333% }
+		.gt-sm2 { width: 16.66666% }
+		.gt-sm3 { width: 24.99999% }
+		.gt-sm4 { width: 33.33333% }
+		.gt-sm5 { width: 41.66666% }
+		.gt-sm6 { width: 49.99999% }
+		.gt-sm7 { width: 58.33333% }
+		.gt-sm8 { width: 66.66666% }
+		.gt-sm9 { width: 74.99999% }
+		.gt-sm10 { width: 83.33333% }
+		.gt-sm11 { width: 91.66666% }
+		.gt-sm12 { width: 99.99999% }
 	}
 
 	@media (min-width: $md) {
-		.gt-m1 { width: 8.33333% }
-		.gt-m2 { width: 16.66666% }
-		.gt-m3 { width: 24.99999% }
-		.gt-m4 { width: 33.33333% }
-		.gt-m5 { width: 41.66666% }
-		.gt-m6 { width: 49.99999% }
-		.gt-m7 { width: 58.33333% }
-		.gt-m8 { width: 66.66666% }
-		.gt-m9 { width: 74.99999% }
-		.gt-m10 { width: 83.33333% }
-		.gt-m11 { width: 91.66666% }
-		.gt-m12 { width: 99.99999% }
+		.gt-md1 { width: 8.33333% }
+		.gt-md2 { width: 16.66666% }
+		.gt-md3 { width: 24.99999% }
+		.gt-md4 { width: 33.33333% }
+		.gt-md5 { width: 41.66666% }
+		.gt-md6 { width: 49.99999% }
+		.gt-md7 { width: 58.33333% }
+		.gt-md8 { width: 66.66666% }
+		.gt-md9 { width: 74.99999% }
+		.gt-md10 { width: 83.33333% }
+		.gt-md11 { width: 91.66666% }
+		.gt-md12 { width: 99.99999% }
 	}
 
 	@media (min-width: $lg) {
-		.gt-l1 { width: 8.33333% }
-		.gt-l2 { width: 16.66666% }
-		.gt-l3 { width: 24.99999% }
-		.gt-l4 { width: 33.33333% }
-		.gt-l5 { width: 41.66666% }
-		.gt-l6 { width: 49.99999% }
-		.gt-l7 { width: 58.33333% }
-		.gt-l8 { width: 66.66666% }
-		.gt-l9 { width: 74.99999% }
-		.gt-l10 { width: 83.33333% }
-		.gt-l11 { width: 91.66666% }
-		.gt-l12 { width: 99.99999% }
+		.gt-lg1 { width: 8.33333% }
+		.gt-lg2 { width: 16.66666% }
+		.gt-lg3 { width: 24.99999% }
+		.gt-lg4 { width: 33.33333% }
+		.gt-lg5 { width: 41.66666% }
+		.gt-lg6 { width: 49.99999% }
+		.gt-lg7 { width: 58.33333% }
+		.gt-lg8 { width: 66.66666% }
+		.gt-lg9 { width: 74.99999% }
+		.gt-lg10 { width: 83.33333% }
+		.gt-lg11 { width: 91.66666% }
+		.gt-lg12 { width: 99.99999% }
 	}
 
 	@media (min-width: $xl) {
