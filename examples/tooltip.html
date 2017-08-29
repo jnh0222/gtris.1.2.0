@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="../css/gtris.css">
+<title>Tooltip</title>
+</head>
+<body>
+
+<div style="padding:3%">
+	<h1>Tooltip</h1>
+	<br>
+	<div class="gt-padding">
+		<div class="gt-tooltip" data-ui="tooltip">
+			<button class="gt-button" data-tooltip="button">툴팁 버튼(default)</button>
+			<div class="gt-tt-content">
+				<span class="gt-triangle"></span>
+				<p class="gt-tiny">안녕하세요. 저는 굉장히 심플한 툴팁이에요.</p>
+			</div>
+		</div>
+
+		<div class="gt-tooltip" id="tooltipMouseHover">
+			<button class="gt-button" data-tooltip="button">툴팁 버튼(MouseHover)</button>
+			<div class="gt-tt-content">
+				<span class="gt-triangle"></span>
+				<p class="gt-tiny">마우스 오버로 툴팁을 활성화 할 수 있습니다.</p>
+			</div>
+		</div>
+
+		<div class="gt-tooltip gt-tooltip-primary" data-ui="tooltip" data-placement="left">
+			<button class="gt-button gt-btn-primary" data-tooltip="button">툴팁 버튼(left)</button>
+			<div class="gt-tt-content">
+				<span class="gt-triangle"></span>
+				<p class="gt-small">가급적이면 한 줄만 사용해주세요.</p>
+			</div>
+		</div>
+
+		<div class="gt-tooltip gt-tooltip-success" data-ui="tooltip" data-placement="bottom">
+			<button class="gt-button gt-btn-success" data-tooltip="button">툴팁 버튼(bottom)</button>
+			<div class="gt-tt-content">
+				<span class="gt-triangle"></span>
+				<p>저를 마우스로 드래그 해보세요.</p>
+			</div>
+		</div>
+
+		<div class="gt-tooltip gt-tooltip-info" data-ui="tooltip" data-placement="top">
+			<button class="gt-button gt-btn-info" data-tooltip="button">툴팁 버튼(top)</button>
+			<div class="gt-tt-content">
+				<span class="gt-triangle"></span>
+				<p>user-select 속성이 none입니다.</p>
+			</div>
+		</div>
+
+		<div class="gt-tooltip gt-tooltip-warning" data-ui="tooltip" data-placement="right">
+			<button class="gt-button gt-btn-warning" data-tooltip="button">툴팁 버튼(right)</button>
+			<div class="gt-tt-content">
+				<span class="gt-triangle"></span>
+				<p>많이 사용해주세요</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/gtris.js"></script>
+<script type="text/javascript">
+gtris.ui.tooltip.init({
+	target : $(document).find('[data-ui="tooltip"]')
+});
+
+gtris.ui.tooltip.init({
+	target : $('#tooltipMouseHover'),
+	event: 'mouseover'
+});
+</script>
+</body>
+</html>

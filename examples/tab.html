@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="../css/gtris.css">
+<title>Tab</title>
+</head>
+<body>
+
+<div style="padding:3%">
+	<h1>Tab</h1>
+	<br>
+	<div class="gt-tab">
+		<div class="gt-tab-nav" id="myTab1">
+			<a href="javascript:void(0);" class="gt-nav-item gt-active" data-id="tab1">요약</a>
+			<a href="javascript:void(0);" class="gt-nav-item" data-id="tab2">g클라우드 서버</a>
+			<a href="javascript:void(0);" class="gt-nav-item" data-id="tab3">g클라우드 서버 스냅샷/이미지</a>
+		</div>
+		<div id="tab1" class="gt-border gt-padding-xlarge">
+			편안하게 영화를 감상하는 동안 컴퓨터가 해커들에게 조작 당하고 있을 수도 있다는 생각, 해본 적 있으신가요?
+			최근 영화 자막파일에 멀웨어, 랜섬웨어 등 악성코드를 심어 PC를 공격하는 신종 해킹 수법이 등장해 주의가 요구되고 있습니다.
+			얼마 전 랜섬웨어가 150개국 30만 대의 컴퓨터를 감염시킨데 이어, 영화 ‘캐리비안의 해적 5’가 해킹을 당해 디즈니에 거액의 비트코인을 요구한 사건이 발생했습니다. 국내에서도 지난 20일 토플 시험장에서 워너크라이 랜섬웨어 공격으로 PC가 마비되어 시험이 전면 취소되었는데, 불과 5일 만에 또 다른 신종 랜섬웨어가 나타난 것입니다.
+		</div>
+		<div id="tab2" class="gt-border gt-padding-xlarge gt-hide">
+			가비아 클라우드는 10분 이내에 서버를 생성하며, 가상의 리소스 자원을 임대하여 사용하는 서비스, 자유로운 서버 확장 및 사용한 만큼 비용 지불하는 경제적이며 ...
+		</div>
+		<div id="tab3" class="gt-border gt-padding-xlarge gt-hide">
+			일반적으로 홈페이지를 만들고 운영하기 위해서는 웹호스팅과 도메인이 필요합니다. 하지만 웹호스팅과 도메인이 있어야지만 홈페이지를 가질 수 있는 것은 아닙니다. 무료로 제공되는 ‘홈페이지 빌더 서비스’를 이용해서 홈페이지를 만들 수도 있기 때문입니다.
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/gtris.js"></script>
+<script type="text/javascript">
+gtris.ui.tab.init({
+    target: '#myTab1'
+});
+</script>
+
+</body>
+</html>

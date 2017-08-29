@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="../css/gtris.css">
+<title>Layer</title>
+</head>
+<body>
+
+<div style="padding:3%">
+	<h1>Layer</h1>
+	<br>
+	<div class="gt-layer" id="gtrisLayer1">
+		<button class="gt-button" data-layer="button">Layer Open(#myLayer1)</button>
+	</div>
+
+	<div class="gt-layer" id="gtrisLayer2">
+		<button class="gt-button gt-btn-info" data-layer="button">Layer Open(#myLayer2)</button>
+	</div>
+
+	<div class="gt-layer" id="gtrisLayer3">
+		<button class="gt-button gt-btn-danger" data-layer="button">Layer Open Callback Events</button>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/gtris.js"></script>
+<script type="text/javascript">
+$('#gtrisLayer1').click(function() {
+	gtris.ui.layer.open({
+		target: $(this),
+		url: 'layer/layer0.html',
+		id : '#myLayer1'
+	})
+});
+
+$('#gtrisLayer2').click(function() {
+	gtris.ui.layer.open({
+		target: $(this),
+		url: 'layer/layer0.html',
+		id : '#myLayer2'
+	})
+});
+
+$('#gtrisLayer3').click(function() {
+	gtris.ui.layer.open({
+		target: $(this),
+		url: 'layer/layer1.html',
+		id : '#myLayer2',
+		completed: function() {
+			alert('completed');
+			gtris.ui.tab.init({
+				target: '#layerTab'
+			})
+		},
+		closed: function() {
+			alert('closed');
+		}
+	})
+});
+</script>
+
+</body>
+</html>
