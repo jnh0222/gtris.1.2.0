@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 <title></title>
 <style>
+body {font-family: 'Spoqa Han Sans'}
 h1 {margin: 10px 0 20px}
 #color .gt-row > div {padding:50px;}
 .box {display: inline-block;
@@ -16,6 +17,32 @@ h1 {margin: 10px 0 20px}
     background-color: #f5f5f5;}
 svg.close {fill: #fff;}
 svg.close:hover{fill-opacity: .54; }
+@font-face {
+    font-family: 'Spoqa Han Sans Bold';
+    font-weight: 700;
+    src: local('Spoqa Han Sans Bold'),
+    url('https://static.gabia.com/www2/font/SpoqaHanSansBold.woff2') format('woff2'),
+    url('https://static.gabia.com/www2/font/SpoqaHanSansBold.woff') format('woff'),
+    url('https://static.gabia.com/www2/font/SpoqaHanSansBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 400;
+    src: local('Spoqa Han Sans Regular'),
+    url('https://static.gabia.com/www2/font/SpoqaHanSansRegular.woff2') format('woff2'),
+    url('https://static.gabia.com/www2/font/SpoqaHanSansRegular.woff') format('woff'),
+    url('https://static.gabia.com/www2/font/SpoqaHanSansRegular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Spoqa Han Sans Light';
+    font-weight: 300;
+    src: local('Spoqa Han Sans Light'),
+    url('https://static.gabia.com/www2/font/SpoqaHanSansLight.woff2') format('woff2'),
+    url('https://static.gabia.com/www2/font/SpoqaHanSansLight.woff') format('woff'),
+    url('https://static.gabia.com/www2/font/SpoqaHanSansLight.ttf') format('truetype');
+}
 </style>
 </head>
 <body style="margin:83px 0">
@@ -32,6 +59,11 @@ svg.close:hover{fill-opacity: .54; }
 <div class="gt-fixed-bottom gt-deep-orange">
 	<p class="gt-text-white gt-xlarge gt-bold" style="padding:20px 20px; max-height:85px;">Fixed Bottom</p>
 </div>
+
+
+<p>
+    Regular와 Thin의 사이 폰트 스타일인 Light를 추가했습니다. 웹 페이지에서 큰 글자 텍스트에 Thin을 쓰기에는 지나치게 얇고 또 Regular는 다소 두껍습니다. 이제, 스포카 한 산스 Light를 사용하시면 됩니다. 큰 글자 크기에서도 Regular와 비슷한 회색도로 보여줄 수 있습니다.
+</p>
 
 <div class="gt-border box"></div>
 <div class="gt-border gt-border-primary box gt-border-top-0"></div>
