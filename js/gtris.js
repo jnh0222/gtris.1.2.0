@@ -11,7 +11,7 @@
         var _num = String(num).replace(/(\d)(?=(\d{3})+$)/g, '$1,');
 		return _num;
     };
-    
+
     gtris.util.addComma = addComma;
 
 })(window.gtris);
@@ -100,7 +100,7 @@
     }
 
     var browser = function() {
-        
+
 		var browserPool = [
 			{detectStr: "MSIE", name: "ie"},
 			{detectStr: "Trident", name: "ie"},
@@ -151,14 +151,14 @@
 	if (!gtris.util) {
 		gtris.util = window.gtris.util = {};
 	}
-	
+
 	var setCookie = function(cname, cvalue, exdays) {
 		var d = new Date();
 		d.setTime(d.getTime() + (exdays*24*60*60*1000));
 		var expires = "expires=" + d.toGMTString();
 		document.cookie = cname + "=" + cvalue + "; " + expires;
 	};
-	
+
 	var getCookie = function(cname) {
 		var name = cname + "=";
 		var ca = document.cookie.split(';');
@@ -173,7 +173,7 @@
 		}
 		return "";
 	};
-	
+
 	gtris.util.setCookie = setCookie;
 	gtris.util.getCookie = getCookie;
 
@@ -576,7 +576,7 @@
 			var $collapseHeader = $(event.target);
 			var $collapseCnt = $target.find('.gt-collapse-content');
 			var $thisCollapseCnt = $collapseHeader.closest('.gt-collapse-item').find('.gt-collapse-content');
-			
+
 			//show & hide
 			if($thisCollapseCnt.is(':hidden')) {
 				$thisCollapseCnt.slideDown(_obj.slideTime);
@@ -597,7 +597,7 @@
 
 			if($activeCollapseItem.length === 0 || $activeCollapseItem.length < $collapseItem.length) {
 				if(_obj.collapsed) return _obj.collapsed($target);
-			}			
+			}
 		},
 
 		toggleCollapse: function(event) {
@@ -607,7 +607,7 @@
 			var $allViewBtn = $(event.target);
 			var thisCollapseItem = $allViewBtn.parents('.gt-collapse').find('.gt-collapse-item');
 			var thisCollapseCnt = $allViewBtn.parents('.gt-collapse').find('.gt-collapse-content');
-			
+
 			//allViewBtn toggle class
 			$allViewBtn.toggleClass('gt-dropdown-expanded');
 
@@ -645,7 +645,7 @@
 	}
 
 	var tooltip = {
-		
+
 		init: function(obj) {
 			var $tt = obj.target;
 			var event_trigger = obj.event;
@@ -663,7 +663,7 @@
 				default:
 				event_trigger = 'click';
 			}
-			
+
 			this.addEvent($tt, event_trigger);
 		},
 
@@ -678,7 +678,7 @@
 			}else{
 				$tt_cnt.hide();
 			}
-			
+
 			var root = tooltip;
 			root.setPosition(placement, $tt_btn, $tt_cnt);
 		},
@@ -751,7 +751,7 @@
 		addEvent: function($tt, event_trigger) {
 			$tt.find('[data-tooltip="button"]').on(event_trigger, this.toggleTT);
 			$tt.find('[data-tooltip="hide"]').on('click', this.hideTT);
-		} 
+		}
 	};
 
 	gtris.ui.tooltip = tooltip;
@@ -769,23 +769,19 @@
 	var tab = {
 		init: function(obj) {
 			var _obj = obj;
-			this.attachTabEvent(_obj);		
+			this.attachTabEvent(_obj);
 		},
-		getParam: function(paramName) {
-			var val = gtris.util.getParameterByName(paramName);
-			return val;
-		},
-		attachTabEvent: function(_obj) {			
+		attachTabEvent: function(_obj) {
 			var $target = $(_obj.target);
-			var idx = Number(this.getParam('idx'));
-			if(idx < 0 || idx > _obj.target.length-1 || window.isNaN(idx)) {
-				idx = 0;
+			var initIdx = Number(gtris.util.getParameterByName('tabIdx'));
+			if(initIdx < 0 || initIdx > _obj.target.length-1 || window.isNaN(initIdx)) {
+				initIdx = 0;
 			}
-			
+
 			if(!_obj.event) {
 				_obj.event = 'click';
 			}
-			
+
 			$target.each(function() {
 				var $tab_head = $(this);
 				$tab_head.target_id = [];
@@ -795,10 +791,10 @@
 					var this_id = "#" + $(this).attr('data-id');
 					$tab_head.target_id.push(this_id);
 					$tab_nav.on(_obj.event, function() {
-						tab.executeTabEvent.call(this, $tab_head, $(this).index());
+						tab.executeTabEvent.call(this, _obj, $tab_head);
 					});
 				});
-				$tab_head.find('.gt-nav-item').eq(idx).find('[data-id]').trigger(_obj.event);
+				$tab_head.find('[data-id]').eq(initIdx).trigger(_obj.event);
 			});
 		},
 		ajaxCall: function(this_id) {
@@ -811,19 +807,22 @@
 				$(this_id).empty().append(response);
 			}).fail(function(jqXHR, textStatus, errorThrown) {
 				window.alert('load failed.');
-				$(this_id).empty().append('jqXHR: ' + jqXHR + ', textStatus: ' + textStatus + ', errorThrown: ' + errorThrown);
+				$(this_id).empty().append(errorThrown);
 			});
 		},
-		executeTabEvent: function($tab_head, idx) {			
-			var this_id = "#" + $(this).attr('data-id');			
+		executeTabEvent: function(_obj, $tab_head) {
+			var this_id = "#" + $(this).attr('data-id');
 			if((/(http(s)?:\/)?(\/\w+)+(\.[\w.]+)?/g).test($(this).attr('data-url'))) {
 				tab.ajaxCall.call(this, this_id);
-			}			
-			
+			}
 			$tab_head.find(".gt-nav-item.gt-active").removeClass("gt-active");
-			$tab_head.find(".gt-nav-item").eq(idx).addClass("gt-active");
-			$($tab_head.target_id.join(", ")).hide();			
+			$tab_head.find(".gt-nav-item").eq($(this).index()).addClass("gt-active");
+			$($tab_head.target_id.join(", ")).hide();
 			$(this_id).show();
+
+			if(_obj.completed) {
+				return _obj.completed();
+			}
 		}
 	};
 	gtris.ui.tab = tab;
@@ -899,7 +898,7 @@
 			}else{
 				url = _obj.url + '\u0020' + _obj.id;
 			}
-            
+
 			//check loaded
 			if( $target.find('.gt-layer-content').hasClass('gt-active') ) {
 				this.isHasCnt = true;
@@ -941,7 +940,7 @@
 	};
 
 	gtris.ui.layer = layer;
-	
+
 })(window.gtris);
 
 (function(gtris) {
@@ -976,7 +975,7 @@
 
 			$toast.animate({opacity: 0}, 0);
 			$toast.animate({opacity: 0.8}, 500);
-			
+
 			//console.log( "<code>" + options.message + "</code>" )
 
 			$toast.html( options.message );
@@ -1024,7 +1023,7 @@
 		},
 
 		mouseoverToast: function() {
-			
+
 		}
 
 	};
