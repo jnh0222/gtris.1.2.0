@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="../css/gtris.css">
+<title>Modal</title>
+</head>
+<body>
+
+<div style="padding:3%">
+	<h1>Modal</h1>
+	<br>
+	<button id="id-modal-btn" class="gt-button gt-brown gt-text-white">Set the Target(ID)</button>
+	<button id="class-modal-btn" class="gt-button gt-pink gt-text-white">Set the Target(Class)</button>
+	<button id="ajax-btn" class="gt-button gt-deep-orange gt-text-white">Ajax modal</button>
+    <button id="callback-event-btn" class="gt-button gt-teal gt-text-white">Callback-Events</button>
+    <br><br>
+    <button id="animate-top-btn" class="gt-button gt-button-success">Animate-Top</button>
+    <button id="animate-bottom-btn" class="gt-button gt-button-info">Animate-Bottom</button>
+    <button id="animate-left-btn" class="gt-button gt-button-warning">Animate-Left</button>
+    <button id="animate-right-btn" class="gt-button gt-button-danger">Animate-Right</button>
+    <button id="animate-zoom-btn" class="gt-button gt-button-primary">Zoom-In</button>
+</div>
+
+<!-- modal -->
+<div id="id-modal" class="gt-modal">
+	<div class="gt-modal-content gt-animate-opacity">
+		<div class="gt-modal-header">Id Modal</div>
+		<div class="gt-modal-body">
+			<p style="font-size:16px; padding-bottom:10px; text-align:center">...</p>
+		</div>
+		<div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+			<a href="javascript:void(0);">
+				<img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- modal -->
+<div class="class-modal gt-modal">
+	<div class="gt-modal-content gt-animate-opacity">
+		<div class="gt-modal-header">Class Modal</div>
+		<div class="gt-modal-body">
+			<p style="font-size:16px; padding-bottom:10px; text-align:center">...</p>
+		</div>
+		<div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+			<a href="javascript:void(0);">
+				<img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- modal -->
+<div id="animate-top" class="gt-modal">
+	<div class="gt-modal-content gt-animate-top">
+		<div class="gt-modal-header">Animate Modal</div>
+		<div class="gt-modal-body">
+			<p style="font-size:16px; padding-bottom:10px; text-align:center">...</p>
+		</div>
+		<div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+			<a href="javascript:void(0);">
+				<img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- modal -->
+<div id="animate-bottom" class="gt-modal">
+	<div class="gt-modal-content gt-animate-bottom">
+		<div class="gt-modal-header">Animate Modal</div>
+		<div class="gt-modal-body">
+			<p style="font-size:16px; padding-bottom:10px; text-align:center">...</p>
+		</div>
+		<div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+			<a href="javascript:void(0);">
+				<img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- modal -->
+<div id="animate-left" class="gt-modal">
+	<div class="gt-modal-content gt-animate-left">
+		<div class="gt-modal-header">Animate Modal</div>
+		<div class="gt-modal-body">
+			<p style="font-size:16px; padding-bottom:10px; text-align:center">...</p>
+		</div>
+		<div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+			<a href="javascript:void(0);">
+				<img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- modal -->
+<div id="animate-right" class="gt-modal">
+	<div class="gt-modal-content gt-animate-right">
+		<div class="gt-modal-header">Animate Modal</div>
+		<div class="gt-modal-body">
+			<p style="font-size:16px; padding-bottom:10px; text-align:center">...</p>
+		</div>
+		<div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+			<a href="javascript:void(0);">
+				<img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- modal -->
+<div id="animate-zoom" class="gt-modal">
+	<div class="gt-modal-content gt-animate-zoom">
+		<div class="gt-modal-header">Animate Modal</div>
+		<div class="gt-modal-body">
+			<p style="font-size:16px; padding-bottom:10px; text-align:center">...</p>
+		</div>
+		<div data-modal="hide" class="gt-display-topright" style="top:10px; right:10px">
+			<a href="javascript:void(0);">
+				<img src="http://static.gabia.com/gtris/1.1.0/assets/images/delete.svg" alt="닫기">
+			</a>
+		</div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/gtris.js"></script>
+<script type="text/javascript">
+$('#id-modal-btn').click(function(event) {
+	gtris.ui.modal.open({
+		target: '#id-modal'
+	})
+});
+$('#class-modal-btn').click(function(event) {
+	gtris.ui.modal.open({
+		target: '.class-modal'
+	})
+});
+$('#ajax-btn').click(function(event) {
+	gtris.ui.modal.open({
+		target: 'modal/ajax-modal.html'
+	})
+});
+$('#callback-event-btn').click(function(event) {
+	gtris.ui.modal.open({
+		target: 'modal/ajax-modal.html',
+		completed: function($modal) {
+			alert('completed');
+		},
+		closed: function() {
+			alert('closed');
+		}
+	})
+});
+$('#animate-top-btn').click(function(event) {
+	gtris.ui.modal.open({
+		target: '#animate-top'
+	})
+});
+
+$('#animate-bottom-btn').click(function(event) {
+	gtris.ui.modal.open({
+		target: '#animate-bottom'
+	})
+});
+
+$('#animate-left-btn').click(function(event) {
+	gtris.ui.modal.open({
+		target: '#animate-left'
+	})
+});
+
+$('#animate-right-btn').click(function(event) {
+	gtris.ui.modal.open({
+		target: '#animate-right'
+	})
+});
+
+$('#animate-zoom-btn').click(function(event) {
+	gtris.ui.modal.open({
+		target: '#animate-zoom'
+	})
+});
+
+</script>
+
+</body>
+</html>
