@@ -608,9 +608,6 @@
 			var thisCollapseItem = $allViewBtn.parents('.gt-collapse').find('.gt-collapse-item');
 			var thisCollapseCnt = $allViewBtn.parents('.gt-collapse').find('.gt-collapse-content');
 
-			//allViewBtn toggle class
-			$allViewBtn.toggleClass('gt-dropdown-expanded');
-
 			//show & hide
 			if(_obj.isAllExpanded) {
 				_obj.isAllExpanded = false;
@@ -841,8 +838,7 @@
 	var dropdown = {
 
 		init: function(obj) {
-			var $dd = $(obj.target);
-			this.addEvent($dd);
+			this.addEvent(obj);
 		},
 
 		toggleDD: function(event) {
@@ -859,12 +855,18 @@
 			}
 		},
 
-		addEvent: function($dd) {
-			$dd.find('.gt-button').on('click', this.toggleDD);
-			$dd.find('.gt-btn').on('click', this.toggleDD);
+		menuClick: function(event) {
+			var _obj = event.data.obj;
+			var $menu_item = $(event.target);
+			if(_obj.changed) return _obj.changed($menu_item);
+		},
+
+		addEvent: function(obj) {
+			var $dd = $(obj.target);
+			$dd.find('button').on('click', this.toggleDD);
+			$dd.find('.gt-dd-item').on('click', { obj: obj }, this.menuClick);
 			$(document).on('click', this.documentClick);
 		}
-
 	};
 
 	gtris.ui.dropdown = dropdown;
@@ -940,94 +942,5 @@
 	};
 
 	gtris.ui.layer = layer;
-
-})(window.gtris);
-
-(function(gtris) {
-	'use strict';
-	if (!gtris) {
-		gtris = window.gtris = {};
-	}
-	if (!gtris.ui) {
-		gtris.ui = window.gtris.ui = {};
-	}
-
-	var toast = {
-
-		$toastContainer : '<div>',
-
-		open: function(options) {
-			var $toast;
-
-			if( $('.gt-toast-container').length === 0 ) {
-				this.$toastContainer = $(document.createElement('div'));
-				this.$toastContainer.addClass('gt-toast-container');
-				this.$toastContainer.appendTo('body');
-				if(options.position === undefined || options.position ==='') {
-					options.position = 'top-right';
-				}
-				this.$toastContainer.attr('data-placement', options.position);
-			}
-
-			$toast = $(document.createElement('div'));
-			$toast.addClass('gt-toast');
-			$toast.appendTo(this.$toastContainer);
-
-			$toast.animate({opacity: 0}, 0);
-			$toast.animate({opacity: 0.8}, 500);
-
-			//console.log( "<code>" + options.message + "</code>" )
-
-			$toast.html( options.message );
-
-			switch(options.type) {
-				case 'primary':
-				$toast.addClass('gt-toast-primary');
-				break;
-
-				case 'success':
-				$toast.addClass('gt-toast-success');
-				break;
-
-				case 'info':
-				$toast.addClass('gt-toast-info');
-				break;
-
-				case 'warning':
-				$toast.addClass('gt-toast-warning');
-				break;
-
-				case 'danger':
-				$toast.addClass('gt-toast-danger');
-				break;
-			}
-
-			$toast.on('click', this.deleteToast);
-			$toast.on('mouseover', this.mouseoverToast);
-
-			$toast.mouseover(function(event) {
-				$(this).css('opacity', '1');
-			});
-
-			$toast.mouseout(function(event) {
-				$(this).css('opacity', '0.8');
-			});
-
-		},
-
-		deleteToast: function(event) {
-			if( $('.gt-toast-container .gt-toast').length === 1 ) {
-				$('.gt-toast-container').remove();
-			}
-			$(this).remove();
-		},
-
-		mouseoverToast: function() {
-
-		}
-
-	};
-
-	gtris.ui.toast = toast;
 
 })(window.gtris);

@@ -10,8 +10,7 @@
 	var dropdown = {
 
 		init: function(obj) {
-			var $dd = $(obj.target);
-			this.addEvent($dd);
+			this.addEvent(obj);
 		},
 
 		toggleDD: function(event) {
@@ -28,12 +27,18 @@
 			}
 		},
 
-		addEvent: function($dd) {
-			$dd.find('.gt-button').on('click', this.toggleDD);
-			$dd.find('.gt-btn').on('click', this.toggleDD);
+		menuClick: function(event) {
+			var _obj = event.data.obj;
+			var $menu_item = $(event.target);
+			if(_obj.changed) return _obj.changed($menu_item);
+		},
+
+		addEvent: function(obj) {
+			var $dd = $(obj.target);
+			$dd.find('button').on('click', this.toggleDD);
+			$dd.find('.gt-dd-item').on('click', { obj: obj }, this.menuClick);
 			$(document).on('click', this.documentClick);
 		}
-
 	};
 
 	gtris.ui.dropdown = dropdown;
