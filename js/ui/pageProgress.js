@@ -12,7 +12,7 @@
 		progress_bar: 'progress_bar',
 
 		init: function(obj) {
-			if(!obj.height) obj.height = 5;
+			if(!obj.height) obj.height = '5px';
 			if(!obj.bgColor) obj.bgColor = '#2598e7';
 			this.progress_bar = $(obj.target);
 			this.progress_bar.css('height', obj.height);
