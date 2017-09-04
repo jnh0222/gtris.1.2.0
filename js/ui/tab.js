@@ -46,7 +46,7 @@
 			}).done(function(response) {
 				$(this_id).empty().append(response);
 			}).fail(function(jqXHR, textStatus, errorThrown) {
-				window.alert('load failed.');
+				//window.alert('load failed.');
 				$(this_id).empty().append(errorThrown);
 			});
 		},
