@@ -1,28 +1,9 @@
 /* scrollprogress */
-progress {
+.scrollprogress {
 	position: fixed;
 	left: 0;
-	width: 100%;
+	width: 0;
 	height: 5px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	border: none;
-	background-color: transparent;
+	background: $blue;
 	transition:width .4s ease-out;
-	color: $blue; //for IE
-	z-index: $zindex-fixed;
-
-	&::-webkit-progress-bar {
-		background-color: transparent;
-	}
-
-	&::-webkit-progress-value {
-		background-color: $blue;
-	}
-
-	&::-moz-progress-bar {
-		background-color: $blue;
-	}
-
 }
