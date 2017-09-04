@@ -8,78 +8,18 @@
 <title></title>
 </head>
 
-
-
 <body style="height:2000px">
-
-
-<progress value="0" class="scrollprogress"></progress>
-
-
-<div style="position:fixed;bottom:0;right:0;left:0;background-color:red">Footer</div>
-
+	<div class="scrollprogress"></div>
+	<div style="position:fixed;bottom:0;right:0;left:0;background-color:red">Footer</div>
+</body>
 
 <script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="../js/gtris.js"></script>
 <script type="text/javascript">
-
-
 gtris.ui.scrollprogress.init({
-    target: $('.scrollprogress')
+    target: $('.scrollprogress'),
+    height: '50px',
+    bgColor: 'purple'
 })
-
-/*
-var getMax = function(){
-        return $(document).height() - $(window).height();
-    }
-    
-    var getValue = function(){
-        return $(window).scrollTop();
-    }
-    
-    if('max' in document.createElement('progress')){
-        // Browser supports progress element
-        var progressBar = $('progress');
-        
-        // Set the Max attr for the first time
-        progressBar.attr({ max: getMax() });
-
-        $(document).on('scroll', function(){
-            // On scroll only Value attr needs to be calculated
-            progressBar.attr({ value: getValue() });
-        });
-      
-        $(window).resize(function(){
-            // On resize, both Max/Value attr needs to be calculated
-            progressBar.attr({ max: getMax(), value: getValue() });
-        });   
-    }
-    else {
-        var progressBar = $('.progress-bar'), 
-            max = getMax(), 
-            value, width;
-        
-        var getWidth = function(){
-            // Calculate width in percentage
-            value = getValue();            
-            width = (value/max) * 100;
-            width = width + '%';
-            return width;
-        }
-        
-        var setWidth = function(){
-            progressBar.css({ width: getWidth() });
-        }
-        
-        $(document).on('scroll', setWidth);
-        $(window).on('resize', function(){
-            // Need to reset the Max attr
-            max = getMax();
-            setWidth();
-        });
-    }*/
-
 </script>
-
-</body>
 </html>
