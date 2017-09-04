@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="../css/gtris.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<title></title>
+</head>
+
+<body style="height:2000px">
+	<div class="gt-page-progress"></div>
+	<div style="position:fixed;bottom:0;right:0;left:0;background-color:red">Footer</div>
+</body>
+
+<script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/gtris.js"></script>
+<script type="text/javascript">
+/*gtris.ui.scrollprogress.init({
+    target: $('.scrollprogress'),
+    height: '50px',
+    bgColor: 'purple'
+});*/
+
+
+
+gtris.ui.pageProgress.init({
+	target: $('.gt-page-progress'),
+    height: '50px',
+    bgColor: 'purple'
+})
+
+</script>
+</html>
