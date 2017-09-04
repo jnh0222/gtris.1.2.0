@@ -954,7 +954,7 @@
 		gtris.ui = window.gtris.ui = {};
 	}
 
-	var scrollprogress = {
+	var pageProgress = {
 
 		progress_bar: 'progress_bar',
 
@@ -971,7 +971,7 @@
 		updateProgress: function(event) {
 			var scroll_top = $(window).scrollTop(); //current vertical position of the scroll bar
 			var bottom_page = $(document).height() - $(window).height(); //(height of HTML document - height of browser viewport)
-			scrollprogress.progress_bar.css('width',  scrollprogress.calculatePercent(scroll_top, bottom_page) );
+			pageProgress.progress_bar.css('width',  pageProgress.calculatePercent(scroll_top, bottom_page) );
 		},
 
 		calculatePercent: function(num1, num2) {
@@ -985,6 +985,6 @@
 		}
 	};
 
-	gtris.ui.scrollprogress = scrollprogress;
+	gtris.ui.pageProgress = pageProgress;
 
 })(window.gtris);
