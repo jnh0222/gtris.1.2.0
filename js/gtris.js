@@ -561,7 +561,7 @@
 	}
 
 	var collapse = {
-
+		
 		init: function(obj) {
 			var _obj = obj;
 			if(!_obj.slideTime) _obj.slideTime = 250;
@@ -952,18 +952,16 @@
 		gtris.ui = window.gtris.ui = {};
 	}
 
-	var pageProgress = {
+	var scrollprogress = {
 
 		progress_bar: 'progress_bar',
 
 		init: function(obj) {
 			if(!obj.height) obj.height = '5px';
-			if(!obj.bgColor) obj.bgColor = '#2598e7';
-			if(!obj.bgColor) obj.top = '0px';
-			if(!obj.bgColor) obj.bottom = '0px';
+			if(!obj.barColor) obj.barColor = '#2598e7';
 			this.progress_bar = $(obj.target);
 			this.progress_bar.css('height', obj.height);
-			this.progress_bar.css('background-color', obj.bgColor);
+			this.progress_bar.css('background-color', obj.barColor);
 			this.progress_bar.css('top', obj.top);
 			this.progress_bar.css('bottom', obj.bottom);
 			this.addEvent(this.progress_bar);
@@ -973,11 +971,12 @@
 		updateProgress: function(event) {
 			var scroll_top = $(window).scrollTop(); //current vertical position of the scroll bar
 			var bottom_page = $(document).height() - $(window).height(); //(height of HTML document - height of browser viewport)
-			pageProgress.progress_bar.css('width',  pageProgress.calculatePercent(scroll_top, bottom_page) );
+			var bar_xpos = scrollprogress.calculatePercent(scroll_top, bottom_page);
+			scrollprogress.progress_bar.css({"transform": "translate3d("+bar_xpos+"%, 0px, 0px)"});
 		},
 
-		calculatePercent: function(num1, num2) {
-			var percent = Math.ceil( num1 / num2 * 100 ) + '%';
+		calculatePercent: function(n1, n2) {
+			var percent = Math.ceil(( n1 / n2 * 100 ) - 100);
 			return percent;
 		},
 
@@ -987,6 +986,6 @@
 		}
 	};
 
-	gtris.ui.pageProgress = pageProgress;
+	gtris.ui.scrollprogress = scrollprogress;
 
 })(window.gtris);
