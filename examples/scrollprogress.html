@@ -9,18 +9,18 @@
 </head>
 
 <body style="height:2000px">
-	<div class="gt-page-progress"></div>
-	<div style="position:fixed;bottom:0;right:0;left:0;background-color:red">Footer</div>
+	<div class="gt-scrollprogress"></div>
+	<!-- <div style="position:fixed;bottom:0;right:0;left:0;background-color:red">Footer</div> -->
 </body>
 
 <script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="../js/gtris.js"></script>
 <script type="text/javascript">
-gtris.ui.pageProgress.init({
-	target: $('.gt-page-progress'),
-	height: '50px',
-	bgColor: 'purple',
-	top: '100px'
+gtris.ui.scrollprogress.init({
+	target: $('.gt-scrollprogress'),
+	height: '20px',
+	barColor: 'purple',
+	top: 100
 })
 </script>
 </html>
