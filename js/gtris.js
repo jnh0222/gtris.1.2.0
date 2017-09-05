@@ -565,66 +565,64 @@
 		init: function(obj) {
 			var _obj = obj;
 			if(!_obj.slideTime) _obj.slideTime = 250;
-			if(!_obj.isAllExpanded) _obj.isAllExpanded = false;
+			if(!_obj.isAllExpand) _obj.isAllExpand = false;
 			this.addEvent(_obj);
 		},
 
-		collapseContent: function(event) {
+		collapseHeaderClick: function(event) {
 			event.preventDefault();
-			var _obj = event.data.obj;
-			var $target = $(_obj.target);
-			var $collapseHeader = $(event.target);
-			var $collapseCnt = $target.find('.gt-collapse-content');
-			var $thisCollapseCnt = $collapseHeader.closest('.gt-collapse-item').find('.gt-collapse-content');
+			var obj = event.data.obj;
+			var $accordion = $(obj.target);
+			var $this_header = $(event.target);
+			var $this_content = $this_header.closest('.gt-collapse-item').find('.gt-collapse-content');
+			var $acd_content = $accordion.find('.gt-collapse-content');
+			obj.isAllExpand = false;
 
 			//show & hide
-			if($thisCollapseCnt.is(':hidden')) {
-				$thisCollapseCnt.slideDown(_obj.slideTime);
-				$collapseHeader.closest('.gt-collapse-item').addClass('gt-active');
+			if($this_content.is(':hidden')) {
+				$this_content.slideDown(obj.slideTime);
+				$this_header.closest('.gt-collapse-item').addClass('gt-active');
 			}else{
-				$thisCollapseCnt.slideUp(_obj.slideTime);
-				$collapseHeader.parent().removeClass('gt-active');
+				$this_content.slideUp(obj.slideTime);
+				$this_header.parent().removeClass('gt-active');
 			}
 
-			var $collapseItem = $target.find('.gt-collapse-item');
-			var $activeCollapseItem = $target.find('.gt-collapse-item.gt-active');
-
-			_obj.isAllExpanded = false;
-			if( $collapseItem.length === $activeCollapseItem.length ) {
-				_obj.isAllExpanded = true;
-				if(_obj.expanded) return _obj.expanded($target);
+			//check all expand
+			if( $accordion.find('.gt-collapse-item').length === $accordion.find('.gt-collapse-item.gt-active').length ) {
+				obj.isAllExpand = true;
+				if(obj.expanded) return obj.expanded($accordion);
 			}
 
-			if($activeCollapseItem.length === 0 || $activeCollapseItem.length < $collapseItem.length) {
-				if(_obj.collapsed) return _obj.collapsed($target);
+			//check all collapse
+			if($accordion.find('.gt-collapse-item.gt-active').length === 0) {
+				if(obj.expanded) return obj.collapsed($accordion);	
 			}
 		},
 
-		toggleCollapse: function(event) {
+		toggleExpand: function(event) {
 			event.preventDefault();
-			var _obj = event.data.obj;
-			var $target = $(_obj.target);
-			var $allViewBtn = $(event.target);
-			var thisCollapseItem = $allViewBtn.parents('.gt-collapse').find('.gt-collapse-item');
-			var thisCollapseCnt = $allViewBtn.parents('.gt-collapse').find('.gt-collapse-content');
+			var obj = event.data.obj;
+			var $accordion = $(obj.target);
+			var $acd_content = $accordion.find('.gt-collapse-content');
+			var $acd_item = $accordion.find('.gt-collapse-item');
 
-			//show & hide
-			if(_obj.isAllExpanded) {
-				_obj.isAllExpanded = false;
-				thisCollapseItem.removeClass('gt-active');
-				thisCollapseCnt.slideUp(_obj.slideTime);
-				if(_obj.collapsed) return _obj.collapsed($target);
+			//toggle all contents
+			if(!obj.isAllExpand) {
+				obj.isAllExpand = true;
+				$acd_content.slideDown(obj.slideTime);
+				$acd_item.addClass('gt-active');
+				if(obj.collapsed) return obj.expanded($accordion);
 			}else{
-				_obj.isAllExpanded = true;
-				thisCollapseItem.addClass('gt-active');
-				thisCollapseCnt.slideDown(_obj.slideTime);
-				if(_obj.expanded) return _obj.expanded($target);
+				obj.isAllExpand = false;
+				$acd_content.slideUp(obj.slideTime);
+				$acd_item.removeClass('gt-active');
+				if(obj.collapsed) return obj.collapsed($accordion);
 			}
 		},
 
 		addEvent: function(obj) {
-			$(obj.target).find('.gt-collapse-header').on('click', { obj: obj }, this.collapseContent);
-			$(obj.target).find('[data-collapse="allview"]').on('click', { obj: obj }, this.toggleCollapse);
+			$(obj.target).find('.gt-collapse-header').on('click', { obj: obj }, this.collapseHeaderClick);
+			$(obj.target).find('[data-toggle="expand"]').on('click', { obj: obj }, this.toggleExpand);
 		}
 	};
 
