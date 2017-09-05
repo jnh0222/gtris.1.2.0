@@ -10,6 +10,7 @@
 
 <body style="height:2000px">
 	<div class="gt-scrollprogress"></div>
+	<div id="percent" style="position:fixed; top:120px; font-size:100px">0%</div>
 	<!-- <div style="position:fixed;bottom:0;right:0;left:0;background-color:red">Footer</div> -->
 </body>
 
@@ -20,7 +21,10 @@ gtris.ui.scrollprogress.init({
 	target: $('.gt-scrollprogress'),
 	height: '20px',
 	barColor: 'purple',
-	top: 100
+	top: 100,
+	onProgress: function(progress) {
+		$('#percent').text(progress + '%');
+	}
 })
 </script>
 </html>

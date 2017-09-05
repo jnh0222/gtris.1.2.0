@@ -19,8 +19,8 @@
 			this.progress_bar.css('background-color', obj.barColor);
 			this.progress_bar.css('top', obj.top);
 			this.progress_bar.css('bottom', obj.bottom);
-			this.addEvent(this.progress_bar);
-			this.updateProgress();
+			this.addEvent(obj);
+			this.updateProgress(obj);
 		},
 
 		updateProgress: function(event) {
@@ -28,6 +28,12 @@
 			var bottom_page = $(document).height() - $(window).height(); //(height of HTML document - height of browser viewport)
 			var bar_xpos = scrollprogress.calculatePercent(scroll_top, bottom_page);
 			scrollprogress.progress_bar.css({"transform": "translate3d("+bar_xpos+"%, 0px, 0px)"});
+
+			//on progress event
+			if(event.data) {
+				var obj = event.data.obj;
+				if(obj.onProgress) return obj.onProgress(bar_xpos + 100);
+			}
 		},
 
 		calculatePercent: function(n1, n2) {
@@ -35,9 +41,9 @@
 			return percent;
 		},
 
-		addEvent: function(progress_bar) {
-			$(document).on('scroll', this.updateProgress);
-			$(window).on('resize', this.updateProgress);
+		addEvent: function(obj) {
+			$(document).on('scroll', {obj: obj}, this.updateProgress);
+			$(window).on('resize', {obj: obj}, this.updateProgress);
 		}
 	};
 
