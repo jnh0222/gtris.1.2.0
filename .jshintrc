@@ -1,0 +1,8 @@
+{
+	"globals": {
+		"$": false
+	},
+	"undef": true,
+	"browser" : true,
+	"node": true
+}

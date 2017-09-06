@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="../css/gtris.css">
+<title>Dropdown</title>
+</head>
+<body>
+
+<div style="padding:3%">
+	<h1>Dropdown</h1>
+	<br>
+	<div class="gt-dropdown" data-ui="dropdown" id="dropdown1">
+		<button class="gt-btn" type="button" name="button">12개월</button>
+		<ul class="gt-dd-menu">
+			<li><a class="gt-dd-item" href="javascript:void(0);">1개월</a></li>
+			<li><a class="gt-dd-item" href="javascript:void(0);">3개월</a></li>
+			<li><a class="gt-dd-item" href="javascript:void(0);">12개월</a></li>
+			<li><a class="gt-dd-item" href="javascript:void(0);">24개월</a></li>
+		</ul>
+	</div>
+
+	<div class="gt-dropdown" data-ui="dropdown" id="dropdown2">
+		<button class="gt-btn gt-btn-primary" type="button" name="button">Dropdown menu</button>
+		<ul class="gt-dd-menu">
+			<li><a class="gt-dd-item" href="#">www.gabia.com</a></li>
+			<li><a class="gt-dd-item" href="#">www.hiworks.com</a></li>
+			<li><a class="gt-dd-item" href="#">partnercenter.gabia.com</a></li>
+			<li class="gt-dd-divider"></li>
+			<li><a class="gt-dd-item" href="#">library.gabia.com</a></li>
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/gtris.js"></script>
+<script type="text/javascript">
+	gtris.ui.dropdown.init({
+		target : $('#dropdown1'),
+		changed: function(item) {
+			var selected_item = item;
+			$(item).closest('.gt-dropdown').find('button').text( item.text() );
+			console.log(selected_item);
+		},
+	});
+
+	gtris.ui.dropdown.init({
+		target : $('#dropdown2'),
+		changed: function(item) {
+			var selected_item = item;
+			$(item).closest('.gt-dropdown').find('button').text( item.text() );
+			console.log(selected_item);
+		}
+	});
+</script>
+
+</body>
+</html>
