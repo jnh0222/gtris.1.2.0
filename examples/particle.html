@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="../dist/gtris.css">
+<title>Particle</title>
+<style type="text/css">
+.culture_area {
+    position: relative;
+    height: 600px;
+    z-index: 2;
+    background: url(img/hiworks.png) center center / cover no-repeat;
+    overflow: hidden;
+}
+.culture_area canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.culture_area canvas {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+</style>
+</head>
+<body>
+
+<div class="culture_area" id="particles-js">
+	<canvas id="sineCanvas" width="2000" height="560"></canvas>
+</div>
+
+<script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.hanwha-total.com/Js/ui/vendor/particles.min.js"></script>
+<script type="text/javascript">
+function drawLine() {
+	var unit = 150;
+	var canvas, context, canvas2, context2,height, width, xAxis, yAxis, draw;
+	canvas = document.getElementById("sineCanvas");
+	canvas.width = 2000;
+	canvas.height = 681;
+	context = canvas.getContext("2d");
+	height = canvas.height;
+	width = canvas.width;
+	xAxis = Math.floor(height/2);
+	yAxis = 0;
+	draw();
+
+	function draw(){
+		context.clearRect(0, 0, width, height);
+		drawWave('#f1732f', 1, 3, 0);
+		draw.seconds = draw.seconds + .0066;
+		draw.t = draw.seconds*Math.PI;
+		setTimeout(draw, 35);
+	};
+
+	draw.seconds = 0;
+	draw.t = 0;
+
+	function drawWave(fillcolor, alpha, zoom, delay) {
+		context.fillStyle = fillcolor;
+		context.globalAlpha = alpha;
+
+		context.beginPath();
+		drawSine(draw.t / 0.5, zoom, delay);
+		context.lineTo(width + 10, height);
+		context.lineTo(0, height);
+		context.closePath();
+		context.strokeStyle = fillcolor;
+		context.stroke();
+	}
+
+	function drawSine(t, zoom, delay) {
+		var x = t;
+		var y = Math.sin(x)/zoom;
+		context.moveTo(yAxis, unit*y+xAxis);
+		for (i = yAxis; i <= width + 10; i += 10) {
+			x = t+(-yAxis+i)/unit/zoom;
+			y = Math.sin(x - delay)/3;
+			context.lineTo(i, unit*y+xAxis);
+		}
+	}
+}
+drawLine();
+
+
+particlesJS('particles-js',
+    {
+        "particles": {
+            "number": {
+                "value": 20,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": ["#f1732f","#e91f3e"]
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "opacity": {
+                "value": 1,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 1,
+                    "opacity_min": 0,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 5,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 4,
+                    "size_min": 0.3,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": false,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 1,
+                "direction": "none",
+                "random": true,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 600
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": false,
+                    "mode": "bubble"
+                },
+                "onclick": {
+                    "enable": false,
+                    "mode": "repulse"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 250,
+                    "size": 0,
+                    "duration": 2,
+                    "opacity": 0,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 400,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    }
+);
+</script>
+
+</body>
+</html>
