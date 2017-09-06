@@ -12,6 +12,7 @@ require('./util/isValidateEmail');
 require('./util/makeDimmed');
 require('./util/os');
 require('./util/removeComma');
+
 /*ui*/
 require('./ui/collapse');
 require('./ui/dropdown');
