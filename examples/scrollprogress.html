@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
-<link rel="stylesheet" href="../css/gtris.css">
+<link rel="stylesheet" href="../dist/gtris.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 <title></title>
 </head>
@@ -11,19 +11,18 @@
 <body style="height:2000px">
 	<div class="gt-scrollprogress"></div>
 	<div id="percent" style="position:fixed; top:120px; font-size:100px">0%</div>
-	<!-- <div style="position:fixed;bottom:0;right:0;left:0;background-color:red">Footer</div> -->
 </body>
 
 <script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="../js/gtris.js"></script>
+<script type="text/javascript" src="../dist/gtris.js"></script>
 <script type="text/javascript">
 gtris.ui.scrollprogress.init({
 	target: $('.gt-scrollprogress'),
-	height: '20px',
+	height: '5px',
 	barColor: 'purple',
 	top: 100,
 	onProgress: function(progress) {
-		$('#percent').text(progress + '%');
+		$('#percent').text(progress);
 	}
 })
 </script>

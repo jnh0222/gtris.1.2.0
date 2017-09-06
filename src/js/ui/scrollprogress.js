@@ -26,18 +26,17 @@
 		updateProgress: function(event) {
 			var scroll_top = $(window).scrollTop(); //current vertical position of the scroll bar
 			var bottom_page = $(document).height() - $(window).height(); //(height of HTML document - height of browser viewport)
-			var bar_xpos = scrollprogress.calculatePercent(scroll_top, bottom_page);
-			scrollprogress.progress_bar.css({"transform": "translate3d("+bar_xpos+"%, 0px, 0px)"});
-
+			var bar_width = scrollprogress.calculatePercent(scroll_top, bottom_page);
+			scrollprogress.progress_bar.css('width',bar_width);
 			//on progress event
 			if(event.data) {
 				var obj = event.data.obj;
-				if(obj.onProgress) return obj.onProgress(bar_xpos + 100);
+				if(obj.onProgress) return obj.onProgress(bar_xpos);
 			}
 		},
 
 		calculatePercent: function(n1, n2) {
-			var percent = Math.ceil(( n1 / n2 * 100 ) - 100);
+			var percent = Math.ceil( n1 / n2 * 100 ) + '%';
 			return percent;
 		},
 
