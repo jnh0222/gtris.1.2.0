@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-<link rel="stylesheet" href="../css/gtris.css">
+<link rel="stylesheet" href="../dist/gtris.css">
 <title>Collapse</title>
 </head>
 <body>
@@ -60,53 +60,51 @@
 </div>
 
 <script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="../js/ui/collapse.js"></script>
+<script type="text/javascript" src="../dist/gtris.js"></script>
 <script type="text/javascript">
-
-
 gtris.ui.collapse.init({
 	target: '#accordion',
 	expanded: function($acd) {
-		console.log($acd, 'all expanded');
+		alert('all expanded');
+		console.log($acd);
 	},
 	collapsed: function($acd) {
-		console.log($acd, 'all collapsed');	
+		alert('all collapsed');
+		console.log($acd);
 	}
 })
 
-
-	var json;
-	$.ajax({
-		context: this,
-		url: 'json/collapse.json',
-		success: function(response) {
-			json = response.web_hosting;
-			makeCollapse(json);
-		},
-	});
-
-	function makeCollapse(response) {
-		var _html;
-
-		for(var i=0; i<response.length; i++) {
-			_html = "<li class='gt-collapse-item'>";
-			_html += "<div class='gt-collapse-header'>" + response[i].title + "<span class='gt-collapse-arrow fa fa-angle-down'></span></div>";
-			_html += "<div class='gt-collapse-content gt-hide'>" + response[i].description + "</div>";
-			_html += "</li>";
-			$('#temp').append(_html);
-		}
-		
-		gtris.ui.collapse.init({
-			target: '#accordion-json',
-			expanded: function($acd) {
-				console.log($acd, 'all expanded');
-			},
-			collapsed: function($acd) {
-				console.log($acd, 'all collapsed');	
-			}
-		});
+var json;
+$.ajax({
+	context: this,
+	url: 'json/collapse.json',
+	success: function(response) {
+		json = response.web_hosting;
+		makeCollapse(json);
+	},
+});
+function makeCollapse(response) {
+	var _html;
+	for(var i=0; i<response.length; i++) {
+		_html = "<li class='gt-collapse-item'>";
+		_html += "<div class='gt-collapse-header'>" + response[i].title + "<span class='gt-collapse-arrow fa fa-angle-down'></span></div>";
+		_html += "<div class='gt-collapse-content gt-hide'>" + response[i].description + "</div>";
+		_html += "</li>";
+		$('#temp').append(_html);
 	}
 	
+	gtris.ui.collapse.init({
+		target: '#accordion-json',
+		expanded: function($acd) {
+			alert('all expanded');
+			console.log($acd);
+		},
+		collapsed: function($acd) {
+			alert('all collapsed');
+			console.log($acd);
+		}
+	});
+}
 </script>
 
 </body>
