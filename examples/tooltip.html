@@ -3,15 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-<link rel="stylesheet" href="../css/gtris.css">
+<link rel="stylesheet" href="../dist/gtris.css">
 <title>Tooltip</title>
 </head>
 <body>
 
 <div style="padding:3%">
-	<h1>Tooltip</h1>
-	<br>
 	<div class="gt-padding">
 		<div class="gt-tooltip" data-ui="tooltip">
 			<button class="gt-button" data-tooltip="button">툴팁 버튼(default)</button>
@@ -64,7 +61,7 @@
 </div>
 
 <script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="../js/gtris.js"></script>
+<script type="text/javascript" src="../dist/gtris.js"></script>
 <script type="text/javascript">
 gtris.ui.tooltip.init({
 	target : $(document).find('[data-ui="tooltip"]')
