@@ -682,7 +682,7 @@ html { box-sizing: border-box; }
 
 .gt-round-small { border-radius: 2px; }
 
-.gt-roundm, .gt-round-medium { border-radius: 4px; }
+.gt-round, .gt-round-medium { border-radius: 4px; }
 
 .gt-round-large { border-radius: 8px; }
 
