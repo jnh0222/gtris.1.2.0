@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="../dist/gtris.css">
+<title></title>
+</head>
+
+<body style="padding:5%">
+	
+	<form>
+		<p class="">
+			<label>Name</label>
+			<input class="gt-input" type="text" disabled="">
+		</p>
+
+		<p class="">
+			<label>Email</label>
+			<input class="gt-input" type="text">
+		</p>
+
+		<p class="">
+			<label>Readonly</label>
+			<input class="gt-input" type="text" readonly="">
+		</p>
+
+		<p class="">
+			<label>Text area</label>
+			<textarea class="gt-input"></textarea>
+		</p>
+
+		<p class="">
+			<label>Select box</label>
+			<select class="gt-select" name="option">
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+		</p>
+
+		<div class="gt-cell-row">
+			<div class="g-orange gt-cell" style="width:50%;">
+				<div>
+					<input id="apple" class="gt-checkbox" type="checkbox" checked="checked">
+					<label for="apple">apple</label>
+				</div>
+				<div>
+					<input id="banana" class="gt-checkbox" type="checkbox">
+					<label for="banana">banana</label>
+				</div>
+				<div>
+					<input id="kiwi" class="gt-checkbox" type="checkbox" disabled="">
+					<label for="kiwi">kiwi (disabled)</label>
+				</div>
+			</div>
+			<div class="g-green gt-cell">
+				<div>
+					<input id="male" class="gt-radio" type="radio" name="gender" value="male" checked="">
+					<label for="male">yes</label>
+				</div>
+				<div>
+					<input id="female" class="gt-radio" type="radio" name="gender" value="female">
+					<label for="female">no</label>
+				</div>
+				<div>
+					<input id="unknown" class="gt-radio" type="radio" name="gender" value="" disabled="">
+					<label for="unknown">don't know (disabled)</label>
+				</div>
+			</div>
+		</div>
+	</form>
+	<br><br><br><br><br>
+
+	<form>
+		<p>
+			<div class="gt-cell-row">
+				<div class="gt-cell gt-cell-middle gt-right-align gt-padding" style="width:120px;">
+					<label for="">Email</label>
+				</div>
+				<div class="gt-cell gt-cell-middle">
+					<input type="email" class="gt-input" id="" placeholder="Email">
+				</div>
+			</div>
+		</p>
+
+		<p>
+			<div class="gt-cell-row">
+				<div class="gt-cell gt-cell-middle gt-right-align gt-padding" style="width:120px;">
+					<label for="">Password</label>
+				</div>
+				<div class="gt-cell gt-cell-middle">
+					<input type="email" class="gt-input" id="" placeholder="Password">
+				</div>
+			</div>
+		</p>
+
+		<p>
+			<div class="gt-cell-row">
+				<div class="gt-cell gt-right-align" style="width:120px;"></div>
+				<div class="gt-cell"><label><input type="checkbox"> Remember me</label></div>
+			</div>
+		</p>
+	</form>
+
+</div>
+
+</body>
+</html>
