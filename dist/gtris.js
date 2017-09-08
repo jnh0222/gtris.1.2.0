@@ -35,7 +35,7 @@ require('./ui/tooltip');
 		init: function(obj) {
 			if(!obj.slideTime) obj.slideTime = 250;
 			if(!obj.isAllExpand) obj.isAllExpand = false;
-			if(obj.active) this.activeContent(obj);
+			if(obj.active !== undefined) this.activeContent(obj);
 			this.addEvent(obj);
 		},
 
