@@ -370,25 +370,30 @@ require('./ui/tooltip');
 
 	var scrollprogress = {
 
-		progress_bar: 'progress_bar',
-
 		init: function(obj) {
 			if(!obj.height) obj.height = '5px';
 			if(!obj.barColor) obj.barColor = '#2598e7';
-			this.progress_bar = $(obj.target);
-			this.progress_bar.css('height', obj.height);
-			this.progress_bar.css('background-color', obj.barColor);
-			this.progress_bar.css('top', obj.top);
-			this.progress_bar.css('bottom', obj.bottom);
+
+			//options
+			$(obj.target).css('height', obj.height);
+			$(obj.target).css('background-color', obj.barColor);
+			$(obj.target).css('top', obj.top);
+			$(obj.target).css('bottom', obj.bottom);
+			
+			//add event
 			this.addEvent(obj);
-			this.updateProgress(obj);
 		},
 
 		updateProgress: function(event) {
+			var obj = event.data.obj;
+			var $progress_bar = $(obj.target);
 			var scroll_top = $(window).scrollTop(); //current vertical position of the scroll bar
 			var bottom_page = $(document).height() - $(window).height(); //(height of HTML document - height of browser viewport)
 			var bar_width = scrollprogress.calculatePercent(scroll_top, bottom_page);
-			scrollprogress.progress_bar.css('width',bar_width);
+
+			//chagne progress bar
+			$progress_bar.css('width',bar_width);
+			
 			//on progress event
 			if(event.data) {
 				var obj = event.data.obj;

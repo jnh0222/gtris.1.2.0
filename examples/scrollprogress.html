@@ -9,8 +9,14 @@
 </head>
 
 <body>
-	<div class="gt-scrollprogress"></div>
-	<div id="percent" style="position:fixed; top:120px; font-size:100px">0%</div>
+
+	<div id="percent" style="position:fixed; top:0px; font-size:80px">0%</div>
+	<div id="scrollprogress1" class="gt-scrollprogress"></div>
+	<div id="scrollprogress2" class="gt-scrollprogress"></div>
+	<div id="scrollprogress3" class="gt-scrollprogress"></div>
+	<div id="scrollprogress4" class="gt-scrollprogress"></div>
+	<div id="scrollprogress5" class="gt-scrollprogress"></div>
+	
 	<div style="background: url('img/www-01.png') no-repeat; width:100%; height:5200px"></div>
 </body>
 
@@ -18,13 +24,41 @@
 <script type="text/javascript" src="../dist/gtris.js"></script>
 <script type="text/javascript">
 gtris.ui.scrollprogress.init({
-	target: $('.gt-scrollprogress'),
+	target: $('#scrollprogress1'),
 	height: '5px',
 	barColor: 'purple',
 	top: 100,
 	onProgress: function(progress) {
 		$('#percent').text(progress);
 	}
-})
+});
+
+gtris.ui.scrollprogress.init({
+	target: $('#scrollprogress2'),
+	height: '20',
+	barColor: 'orange',
+	top: 150
+});
+
+gtris.ui.scrollprogress.init({
+	target: $('#scrollprogress3'),
+	height: '30px',
+	barColor: 'magenta',
+	top: 250
+});
+
+gtris.ui.scrollprogress.init({
+	target: $('#scrollprogress4'),
+	height: '60px',
+	barColor: 'tomato',
+	top: 350
+});
+
+gtris.ui.scrollprogress.init({
+	target: $('#scrollprogress5'),
+	height: '100px',
+	barColor: 'crimson',
+	top: 500
+});
 </script>
 </html>
