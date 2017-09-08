@@ -489,7 +489,7 @@ html { box-sizing: border-box; }
 
 .gt-collapse .gt-collapse-item.gt-active .gt-collapse-header .gt-collapse-arrow { transform: rotate(180deg); }
 
-.gt-collapse .gt-collapse-item .gt-collapse-content { padding: 30px; background: #fff; border: 1px solid #ddd; }
+.gt-collapse .gt-collapse-item .gt-collapse-content { padding: 30px; background: #fff; border: 1px solid #ddd; display: none; }
 
 /* Tab */
 .gt-tab .gt-tab-nav .gt-nav-item { float: left; padding: 10px 20px; background-color: #eee; }
