@@ -10,10 +10,17 @@
 	var collapse = {
 
 		init: function(obj) {
-			var _obj = obj;
-			if(!_obj.slideTime) _obj.slideTime = 250;
-			if(!_obj.isAllExpand) _obj.isAllExpand = false;
-			this.addEvent(_obj);
+			if(!obj.slideTime) obj.slideTime = 250;
+			if(!obj.isAllExpand) obj.isAllExpand = false;
+			if(obj.active) this.activeContent(obj);
+			this.addEvent(obj);
+		},
+
+		activeContent:function(obj) {
+			var $accordion = $(obj.target);
+			var $acd_content = $accordion.find('.gt-collapse-content');
+			$acd_content.eq(obj.active).closest('.gt-collapse-item').addClass('gt-active');
+			$acd_content.eq(obj.active).show();
 		},
 
 		collapseHeaderClick: function(event) {
