@@ -52,7 +52,6 @@ require('./ui/tooltip');
 			var $accordion = $(obj.target);
 			var $this_header = $(event.target);
 			var $this_content = $this_header.closest('.gt-collapse-item').find('.gt-collapse-content');
-			var $acd_content = $accordion.find('.gt-collapse-content');
 			obj.isAllExpand = false;
 
 			//show & hide
@@ -218,7 +217,6 @@ require('./ui/tooltip');
 		},
 
 		addEvent: function(_obj) {
-			var $layerBtn = $(_obj.target).find('[data-layer="button"]');
 			layer.loadLayer(_obj);
 		}
 
