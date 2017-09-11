@@ -60,7 +60,6 @@
 		},
 
 		addEvent: function(_obj) {
-			var $layerBtn = $(_obj.target).find('[data-layer="button"]');
 			layer.loadLayer(_obj);
 		}
 

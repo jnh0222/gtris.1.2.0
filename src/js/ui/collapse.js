@@ -29,7 +29,6 @@
 			var $accordion = $(obj.target);
 			var $this_header = $(event.target);
 			var $this_content = $this_header.closest('.gt-collapse-item').find('.gt-collapse-content');
-			var $acd_content = $accordion.find('.gt-collapse-content');
 			obj.isAllExpand = false;
 
 			//show & hide
