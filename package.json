@@ -11,7 +11,7 @@
 		"build:js": "browserify src/js/entry.js > dist/gtris.js",
 		"watch:file": "nodemon -e scss,js --watch src -x \"npm run build:css && npm run build:js\"",
 		"devbuild": "npm run lint:sass && npm run lint:js && npm run watch:file",
-		"build": "node-sass --output-style compressed --source-map dist/map/ -o src/sass/utils/ src/sass/gtris.scss dist/gtris.min.css && uglifyjs src/js/util/*.js src/js/ui/*.js -o dist/gtris.min.js --source-map dist/map/bundle.min.js.map -p 5 -c -m"
+		"build": "node-sass --output-style compressed --source-map dist/map/ -o src/sass/utils/ src/sass/gtris.scss dist/gtris.min.css && uglifyjs src/js/util/*.js src/js/ui/*.js -o dist/gtris.min.js --source-map dist/map/gtris.min.js.map -p 5 -c -m"
 	},
 	"devDependencies": {
 		"browserify": "^14.1.0",
