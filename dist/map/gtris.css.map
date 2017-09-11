@@ -21,7 +21,7 @@
 		"../../src/sass/_tooltip.scss",
 		"../../src/sass/_dropdown.scss",
 		"../../src/sass/_layer.scss",
-		"../../src/sass/note.scss",
+		"../../src/sass/_note.scss",
 		"../../src/sass/_scrollprogress.scss",
 		"../../src/sass/_helper.scss"
 	],
