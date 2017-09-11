@@ -396,7 +396,6 @@ require('./ui/tooltip');
 			
 			//on progress event
 			if(event.data) {
-				var obj = event.data.obj;
 				if(obj.onProgress) return obj.onProgress(bar_width);
 			}
 		},
