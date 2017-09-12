@@ -53,6 +53,7 @@
 						$ly_container.find('[data-layer="hide"]').on('click', function(event) {
 							event.stopPropagation();
 							this.isHasLayer = false;
+							focusedElementBeforeWindow.focus();
 							$ly_container.remove();
 							if(obj.closed) return obj.closed();
 						});
