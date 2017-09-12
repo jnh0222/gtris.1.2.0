@@ -166,7 +166,7 @@ require('./ui/tooltip');
 
 	var layer = {
 
-		isHasCnt : false,
+		isHasLayer : false,
 
 		open: function(obj) {
 			this.addEvent(obj);
@@ -184,13 +184,13 @@ require('./ui/tooltip');
 
 			//check loaded
 			if( $target.find('.gt-layer-content').hasClass('gt-active') ) {
-				this.isHasCnt = true;
+				this.isHasLayer = true;
 			}else{
-				this.isHasCnt = false;
+				this.isHasLayer = false;
 			}
 
 			//load
-			if(this.isHasCnt === false) {
+			if(this.isHasLayer === false) {
 				//create gt-layer-content
 				var $ly_container = $(document.createElement('div'));
 				$ly_container.addClass('gt-layer-content');
@@ -209,7 +209,7 @@ require('./ui/tooltip');
 						//hide layer
 						$ly_container.find('[data-layer="hide"]').on('click', function(event) {
 							event.stopPropagation();
-							this.isHasCnt = false;
+							this.isHasLayer = false;
 							$ly_container.remove();
 							if(obj.closed) return obj.closed();
 						});
