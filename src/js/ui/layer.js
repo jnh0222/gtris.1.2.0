@@ -49,7 +49,7 @@
 						var o = $ly_container.find('*');
 						o.filter(focusableElementsString).filter(':visible').first().focus();
 
-						//hide
+						//hide layer
 						$ly_container.find('[data-layer="hide"]').on('click', function(event) {
 							event.stopPropagation();
 							this.isHasCnt = false;
