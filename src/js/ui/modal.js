@@ -97,6 +97,7 @@
 			$overlay.appendTo(this.wrapperArr[this.wrapperArr.length - 1]);
 			$target.appendTo(this.wrapperArr[this.wrapperArr.length - 1]);
 
+			//focusabled string
 			var	focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
 			var	focusedElementBeforeWindow = $(':focus');
 			var o = $target.find('*');

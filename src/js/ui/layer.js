@@ -12,18 +12,17 @@
 		isHasCnt : false,
 
 		open: function(obj) {
-			var _obj = obj;
-			this.addEvent(_obj);
+			this.addEvent(obj);
 		},
 
-		loadLayer: function(_obj) {
-			var $target = $(_obj.target);
+		loadLayer: function(obj) {
+			var $target = $(obj.target);
 			var url;
 
-			if(_obj.id === undefined) {
-				url = _obj.url;
+			if(obj.id === undefined) {
+				url = obj.url;
 			}else{
-				url = _obj.url + '\u0020' + _obj.id;
+				url = obj.url + '\u0020' + obj.id;
 			}
 
 			//check loaded
@@ -36,31 +35,37 @@
 			//load
 			if(this.isHasCnt === false) {
 				//create gt-layer-content
-				var $cnt = $(document.createElement('div'));
-				$cnt.addClass('gt-layer-content');
-				$cnt.appendTo($target);
+				var $ly_container = $(document.createElement('div'));
+				$ly_container.addClass('gt-layer-content');
+				$ly_container.appendTo($target);
 
-				$cnt.load( url, function( response, status, xhr ) {
-					if ( status == "success" ) {
-						$cnt.addClass('gt-active');
-						$cnt.find('[data-layer="hide"]').on('click', {cnt: $(this), obj: _obj}, layer.hideLayer);
-						if(_obj.completed) return _obj.completed();
+				$ly_container.load(url, function(response, status, xhr) {
+					if(status === "success") {
+						$ly_container.addClass('gt-active');
+
+						//focusabled string
+						var	focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
+						var	focusedElementBeforeWindow = $(':focus');
+						var o = $ly_container.find('*');
+						o.filter(focusableElementsString).filter(':visible').first().focus();
+
+						//hide
+						$ly_container.find('[data-layer="hide"]').on('click', function(event) {
+							event.stopPropagation();
+							this.isHasCnt = false;
+							$ly_container.remove();
+							if(obj.closed) return obj.closed();
+						});
+
+						//completed
+						if(obj.completed) return obj.completed();
 					}
 				});
 			}
 		},
 
-		hideLayer: function(event) {
-			event.stopPropagation();
-			var $thisCnt = event.data.cnt;
-			var _obj = event.data.obj;
-			$thisCnt.remove();
-			this.isHasCnt = false;
-			if(_obj.closed) return _obj.closed();
-		},
-
-		addEvent: function(_obj) {
-			layer.loadLayer(_obj);
+		addEvent: function(obj) {
+			layer.loadLayer(obj);
 		}
 
 	};
