@@ -97,9 +97,16 @@
 			$overlay.appendTo(this.wrapperArr[this.wrapperArr.length - 1]);
 			$target.appendTo(this.wrapperArr[this.wrapperArr.length - 1]);
 
-			//add event
+			var	focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
+			var	focusedElementBeforeWindow = $(':focus');
+			var o = $target.find('*');
+			o.filter(focusableElementsString).filter(':visible').first().focus();
+
+			//add modal hide event(focusout)
 			$target.find('[data-modal="hide"]').on('click', function(event) {
+				event.preventDefault();
 				modal.hideModal(_obj);
+				focusedElementBeforeWindow.focus();
 			});
 
 			//completed event return
@@ -108,7 +115,7 @@
 			}
 		},
 
-		hideModal: function(_obj) {
+		hideModal: function(_obj, focusedElementBeforeWindow) {
 			var lastModalIdx = modal.wrapperArr.length - 1;
 			modal.wrapperArr[lastModalIdx].remove();
 			modal.wrapperArr.pop();
