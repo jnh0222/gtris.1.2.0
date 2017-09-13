@@ -19,6 +19,7 @@
 			var $target = $(obj.target);
 			var url;
 
+			//url and id
 			if(obj.id === undefined) {
 				url = obj.url;
 			}else{
