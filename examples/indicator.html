@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="../dist/gtris.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<title></title>
+</head>
+
+<body>
+	
+	<div style="background: url('img/www-01.png') no-repeat; width:100%; height:5200px"></div>
+
+	<div class="gt-indicator gt-round-xlarge" style="margin-top:-65px">
+		<span class="gt-indicator-item gt-active"></span>
+		<span class="gt-indicator-item"></span>
+		<span class="gt-indicator-item"></span>
+		<span class="gt-indicator-item"></span>
+	</div>
+</body>
+
+<script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../dist/gtris.js"></script>
+
+
+<script type="text/javascript">
+	/*$('.gt-indicator').find('span').click(function(event) {
+		$('.gt-indicator').find('span').removeClass('gt-active');
+		$(this).addClass('gt-active');
+	});*/
+
+
+	gtris.ui.indicator.init({
+		target: '.gt-indicator',
+		indicatorItemClick: function(activedIndicatorItem, index) {
+			console.log(activedIndicatorItem, index);
+		}
+	})
+
+</script>
+
+</html>
