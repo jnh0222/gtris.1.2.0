@@ -63,7 +63,7 @@
 							if(obj.closed) return obj.closed();
 						});
 
-						//completed
+						//return completed
 						if(obj.completed) return obj.completed();
 					}
 				});
