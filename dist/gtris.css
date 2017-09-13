@@ -710,6 +710,11 @@ html { box-sizing: border-box; }
 	100% { transform: scale(1);
 		opacity: 1; } }
 
+.gt-layer .gt-animate-zoom { animation: animatezoom 0.2s; }
+
+@keyframes animatezoom { from { transform: scale(0); }
+	to { transform: scale(1); } }
+
 /* note */
 .gt-note { padding: 10px; border-left: 10px solid #808080; background: #e6e6e6; }
 
@@ -720,6 +725,13 @@ html { box-sizing: border-box; }
 .gt-note.gt-note-info { border-left: 10px solid #009688; background: #63fff0; }
 
 .gt-note.gt-note-danger { border-left: 10px solid #e75113; background: #fbd9cb; }
+
+/* indicator */
+.gt-indicator { position: fixed; top: 50%; right: 100px; margin: 0 auto; width: 40px; padding: 10px 0; background: #333; }
+
+.gt-indicator > span { display: block; width: 10px; height: 10px; border-radius: 50%; background: #fff; margin: 20px auto; cursor: pointer; transition-duration: 0.1s; }
+
+.gt-indicator > span.gt-active { background: #2598e7; transform: scale(1.5); }
 
 /* scrollprogress */
 .gt-scrollprogress { position: fixed; left: 0; width: 0; height: 5px; background: #2598e7; transition: width .4s ease-out; transform: rotateZ(0deg); }

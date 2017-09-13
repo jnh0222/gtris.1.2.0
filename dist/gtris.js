@@ -20,7 +20,8 @@ require('./ui/modal');
 require('./ui/scrollprogress');
 require('./ui/tab');
 require('./ui/tooltip');
-},{"./ui/collapse":2,"./ui/dropdown":3,"./ui/layer":4,"./ui/modal":5,"./ui/scrollprogress":6,"./ui/tab":7,"./ui/tooltip":8,"./util/addComma":9,"./util/autoDashDate":10,"./util/autoDashPhoneNumber":11,"./util/browser":12,"./util/cookies":13,"./util/copyToClipboard":14,"./util/getParameterByName":15,"./util/isMobile":16,"./util/isValidateEmail":17,"./util/makeDimmed":18,"./util/os":19,"./util/removeComma":20}],2:[function(require,module,exports){
+require('./ui/indicator');
+},{"./ui/collapse":2,"./ui/dropdown":3,"./ui/indicator":4,"./ui/layer":5,"./ui/modal":6,"./ui/scrollprogress":7,"./ui/tab":8,"./ui/tooltip":9,"./util/addComma":10,"./util/autoDashDate":11,"./util/autoDashPhoneNumber":12,"./util/browser":13,"./util/cookies":14,"./util/copyToClipboard":15,"./util/getParameterByName":16,"./util/isMobile":17,"./util/isValidateEmail":18,"./util/makeDimmed":19,"./util/os":20,"./util/removeComma":21}],2:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -164,18 +165,58 @@ require('./ui/tooltip');
 		gtris.ui = window.gtris.ui = {};
 	}
 
+	var indicator = {
+
+		init: function(obj) {
+			this.addEvent(obj);
+		},
+
+		indicatorClick: function(event) {
+			var obj = event.data.obj;
+			var $indicator_item = $(obj.target).find('.gt-indicator-item');
+			var $this_indicator_item = $(event.target);
+			var indicator_index = $this_indicator_item.index();
+			
+			//add active class
+			$indicator_item.removeClass('gt-active');
+			$this_indicator_item.addClass('gt-active');
+
+			//return indicatorItemClick
+			if(obj.indicatorItemClick) return obj.indicatorItemClick($this_indicator_item, indicator_index);
+		},
+
+		addEvent: function(obj) {
+			$(obj.target).find('.gt-indicator-item').on('click', {obj: obj}, this.indicatorClick);
+		}
+	};
+
+	gtris.ui.indicator = indicator;
+
+})(window.gtris);
+
+},{}],5:[function(require,module,exports){
+(function(gtris) {
+	'use strict';
+	if (!gtris) {
+		gtris = window.gtris = {};
+	}
+	if (!gtris.ui) {
+		gtris.ui = window.gtris.ui = {};
+	}
+
 	var layer = {
 
 		isHasLayer : false,
 
 		open: function(obj) {
-			this.addEvent(obj);
+			this.loadLayer(obj);
 		},
 
 		loadLayer: function(obj) {
 			var $target = $(obj.target);
 			var url;
 
+			//url and id
 			if(obj.id === undefined) {
 				url = obj.url;
 			}else{
@@ -189,20 +230,23 @@ require('./ui/tooltip');
 				this.isHasLayer = false;
 			}
 
-			//load
+			//when layer is not open
 			if(this.isHasLayer === false) {
-				//create div and addclass
+
+				//create div and add active class
 				var $ly_container = $(document.createElement('div'));
 				$ly_container.addClass('gt-layer-container');
 				$ly_container.appendTo($target);
 				$target.addClass('gt-active');
 
+				//load
 				$ly_container.load(url, function(response, status, xhr) {
 					
 					if(status === "success") {
-						//focusabled string
-						var	focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
-						var	focusedElementBeforeWindow = $(':focus');
+
+						//focusable string
+						var focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
+						var focusedElementBeforeWindow = $(':focus');
 						var o = $ly_container.find('*');
 						o.filter(focusableElementsString).filter(':visible').first().focus();
 
@@ -216,15 +260,11 @@ require('./ui/tooltip');
 							if(obj.closed) return obj.closed();
 						});
 
-						//completed
+						//return completed
 						if(obj.completed) return obj.completed();
 					}
 				});
 			}
-		},
-
-		addEvent: function(obj) {
-			layer.loadLayer(obj);
 		}
 
 	};
@@ -233,7 +273,7 @@ require('./ui/tooltip');
 	
 })(window.gtris);
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -371,7 +411,7 @@ require('./ui/tooltip');
     gtris.ui.modal = modal;
 })(window.gtris);
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -428,7 +468,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -500,7 +540,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -624,7 +664,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -643,7 +683,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -677,7 +717,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -719,7 +759,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -773,7 +813,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -810,7 +850,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -845,7 +885,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -871,7 +911,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -891,7 +931,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -910,7 +950,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -965,7 +1005,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -1041,7 +1081,7 @@ require('./ui/tooltip');
 
 })(window.gtris);
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
