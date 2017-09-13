@@ -63,15 +63,15 @@ require('./ui/tooltip');
 				$this_header.parent().removeClass('gt-active');
 			}
 
-			//check all expand
+			//check all expanded
 			if( $accordion.find('.gt-collapse-item').length === $accordion.find('.gt-collapse-item.gt-active').length ) {
 				obj.isAllExpand = true;
 				if(obj.expanded) return obj.expanded($accordion);
 			}
 
-			//check all collapse
+			//check all collapsed
 			if($accordion.find('.gt-collapse-item.gt-active').length === 0) {
-				if(obj.expanded) return obj.collapsed($accordion);	
+				if(obj.collapsed) return obj.collapsed($accordion);	
 			}
 		},
 
