@@ -52,6 +52,7 @@
 		0% {background:rgba(0,0,0,0)}
 		100%{background:rgba(0,0,0,0.75)}
 	}
+	
 	.gt-animate-opacity {animation:animatepopup 0.2s forwards}
 	@keyframes animatepopup {
 		0% { transform:scale(0.94); opacity:0 }
