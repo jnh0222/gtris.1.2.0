@@ -26,7 +26,7 @@
 			}
 
 			//check loaded
-			if( $target.find('.gt-layer-content').hasClass('gt-active') ) {
+			if( $target.hasClass('gt-active') ) {
 				this.isHasLayer = true;
 			}else{
 				this.isHasLayer = false;
@@ -55,6 +55,7 @@
 							this.isHasLayer = false;
 							focusedElementBeforeWindow.focus();
 							$ly_container.remove();
+							$target.removeClass('gt-active');
 							if(obj.closed) return obj.closed();
 						});
 
