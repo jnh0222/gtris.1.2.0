@@ -19,3 +19,4 @@ require('./ui/modal');
 require('./ui/scrollprogress');
 require('./ui/tab');
 require('./ui/tooltip');
+require('./ui/indicator');
