@@ -34,15 +34,15 @@
 
 			//load
 			if(this.isHasLayer === false) {
-				//create gt-layer-content
+				//create div and addclass
 				var $ly_container = $(document.createElement('div'));
-				$ly_container.addClass('gt-layer-content');
+				$ly_container.addClass('gt-layer-container');
 				$ly_container.appendTo($target);
+				$target.addClass('gt-active');
 
 				$ly_container.load(url, function(response, status, xhr) {
+					
 					if(status === "success") {
-						$ly_container.addClass('gt-active');
-
 						//focusabled string
 						var	focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
 						var	focusedElementBeforeWindow = $(':focus');
