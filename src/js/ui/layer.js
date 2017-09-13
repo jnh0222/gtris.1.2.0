@@ -12,7 +12,7 @@
 		isHasLayer : false,
 
 		open: function(obj) {
-			this.addEvent(obj);
+			this.loadLayer(obj);
 		},
 
 		loadLayer: function(obj) {
@@ -32,17 +32,20 @@
 				this.isHasLayer = false;
 			}
 
-			//load
+			//check layer opened
 			if(this.isHasLayer === false) {
-				//create div and addclass
+
+				//create div and add active class
 				var $ly_container = $(document.createElement('div'));
 				$ly_container.addClass('gt-layer-container');
 				$ly_container.appendTo($target);
 				$target.addClass('gt-active');
 
+				//load
 				$ly_container.load(url, function(response, status, xhr) {
 					
 					if(status === "success") {
+						
 						//focusabled string
 						var	focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
 						var	focusedElementBeforeWindow = $(':focus');
@@ -64,10 +67,6 @@
 					}
 				});
 			}
-		},
-
-		addEvent: function(obj) {
-			layer.loadLayer(obj);
 		}
 
 	};
