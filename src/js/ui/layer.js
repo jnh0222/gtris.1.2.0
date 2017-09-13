@@ -32,7 +32,7 @@
 				this.isHasLayer = false;
 			}
 
-			//check layer opened
+			//when layer is not open
 			if(this.isHasLayer === false) {
 
 				//create div and add active class
@@ -45,10 +45,10 @@
 				$ly_container.load(url, function(response, status, xhr) {
 					
 					if(status === "success") {
-						
+
 						//focusabled string
-						var	focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
-						var	focusedElementBeforeWindow = $(':focus');
+						var focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
+						var focusedElementBeforeWindow = $(':focus');
 						var o = $ly_container.find('*');
 						o.filter(focusableElementsString).filter(':visible').first().focus();
 
