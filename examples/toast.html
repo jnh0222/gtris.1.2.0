@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="../dist/gtris.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<title></title>
+</head>
+
+<body>
+	<div style="padding:3%">
+		<h1>Direction</h1>
+		<p style="padding:4px 0">
+			<button id="toast-btn-default" class="gt-btn" type="button" name="button">Toast(default:right-top)</button>
+			<button id="toast-btn-right-bottom" class="gt-btn" type="button" name="button">Toast(right-bottom)</button>
+			<button id="toast-btn-left-top" class="gt-btn" type="button" name="button">Toast(left-top)</button>
+			<button id="toast-btn-left-bottom" class="gt-btn" type="button" name="button">Toast(left-bottom)</button>
+		</p>
+		<h1>Colors</h1>
+		<p style="padding:4px 0">
+			<button id="toast-btn-primary" class="gt-btn gt-btn-primary" type="button" name="button">Toast(primary)</button>
+			<button id="toast-btn-success" class="gt-btn gt-button-success" type="button" name="button">Toast(success)</button>
+			<button id="toast-btn-info" class="gt-btn gt-btn-info" type="button" name="button">Toast(info)</button>
+			<button id="toast-btn-warning" class="gt-btn gt-button-warning" type="button" name="button">Toast(warning)</button>
+			<button id="toast-btn-danger" class="gt-btn gt-btn-danger" type="button" name="button">Toast(danger)</button>
+		</p>
+	</div>
+</body>
+
+<script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../dist/gtris.js"></script>
+
+<script type="text/javascript">
+	$('#toast-btn-default').click(function(event) {
+		gtris.ui.toast.open({
+			message: '위시리스트에 담았습니다. 위시리스트 보기',
+			direction: 'right-top',
+			removeSecond: 1000
+		})
+	});
+
+	$('#toast-btn-right-bottom').click(function(event) {
+		gtris.ui.toast.open({
+			message: '나의 업무 파트너 하이웍스',
+			direction: 'right-bottom'
+		})
+	});
+
+	$('#toast-btn-left-top').click(function(event) {
+		gtris.ui.toast.open({
+			message: '비즈니스를 위한 IT 가비아',
+			direction: 'left-top'
+		})
+	});
+
+	$('#toast-btn-left-bottom').click(function(event) {
+		gtris.ui.toast.open({
+			message: '파트너 센터, 리셀러, 제휴 파트너',
+			direction: 'left-bottom'
+		})
+	});
+
+	$('#toast-btn-primary').click(function(event) {
+		gtris.ui.toast.open({
+			message: '가비아 보안/관제 - 위협을 기술로 통제하는, 가비아시큐리티',
+			type: 'primary'
+		})
+	});
+
+	$('#toast-btn-success').click(function(event) {
+		gtris.ui.toast.open({
+			message: '가비아 보안/관제 - 위협을 기술로 통제하는, 가비아시큐리티',
+			type: 'success'
+		})
+	});
+
+	$('#toast-btn-info').click(function(event) {
+		gtris.ui.toast.open({
+			message: '가비아 Office 365 상품 출시',
+			type: 'info'
+		})
+	});
+
+	$('#toast-btn-warning').click(function(event) {
+		gtris.ui.toast.open({
+			message: '가비아 오피스호스팅 - 사무실 IT 장비 임대 관리',
+			type: 'warning'
+		})
+	});
+
+	$('#toast-btn-danger').click(function(event) {
+		gtris.ui.toast.open({
+			message: '가비아 - 대한민국 No.1 서버 관리 전문 업체',
+			type: 'danger'
+		})
+	});
+
+</script>
+
+</html>
