@@ -21,7 +21,8 @@ require('./ui/scrollprogress');
 require('./ui/tab');
 require('./ui/tooltip');
 require('./ui/indicator');
-},{"./ui/collapse":2,"./ui/dropdown":3,"./ui/indicator":4,"./ui/layer":5,"./ui/modal":6,"./ui/scrollprogress":7,"./ui/tab":8,"./ui/tooltip":9,"./util/addComma":10,"./util/autoDashDate":11,"./util/autoDashPhoneNumber":12,"./util/browser":13,"./util/cookies":14,"./util/copyToClipboard":15,"./util/getParameterByName":16,"./util/isMobile":17,"./util/isValidateEmail":18,"./util/makeDimmed":19,"./util/os":20,"./util/removeComma":21}],2:[function(require,module,exports){
+require('./ui/toast');
+},{"./ui/collapse":2,"./ui/dropdown":3,"./ui/indicator":4,"./ui/layer":5,"./ui/modal":6,"./ui/scrollprogress":7,"./ui/tab":8,"./ui/toast":9,"./ui/tooltip":10,"./util/addComma":11,"./util/autoDashDate":12,"./util/autoDashPhoneNumber":13,"./util/browser":14,"./util/cookies":15,"./util/copyToClipboard":16,"./util/getParameterByName":17,"./util/isMobile":18,"./util/isValidateEmail":19,"./util/makeDimmed":20,"./util/os":21,"./util/removeComma":22}],2:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -550,6 +551,109 @@ require('./ui/indicator');
 		gtris.ui = window.gtris.ui = {};
 	}
 
+	var toast = {
+
+		$toast_container: 'toast-container',
+		timer: 'toast-delete-time',
+		removeSecond: 'remove-second',
+
+		open: function(obj) {
+
+			if( $('.gt-toast-container').length === 0 ) {
+
+				//set options
+				if(!obj.direction) obj.direction = 'right-top';
+				if(!obj.removeSecond) {
+					this.removeSecond = 5000;
+				}else{
+					this.removeSecond = obj.removeSecond;
+				}
+
+				//toast container
+				this.$toast_container = $(document.createElement('div'));
+				this.$toast_container.addClass('gt-toast-container');
+				this.$toast_container.attr('data-direction', obj.direction);
+				this.$toast_container.appendTo('body');
+				this.$toast_container.animate({opacity: 0}, 0);
+				this.$toast_container.animate({opacity: 0.8}, 30);
+
+				//toast
+				var $toast = $(document.createElement('div'));
+				$toast.addClass('gt-toast');
+				$toast.html(obj.message);
+				$toast.appendTo(this.$toast_container);
+
+				//set colors
+				this.setColors(obj, $toast);
+
+				//add event
+				$toast.on('mouseover', toast.mouseoverToast);
+				$toast.on('mouseout', toast.mouseoutToast);
+				$toast.on('click', toast.deleteToast);
+				this.timer = setInterval(this.timerHandler, this.removeSecond);
+			}
+		},
+
+		setColors: function(obj, $toast) {
+			switch(obj.type) {
+				case 'primary':
+				$toast.addClass('gt-toast-primary');
+				break;
+
+				case 'success':
+				$toast.addClass('gt-toast-success');
+				break;
+
+				case 'info':
+				$toast.addClass('gt-toast-info');
+				break;
+
+				case 'warning':
+				$toast.addClass('gt-toast-warning');
+				break;
+
+				case 'danger':
+				$toast.addClass('gt-toast-danger');
+				break;
+			}
+		},
+
+		timerHandler: function() {
+			toast.$toast_container.remove();
+			clearInterval(toast.timer);
+		},
+
+		deleteToast: function() {
+			toast.$toast_container.remove();
+			clearInterval(toast.timer);
+		},
+
+		mouseoverToast: function() {
+			toast.$toast_container.css('opacity', '1');
+			clearInterval(toast.timer);
+		},
+
+		mouseoutToast: function() {
+			toast.$toast_container.css('opacity', '0.8');
+			toast.timer = setInterval(toast.timerHandler, toast.removeSecond);
+		}
+
+	};
+
+	gtris.ui.toast = toast;
+
+})(window.gtris);
+
+},{}],10:[function(require,module,exports){
+(function(gtris) {
+	'use strict';
+	if (!gtris) {
+		gtris = window.gtris = {};
+	}
+	if (!gtris.ui) {
+		gtris.ui = window.gtris.ui = {};
+	}
+
 	var tooltip = {
 		
 		init: function(obj) {
@@ -664,7 +768,7 @@ require('./ui/indicator');
 
 })(window.gtris);
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -683,7 +787,7 @@ require('./ui/indicator');
 
 })(window.gtris);
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -717,7 +821,7 @@ require('./ui/indicator');
 
 })(window.gtris);
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -759,7 +863,7 @@ require('./ui/indicator');
 
 })(window.gtris);
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -813,7 +917,7 @@ require('./ui/indicator');
 
 })(window.gtris);
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -850,7 +954,7 @@ require('./ui/indicator');
 
 })(window.gtris);
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -885,7 +989,7 @@ require('./ui/indicator');
 
 })(window.gtris);
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -911,7 +1015,7 @@ require('./ui/indicator');
 
 })(window.gtris);
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -931,7 +1035,7 @@ require('./ui/indicator');
 
 })(window.gtris);
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -950,7 +1054,7 @@ require('./ui/indicator');
 
 })(window.gtris);
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -1005,7 +1109,7 @@ require('./ui/indicator');
 
 })(window.gtris);
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
@@ -1081,7 +1185,7 @@ require('./ui/indicator');
 
 })(window.gtris);
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 (function(gtris) {
 	'use strict';
 	if (!gtris) {
