@@ -31,7 +31,7 @@
 				if(obj.className) this.$toast_container.addClass(obj.className);
 				this.$toast_container.attr('data-direction', obj.direction);
 				this.$toast_container.appendTo('body');
-				this.$toast_container.animate({opacity: 0.8}, 30);
+				this.$toast_container.animate({opacity: 1}, 30);
 
 				//toast
 				var $toast = $(document.createElement('div'));
@@ -86,12 +86,12 @@
 		},
 
 		mouseoverToast: function() {
-			toast.$toast_container.css('opacity', '1');
+			toast.$toast_container.css('opacity', '0.8');
 			clearInterval(toast.timer);
 		},
 
 		mouseoutToast: function() {
-			toast.$toast_container.css('opacity', '0.8');
+			toast.$toast_container.css('opacity', '1');
 			toast.timer = setInterval(toast.timerHandler, toast.removeSecond);
 		}
 	};
