@@ -26,11 +26,22 @@
 		bottom: 12px;
 	}
 
+	&[data-direction="center-top"] {
+		left: 50%;
+		top: 12px;
+		transform: translate(-50%, 0);
+	}
+
+	&[data-direction="center-bottom"] {
+		left: 50%;
+		bottom: 12px;
+		transform: translate(-50%, 0);
+	}
+
 	.gt-toast {
 		position: relative;
 		pointer-events: auto;
 		overflow: hidden;
-		margin: 0 0 6px;
 		padding: 10px;
 		width: 300px;
 		font-size: 0.8em;

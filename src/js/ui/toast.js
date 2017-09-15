@@ -10,8 +10,8 @@
 	var toast = {
 
 		$toast_container: 'toast-container',
-		timer: 'toast-delete-time',
-		removeSecond: 'remove-second',
+		timer: 'timer',
+		removeSecond: 5000,
 
 		open: function(obj) {
 
@@ -28,15 +28,16 @@
 				//toast container
 				this.$toast_container = $(document.createElement('div'));
 				this.$toast_container.addClass('gt-toast-container');
+				if(obj.className) this.$toast_container.addClass(obj.className);
 				this.$toast_container.attr('data-direction', obj.direction);
 				this.$toast_container.appendTo('body');
-				this.$toast_container.animate({opacity: 0}, 0);
 				this.$toast_container.animate({opacity: 0.8}, 30);
 
 				//toast
 				var $toast = $(document.createElement('div'));
 				$toast.addClass('gt-toast');
 				$toast.html(obj.message);
+				if(obj.bgColor) $toast.css('background-color', obj.bgColor);
 				$toast.appendTo(this.$toast_container);
 
 				//set colors
@@ -93,7 +94,6 @@
 			toast.$toast_container.css('opacity', '0.8');
 			toast.timer = setInterval(toast.timerHandler, toast.removeSecond);
 		}
-
 	};
 
 	gtris.ui.toast = toast;
