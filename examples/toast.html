@@ -16,6 +16,8 @@
 			<button id="toast-btn-right-bottom" class="gt-btn" type="button" name="button">Toast(right-bottom)</button>
 			<button id="toast-btn-left-top" class="gt-btn" type="button" name="button">Toast(left-top)</button>
 			<button id="toast-btn-left-bottom" class="gt-btn" type="button" name="button">Toast(left-bottom)</button>
+			<button id="toast-btn-center-top" class="gt-btn" type="button" name="button">Toast(center-top)</button>
+			<button id="toast-btn-center-bottom" class="gt-btn" type="button" name="button">Toast(center-bottom)</button>
 		</p>
 		<h1>Colors</h1>
 		<p style="padding:4px 0">
@@ -25,6 +27,10 @@
 			<button id="toast-btn-warning" class="gt-btn gt-button-warning" type="button" name="button">Toast(warning)</button>
 			<button id="toast-btn-danger" class="gt-btn gt-btn-danger" type="button" name="button">Toast(danger)</button>
 		</p>
+		<h1>Options</h1>
+		<p style="padding:4px 0">
+			<button id="toast-btn-options" class="gt-btn" type="button" name="button">Toast(options)</button>
+		</p>
 	</div>
 </body>
 
@@ -32,11 +38,11 @@
 <script type="text/javascript" src="../dist/gtris.js"></script>
 
 <script type="text/javascript">
+
 	$('#toast-btn-default').click(function(event) {
 		gtris.ui.toast.open({
 			message: '위시리스트에 담았습니다. 위시리스트 보기',
-			direction: 'right-top',
-			removeSecond: 1000
+			direction: 'right-top'
 		})
 	});
 
@@ -58,6 +64,20 @@
 		gtris.ui.toast.open({
 			message: '파트너 센터, 리셀러, 제휴 파트너',
 			direction: 'left-bottom'
+		})
+	});
+
+	$('#toast-btn-center-top').click(function(event) {
+		gtris.ui.toast.open({
+			message: "위시리스트에 담았습니다. 위시리스트 보기 <i class='fa fa-close' aria-hidden='true'></i>",
+			direction: 'center-top'
+		})
+	});
+
+	$('#toast-btn-center-bottom').click(function(event) {
+		gtris.ui.toast.open({
+			message: '위시리스트에 담았습니다. 위시리스트 보기',
+			direction: 'center-bottom'
 		})
 	});
 
@@ -93,6 +113,16 @@
 		gtris.ui.toast.open({
 			message: '가비아 - 대한민국 No.1 서버 관리 전문 업체',
 			type: 'danger'
+		})
+	});
+
+	$('#toast-btn-options').click(function(event) {
+		gtris.ui.toast.open({
+			message: '위시리스트에 담았습니다. 위시리스트 보기',
+			bgColor: 'purple',
+			className: 'custom-class-name',
+			removeSecond: 10000,
+			direction: 'center-top'
 		})
 	});
 
