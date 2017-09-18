@@ -3,11 +3,12 @@
 
 	display: inline-block;
 
-	.gt-pagination-nav {
+	.gt-pagination-nav, .gt-pagination-num {
 		float: left;
 		padding: 8px 16px;
 		color: $gray;
 		text-decoration: none;
+		transition-duration: .1s;
 
 		&:hover {
 			background: $gray-ccc;
