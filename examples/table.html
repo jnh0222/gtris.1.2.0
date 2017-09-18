@@ -3,7 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 <link rel="stylesheet" href="../dist/gtris.css">
+<style type="text/css">
+	h1 {padding-bottom:10px}
+</style>
 <title>Table</title>
 </head>
 <body>
@@ -332,8 +336,87 @@
 	</tr>
 	</tbody>
 	</table>
+	<br><br>
+
+	<!-- jQuery ajax + VueJS + StarWars API -->
+	<div class="ajax-table">
+		<h1>{{message}}</h1>
+		<table class="gt-table-all gt-centered">
+		<colgroup>
+			<col width="5%"><col><col width="5%"><col width="5%"><col width="10%"><col width="10%"><col width="10%"><col width="10%"><col width="10%">
+		</colgroup>
+		<thead>
+		<tr>
+			<th>번호</th>
+			<th>name</th>
+			<th>height</th>
+			<th>mass</th>
+			<th>hair color</th>
+			<th>skin color</th>
+			<th>eye color</th>
+			<th>birth year</th>
+			<th>gender</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr v-for="(item, index) in people.results">
+			<td>{{index + 1}}</td>
+			<td>{{item.name}}</td>
+			<td>{{item.height}}</td>
+			<td>{{item.mass}}</td>
+			<td>{{item.hair_color}}</td>
+			<td>{{item.skin_color}}</td>
+			<td>{{item.eye_color}}</td>
+			<td>{{item.birth_year}}</td>
+			<td>{{item.gender}}</td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vuejs-paginator/2.0.0/vuejs-paginator.js"></script>
+<script type="text/javascript" src="https://static.gabia.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../dist/gtris.js"></script>
+
+<script type="text/javascript">
+var list = new Vue({
+	el: '.ajax-table',
+	data: {
+		url: 'http://swapi.co/api/people/?page=1',
+		message: 'jQuery ajax + VueJS + StarWars API',
+		people: []
+	},
+	mounted: function() {
+		loadAjax(this.url);
+	}
+});
+
+function loadAjax(url) {
+	$.ajax({
+		context: this,
+		url: url,
+		success: function(response) {
+			list.people = response;
+		}
+	});
+}
+/*
+$('.gt-pagination-nav').click(function(event) {
+	var isNumber = false;
+	if($(this).text()) {
+		isNumber = true;
+	}else{
+		isNumber = false;
+	}
+	if(isNumber) {
+		var page_number = $(this).text();
+		loadAjax('http://swapi.co/api/people/?page=' + page_number);
+	}
+});
+*/
+</script>
 
 </body>
 </html>
