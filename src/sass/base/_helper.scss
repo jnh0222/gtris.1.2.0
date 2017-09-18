@@ -1,7 +1,7 @@
 /* Helper */
 
 //Skip navigation
-.gt-skip-navigation .gt-skip-link { position:absolute; top:-99999px; left:0; z-index:10000; padding:8px 14px; background-color:$gray-333; color:$gray-eee; text-align: center; font-size:14px }
+.gt-skip-navigation .gt-skip-link { position: absolute; top: -10000px; left: 0; z-index: 10000; background: $gray-333; text-align: center; color: $white; padding: 10px; font-size: 12px }
 .gt-skip-navigation .gt-skip-link:focus {top:0}
 
 //Accessibility
