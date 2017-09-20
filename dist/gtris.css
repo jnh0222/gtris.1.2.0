@@ -32,7 +32,7 @@ html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
 /* Helper */
-.gt-skip-navigation .gt-skip-link { position: absolute; top: -99999px; left: 0; z-index: 10000; padding: 8px 14px; background-color: #333; color: #eee; text-align: center; font-size: 14px; }
+.gt-skip-navigation .gt-skip-link { position: absolute; top: -10000px; left: 0; z-index: 10000; background: #333; text-align: center; color: #fff; padding: 10px; font-size: 12px; }
 
 .gt-skip-navigation .gt-skip-link:focus { top: 0; }
 
@@ -537,11 +537,11 @@ html { box-sizing: border-box; }
 /* Pagination */
 .gt-pagination { display: inline-block; }
 
-.gt-pagination .gt-pagination-nav { float: left; padding: 8px 16px; color: #808080; text-decoration: none; }
+.gt-pagination .gt-pagination-nav, .gt-pagination .gt-pagination-num { float: left; padding: 8px 16px; color: #808080; text-decoration: none; transition-duration: .1s; }
 
-.gt-pagination .gt-pagination-nav:hover { background: #ccc; color: #fff; }
+.gt-pagination .gt-pagination-nav:hover, .gt-pagination .gt-pagination-num:hover { background: #ccc; color: #fff; }
 
-.gt-pagination .gt-pagination-nav.gt-active { background: #2598e7; color: #fff; }
+.gt-pagination .gt-pagination-nav.gt-active, .gt-pagination .gt-pagination-num.gt-active { background: #2598e7; color: #fff; }
 
 .gt-pagination:before, .gt-pagination:after { display: block; content: " "; clear: both; }
 
@@ -747,7 +747,11 @@ html { box-sizing: border-box; }
 
 .gt-toast-container[data-direction="left-bottom"] { left: 12px; bottom: 12px; }
 
-.gt-toast-container .gt-toast { position: relative; pointer-events: auto; overflow: hidden; margin: 0 0 6px; padding: 10px; width: 300px; font-size: 0.8em; color: #fff; background-color: #808080; box-shadow: 2px 2px 10px #ccc; cursor: pointer; }
+.gt-toast-container[data-direction="center-top"] { left: 50%; top: 12px; transform: translate(-50%, 0); }
+
+.gt-toast-container[data-direction="center-bottom"] { left: 50%; bottom: 12px; transform: translate(-50%, 0); }
+
+.gt-toast-container .gt-toast { position: relative; pointer-events: auto; overflow: hidden; padding: 10px; width: 300px; font-size: 0.8em; color: #fff; background-color: #808080; box-shadow: 2px 2px 10px #ccc; cursor: pointer; }
 
 .gt-toast-container .gt-toast.gt-toast-over { transition-duration: .2s; }
 

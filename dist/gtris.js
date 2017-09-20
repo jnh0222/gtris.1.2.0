@@ -485,11 +485,6 @@ require('./ui/toast');
 		},
 		attachTabEvent: function(_obj) {
 			var $target = $(_obj.target);
-			var initIdx = Number(gtris.util.getParameterByName('tabIdx'));
-			if(initIdx < 0 || initIdx > _obj.target.length-1 || window.isNaN(initIdx)) {
-				initIdx = 0;
-			}
-
 			if(!_obj.event) {
 				_obj.event = 'click';
 			}
@@ -506,7 +501,18 @@ require('./ui/toast');
 						tab.executeTabEvent.call(this, _obj, $tab_head);
 					});
 				});
-				$tab_head.find('[data-id]').eq(initIdx).trigger(_obj.event);
+
+				//초기 탭 활성화
+				var initActiveTabs, initIdx = [];
+				initActiveTabs = gtris.util.getParameterByName('init').split(',');
+				initActiveTabs.forEach(function(v) {
+					if( $.inArray('#' + v, $tab_head.target_id) > -1 ) {
+						initIdx.push($.inArray('#' + v, $tab_head.target_id));
+					}
+				});
+				initIdx.forEach(function(v) {
+					$tab_head.find('[data-id]').eq(v).trigger(_obj.event);
+				});
 			});
 		},
 		ajaxCall: function(this_id) {
@@ -554,8 +560,8 @@ require('./ui/toast');
 	var toast = {
 
 		$toast_container: 'toast-container',
-		timer: 'toast-delete-time',
-		removeSecond: 'remove-second',
+		timer: 'timer',
+		removeSecond: 5000,
 
 		open: function(obj) {
 
@@ -572,15 +578,16 @@ require('./ui/toast');
 				//toast container
 				this.$toast_container = $(document.createElement('div'));
 				this.$toast_container.addClass('gt-toast-container');
+				if(obj.className) this.$toast_container.addClass(obj.className);
 				this.$toast_container.attr('data-direction', obj.direction);
 				this.$toast_container.appendTo('body');
-				this.$toast_container.animate({opacity: 0}, 0);
-				this.$toast_container.animate({opacity: 0.8}, 30);
+				this.$toast_container.animate({opacity: 1}, 30);
 
 				//toast
 				var $toast = $(document.createElement('div'));
 				$toast.addClass('gt-toast');
 				$toast.html(obj.message);
+				if(obj.bgColor) $toast.css('background-color', obj.bgColor);
 				$toast.appendTo(this.$toast_container);
 
 				//set colors
@@ -629,15 +636,14 @@ require('./ui/toast');
 		},
 
 		mouseoverToast: function() {
-			toast.$toast_container.css('opacity', '1');
+			toast.$toast_container.css('opacity', '0.8');
 			clearInterval(toast.timer);
 		},
 
 		mouseoutToast: function() {
-			toast.$toast_container.css('opacity', '0.8');
+			toast.$toast_container.css('opacity', '1');
 			toast.timer = setInterval(toast.timerHandler, toast.removeSecond);
 		}
-
 	};
 
 	gtris.ui.toast = toast;
