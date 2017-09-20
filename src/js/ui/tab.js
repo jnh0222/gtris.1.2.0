@@ -31,16 +31,18 @@
 				});
 
 				//초기 탭 활성화
-				var initActiveTabs, initIdx = [];
-				initActiveTabs = gtris.util.getParameterByName('init').split(',');
-				initActiveTabs.forEach(function(v) {
-					if( $.inArray('#' + v, $tab_head.target_id) > -1 ) {
-						initIdx.push($.inArray('#' + v, $tab_head.target_id));
-					}
-				});
-				initIdx.forEach(function(v) {
-					$tab_head.find('[data-id]').eq(v).trigger(_obj.event);
-				});
+				if(gtris.util.getParameterByName('init').length) {
+					var initActiveTabs, initIdx = [];
+					initActiveTabs = gtris.util.getParameterByName('init').split(',');
+					initActiveTabs.forEach(function(v) {
+						if( $.inArray('#' + v, $tab_head.target_id) > -1 ) {
+							initIdx.push($.inArray('#' + v, $tab_head.target_id));
+						}
+					});
+					initIdx.forEach(function(v) {
+						$tab_head.find('[data-id]').eq(v).trigger(_obj.event);
+					});
+				}
 			});
 		},
 		ajaxCall: function(this_id) {
