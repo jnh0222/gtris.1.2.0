@@ -31,16 +31,14 @@
 				});
 
 				//초기 탭 활성화
-				if(gtris.util.getParameterByName('init').length) {
-					var initActiveTabs, initIdx = [];
+				if(gtris.util.getParameterByName('init')) {
+					var initActiveTabs = [];
 					initActiveTabs = gtris.util.getParameterByName('init').split(',');
 					initActiveTabs.forEach(function(v) {
 						if( $.inArray('#' + v, $tab_head.target_id) > -1 ) {
-							initIdx.push($.inArray('#' + v, $tab_head.target_id));
+							var initIdx = $.inArray('#' + v, $tab_head.target_id);
+							$tab_head.find('[data-id]').eq(initIdx).trigger(_obj.event);
 						}
-					});
-					initIdx.forEach(function(v) {
-						$tab_head.find('[data-id]').eq(v).trigger(_obj.event);
 					});
 				}
 			});
