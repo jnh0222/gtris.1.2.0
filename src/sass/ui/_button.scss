@@ -12,12 +12,12 @@
 	white-space:nowrap;
 	color: $white;
 	cursor:pointer;
-	transition-duration:.3s;
 	vertical-align: top;
 	border: 1px solid transparent;
 	user-select: none;
 	&:hover {
 		background-color: lighten($gray-999, 8%);
+		transition-duration:.3s;
 	}
 
 	//outline style
