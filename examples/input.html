@@ -9,65 +9,66 @@
 
 <body style="padding:5%">
 	
-	<form>
+	<h1>Vertical Style</h1>
+	<form class="gt-border gt-padding-xlarge">
 		<p class="">
 			<label>Name</label>
-			<input class="gt-input" type="text" disabled="">
+			<input class="gt-input gt-block" type="text" disabled="" style="width:50%">
 		</p>
+		<br>
 
 		<p class="">
 			<label>Email</label>
-			<input class="gt-input" type="text">
+			<input class="gt-input gt-block" type="text" style="width:50%">
 		</p>
+		<br>
 
 		<p class="">
 			<label>Readonly</label>
-			<input class="gt-input" type="text" readonly="">
+			<input class="gt-input gt-block" type="text" readonly="" style="width:50%">
 		</p>
+		<br>
 
 		<p class="">
 			<label>Text area</label>
-			<textarea class="gt-input"></textarea>
+			<textarea class="gt-input gt-block" style="width:50%; height:400px"></textarea>
 		</p>
+		<br>
 
 		<p class="">
 			<label>Select box</label>
-			<select class="gt-select" name="option">
+			<select class="gt-select gt-block" name="option" style="width:50%">
 				<option value="1">Option 1</option>
 				<option value="2">Option 2</option>
 				<option value="3">Option 3</option>
 			</select>
 		</p>
+		<br>
 
 		<div class="gt-cell-row">
-			<div class="g-orange gt-cell" style="width:50%;">
-				<div>
-					<input id="apple" class="gt-checkbox" type="checkbox" checked="checked">
-					<label for="apple">apple</label>
-				</div>
-				<div>
-					<input id="banana" class="gt-checkbox" type="checkbox">
-					<label for="banana">banana</label>
-				</div>
-				<div>
-					<input id="kiwi" class="gt-checkbox" type="checkbox" disabled="">
-					<label for="kiwi">kiwi (disabled)</label>
-				</div>
-			</div>
-			<div class="g-green gt-cell">
-				<div>
-					<input id="male" class="gt-radio" type="radio" name="gender" value="male" checked="">
-					<label for="male">yes</label>
-				</div>
-				<div>
-					<input id="female" class="gt-radio" type="radio" name="gender" value="female">
-					<label for="female">no</label>
-				</div>
-				<div>
-					<input id="unknown" class="gt-radio" type="radio" name="gender" value="" disabled="">
-					<label for="unknown">don't know (disabled)</label>
-				</div>
-			</div>
+			
+				<input id="apple" class="gt-checkbox" type="checkbox" checked="checked">
+				<label for="apple"> apple</label>
+				<br>
+			
+				<input id="banana" class="gt-checkbox" type="checkbox">
+				<label for="banana"> banana</label>
+				<br>
+			
+				<input id="kiwi" class="gt-checkbox" type="checkbox" disabled="">
+				<label for="kiwi"> kiwi (disabled)</label>
+				<br><br>
+			
+				<input id="male" class="gt-radio" type="radio" name="gender" value="male" checked="">
+				<label for="male"> yes</label>
+				<br>
+			
+				<input id="female" class="gt-radio" type="radio" name="gender" value="female">
+				<label for="female"> no</label>
+				<br>
+			
+				<input id="unknown" class="gt-radio" type="radio" name="gender" value="" disabled="">
+				<label for="unknown"> don't know (disabled)</label>
 		</div>
 	</form>
 	<br><br><br><br><br>

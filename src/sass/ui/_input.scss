@@ -4,7 +4,7 @@
 	display:inline-block;
 	border:1px solid $gray-ddd;
 	min-height:34px;
-	width:100%;
+	//width:100%;
 
 	&[disabled], &[readonly], &.gt-disabled {
 		background-color: $gray-eee;
@@ -17,7 +17,7 @@
 	display:inline-block;
 	border:1px solid $gray-ddd;
 	min-height:34px;
-	width:100%;
+	//width:100%;
 }
 
 .gt-checkbox {
