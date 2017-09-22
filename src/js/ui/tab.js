@@ -13,11 +13,6 @@
 		},
 		attachTabEvent: function(_obj) {
 			var $target = $(_obj.target);
-			var initIdx = Number(gtris.util.getParameterByName('tabIdx'));
-			if(initIdx < 0 || initIdx > _obj.target.length-1 || window.isNaN(initIdx)) {
-				initIdx = 0;
-			}
-
 			if(!_obj.event) {
 				_obj.event = 'click';
 			}
@@ -34,7 +29,18 @@
 						tab.executeTabEvent.call(this, _obj, $tab_head);
 					});
 				});
-				$tab_head.find('[data-id]').eq(initIdx).trigger(_obj.event);
+
+				//초기 탭 활성화
+				if(gtris.util.getParameterByName('init')) {
+					var initActiveTabs = [];
+					initActiveTabs = gtris.util.getParameterByName('init').split(',');
+					initActiveTabs.forEach(function(v) {
+						if( $.inArray('#' + v, $tab_head.target_id) > -1 ) {
+							var initIdx = $.inArray('#' + v, $tab_head.target_id);
+							$tab_head.find('[data-id]').eq(initIdx).trigger(_obj.event);
+						}
+					});
+				}
 			});
 		},
 		ajaxCall: function(this_id) {

@@ -5,4 +5,5 @@ css/map
 fixed-positioning
 .sass-cache
 _temp
+dist
 package-lock.json
