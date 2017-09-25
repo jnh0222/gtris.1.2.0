@@ -13,6 +13,8 @@
 .gt-float-none { float:none!important }
 
 //Position
+.gt-relative { position:relative }
+.gt-absolute { position:absolute }
 .gt-fixed-top {position:fixed; top:0; right:0; left:0; z-index:$zindex-fixed; }
 .gt-fixed-bottom {position:fixed; right:0; bottom:0; left:0; z-index:$zindex-fixed; }
 
