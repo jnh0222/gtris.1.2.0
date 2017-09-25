@@ -33,6 +33,11 @@
 		.gt-modal-body {
 			padding: 30px;
 		}
+		.gt-modal-close {
+			position:absolute;
+			top:10px;
+			right:10px;
+		}
 	}
 
 	@media screen and (min-width: $md) {
