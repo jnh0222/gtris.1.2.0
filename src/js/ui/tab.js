@@ -66,8 +66,8 @@
 			$($tab_head.target_id.join(", ")).hide();
 			$(this_id).show();
 
-			if(_obj.completed) {
-				return _obj.completed();
+			if(_obj.getHeadIndex) {
+				return _obj.getHeadIndex($(this).index());
 			}
 		}
 	};

@@ -11,10 +11,11 @@
 <div style="padding:3%">
 	<h1>Tab</h1>
 	<br>
+	<!-- 초기 활성 url 가이드
 	<p><strong>띄어쓰기 주의! ',' 다음에 공백없음</strong></p>
 	<p>사용법) url?init=1번탭그룹에서 활성화 할 id,1번탭그룹에서 활성화 할 id</p>
 	<p>예시) example.com?init=tab3,tab5</p>
-	<br>
+	<br> -->
 	<div class="gt-tab">
 		<div class="gt-tab-nav" id="myTab1">
 			<a href="javascript:void(0);" class="gt-nav-item gt-active" data-id="tab1">요약</a>
@@ -58,7 +59,13 @@
 <script type="text/javascript" src="../dist/gtris.js"></script>
 <script type="text/javascript">
 gtris.ui.tab.init({
-    target: '#myTab1, #myTab2'
+    target: '#myTab1, #myTab2',
+	completed: function() {
+		console.log('executeTabEvent() completed..');
+	},
+	getHeadIndex: function(idx) {
+		console.log('index: ' + idx);
+	},
 });
 </script>
 
