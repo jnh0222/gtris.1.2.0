@@ -19,8 +19,8 @@
 .gt-fixed-bottom {position:fixed; right:0; bottom:0; left:0; z-index:$zindex-fixed; }
 
 //Text Align
-.gt-left-align { text-align:left!important }
-.gt-right-align { text-align:right!important }
+.gt-align-left { text-align:left!important }
+.gt-align-right { text-align:right!important }
 .gt-justify { text-align:justify!important }
 .gt-center { text-align:center!important }
 .gt-bold { font-weight:bold!important }
